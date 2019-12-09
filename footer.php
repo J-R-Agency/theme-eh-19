@@ -26,8 +26,40 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<footer class="site-footer" id="colophon">
 
 					<div class="site-info">
+						
+						<!-- CONTENT -->
+						<div class="row">
+							<div class="col-md-6 col-12">
+								<p>Empowerment House &#169; 2019</p>
+								<p class="no-margins">Business address:</p>
+								<p class="no-margins">61 Rodney Street, Merseyside,</p>
+								<p class="no-margins">England, L1 9ER</p>
+								<p class="no-margins">Registered Business Number:</p>
 
-						<?php understrap_site_info(); ?>
+							</div>
+							<div class="col-md-6 col-12">
+								<div class="row">
+									<div class="col-12">
+										<p>Icons go here</p>
+									</div>
+								</div>
+								
+								<div class="row">
+									<div class="col-12">
+										<?php
+											wp_nav_menu(
+											  array(
+											    'menu' => 'social-media-menu',
+											    'link_before' => '<span class="footer-menu-item">',
+											    'link_after' => '</span>',
+											  )
+											);	
+										?>
+									</div>
+								</div>
+								
+							</div>
+						</div>
 
 					</div><!-- .site-info -->
 
