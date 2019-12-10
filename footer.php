@@ -38,18 +38,26 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 							</div>
 							<div class="col-md-6 col-12">
-								<div class="row">
-									<div class="col-12">
-										<p>Icons go here</p>
-									</div>
-								</div>
-								
-								<div class="row">
+								<div class="row mt-4 mb-4">
 									<div class="col-12">
 										<?php
 											wp_nav_menu(
 											  array(
 											    'menu' => 'social-media-menu',
+											    'link_before' => '<span class="footer-menu-item">',
+											    'link_after' => '</span>',
+											  )
+											);	
+										?>									
+									</div>
+								</div>
+								
+								<div class="row mt-4">
+									<div class="col-12">
+										<?php
+											wp_nav_menu(
+											  array(
+											    'menu' => 'footer-menu',
 											    'link_before' => '<span class="footer-menu-item">',
 											    'link_after' => '</span>',
 											  )
