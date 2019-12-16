@@ -1,0 +1,145 @@
+.wrapper {
+	padding: 0;
+}
+
+.entry-header {
+	background-color: $light-grey;
+	padding: 50px;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		padding: 0px;
+	}	
+}
+
+.entry-title {
+	max-width: 60%;
+	text-align: center;
+	margin: 0 auto;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		max-width: 100%;
+	}
+}
+
+.entry-content {
+	@include content;
+	position: relative;
+	img {
+		width: 100%;
+		margin: 40px 0px;
+		@media all and (max-width: $breakpoint-phone) {
+			margin: 10px 0px;
+		}
+	}	
+	h1, h2 {
+		margin: 30px 0px;
+	}
+}
+
+.category-title {
+	font-size: 16pt;
+	text-transform: uppercase;
+	font-family: 'Montserrat Medium', sans-serif;
+	color: $peach;
+	padding: 30px 0px 30px 0px;
+	
+	&:after, &:before {
+		content: '';
+		width: 50px;
+		height: 2px;
+		background: $peach;
+		margin: 0 10px;	
+	}
+}
+
+.post-excerpt {
+	text-align: center;
+	width: 70%;
+	margin: 0 auto;
+	padding: 40px 0px;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		width: 90%;
+		padding: 20px 0px 60px 0px;
+	}	
+}
+
+/* -- Social Media -- */
+
+.social-media-header {
+	background-color: $peach;
+	position: absolute;
+	top: -35px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 400px;
+	height: 70px;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		height: 60px;
+		width: 300px;
+		transform: translateX(-45%);
+	}
+		
+	ul {
+		list-style-type: none;
+		
+		li {
+			display: inline-block;
+			margin: 0px 10px;
+			img {
+				max-height: 35px;
+				margin: 15px 0px;
+					@media all and (max-width: $breakpoint-phone) {
+						max-height: 25px;
+					}
+			}
+		}
+	}
+}
+
+.social-media-footer {
+	border-top: 2px solid $peach;
+	border-bottom: 2px solid $peach;
+	margin: 40px 0px;
+	padding: 0px;
+	
+	ul {
+		list-style-type: none;
+		
+		li {
+			display: inline-block;
+			margin: 0px 10px;
+			img {
+				max-height: 35px;
+				margin: 15px 0px;
+			}
+		}
+	}
+}
+
+
+
+/* -- Author bio section -- */
+
+.avatar {
+	border: 5px solid $teal;
+	border-radius: 50%;
+}
+
+/* -- Related Articles -- */
+.related-articles {
+	background-color: $light-grey;
+	padding: 100px 0px;
+	border-top: 1px solid $navy;
+	position: relative;
+}
+
+.line-icon {
+	position: absolute;
+	top: -50px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100px;
+	height: 100px;
+}

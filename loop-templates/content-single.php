@@ -28,15 +28,14 @@ defined( 'ABSPATH' ) || exit;
 			
 			<h4 class="post-excerpt">Vestibulum molestie, ex vitae ornare ullamcorper, mi sapien commodo mi, maximus volutpat orci nibh nec dolor. Proin vitae justo id ipsum ultricies molestie. Sed vitae tortor sagittis, malesuada elit quis, ornare lorem. Orci varius natoque penatibus et magnis dis parturient montes.</h4>
 	
-			<!--<div class="entry-meta">
-	
-				<?php understrap_posted_on(); ?>
-	
-			</div><!-- .entry-meta -->
-	
 		</header><!-- .entry-header -->
 		
 		<div class="entry-content">
+
+			<!-- Social Media 1 -->
+			<div class="row social-media-header centered">
+					<?php include get_template_directory() ."/inc/social-media-share.php"; ?>
+			</div>
 	
 			<?php the_content(); ?>
 				
@@ -50,10 +49,8 @@ defined( 'ABSPATH' ) || exit;
 			?>
 			
 		<!-- Social Media 2 -->
-		<div class="row social-media-footer">
-			<div class="col-12">
+		<div class="row social-media-footer centered">
 				<?php include get_template_directory() ."/inc/social-media-share.php"; ?>
-			</div>
 		</div>
 		
 		<!-- AUTHOR BIO -->
@@ -86,8 +83,8 @@ defined( 'ABSPATH' ) || exit;
 			<div class="col-md-8 vertical-center">
 				<div class="row">
 					<div class="col-12">
-						<h2><?php echo $display_name; ?> </h2>
-						<h3><?php echo $job_role; ?></h3>
+						<h3><?php echo $display_name; ?> </h3>
+						<h4><?php echo $job_role; ?></h4>
 					</div>
 				</div>
 				<div class="row">

@@ -1,0 +1,33 @@
+#wrapper-footer.wrapper {
+	background-color: $dark-grey;
+	color: $white;
+	padding: 40px 0px;
+	a {
+		color: $white;
+	}
+}
+
+.menu-footer-menu-container, .menu-social-media-menu-container {
+	display: inline;
+	font-family: 'Montserrat Regular', sans-serif;
+	
+	ul#menu-footer-menu, ul#menu-social-media-menu {
+		list-style: none;
+		display: inline;
+		padding: 0;
+			
+		li {
+			display: inline;
+			
+			span.footer-menu-item {
+				margin: 0px 20px 0px 0px;
+				
+				&:hover {
+					color: $peach;
+					text-decoration: none !important;
+				}
+			}	
+			
+		}	
+	}
+}

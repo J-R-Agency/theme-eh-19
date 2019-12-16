@@ -25,7 +25,6 @@ get_header();
 	<div class="content">
 		<div class="row">
 			<div class="col-12">
-				<h1><?php the_field('homepage_header'); ?></h1>
 				<h2>Subheader</h2>
 				<p>Test<p>
 			</div>

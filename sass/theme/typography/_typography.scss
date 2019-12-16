@@ -1,0 +1,30 @@
+body, p {
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2 {
+	font-family: 'Montserrat Extra Bold', sans-serif;
+	text-transform: uppercase;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		font-size: 7vw;
+	}	
+}
+
+h3 {
+	font-family: 'Montserrat Extra Bold', sans-serif;
+	text-transform: uppercase;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		font-size: 5vw;
+	}
+}
+
+h4, h5 {
+	font-family: 'Montserrat Medium', sans-serif;
+	text-transform: uppercase;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		font-size: 5vw;
+	}
+}

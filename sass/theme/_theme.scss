@@ -1,62 +1,10 @@
 /*-- FONTS --*/
-@font-face {
-    font-family: 'Montserrat Regular';
-    src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
-}
+@import 'typography/fontfaces';
 
-@font-face {
-    font-family: 'Montserrat Medium';
-    src: url("../fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'Montserrat Extra Bold';
-    src: url("../fonts/Montserrat/Montserrat-ExtraBold.ttf") format("truetype");
-}
-
-/*-- MIX-INS --*/
-@mixin centered {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-@mixin vertical-center {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-@mixin no-margins {
-	margin: 0;
-	padding: 0;	
-}
-
-@mixin content {
-	padding: 5% 20% 5% 20%;
-	
-	@media all and (max-width: $breakpoint-phone) {
-		padding: 5% 10% 5% 10%;
-	}
-}
+/* -- MIXINS -- */
+@import 'mixins';
 
 /*-- GLOBAL --*/
-
-.no-margins {
-	@include no-margins;
-}
-
-.centered {
-	@include centered;
-}
-
-.vertical-center {
-	@include vertical-center;
-}
-
-a:hover {
-	text-decoration: none;
-}
 
 html,body
 {
@@ -67,50 +15,17 @@ html,body
     overflow-x: hidden; 
 }
 
-.content {
-	@include content;
-}
-
 /*-- Typography --*/
 
-body, p {
-	font-family: 'Montserrat Regular', sans-serif;
-}
+@import 'typography/typography';
 
-h1, h2 {
-	font-family: 'Montserrat Extra Bold', sans-serif;
-	text-transform: uppercase;
-}
-
-h3 {
-	font-family: 'Montserrat Medium', sans-serif;
-	text-transform: uppercase;
-}
-
-h4, h5 {
-	font-family: 'Montserrat Medium', sans-serif;
+/*-- Links --*/
+a:hover {
+	text-decoration: none;
 }
 
 /* -- Navigation Menu -- */
-.navbar-dark .navbar-nav .nav-link {
-	text-transform: uppercase;
-	color: $white;
-	font-size: 11pt;
-	
-	&:hover {
-		color: $peach;
-	}
-}
-
-a.nav-link {
-	margin: 0px 5px 0px 5px;
-}
-
-.navbar-brand img {
-	width: 200px;
-	padding: 10px 0px;
-}
-
+@import'navigation/header';
 
 /*-- HOMEPAGE --*/
 .hero {
@@ -125,139 +40,7 @@ a.nav-link {
 
 /*-- POSTS --*/
 
-.wrapper {
-	padding: 0;
-}
-
-.entry-header {
-	background-color: $light-grey;
-	padding: 50px;
-	
-	@media all and (max-width: $breakpoint-phone) {
-		padding: 0px;
-	}	
-}
-
-.entry-title {
-	max-width: 50%;
-	text-align: center;
-	margin: 0 auto;
-	
-	@media all and (max-width: $breakpoint-phone) {
-		max-width: 100%;
-	}
-}
-
-.entry-content {
-	@include content;
-			
-	img {
-		width: 100%;
-		margin: 40px 0px;
-	}	
-}
-
-.category-title {
-	font-size: 16pt;
-	text-transform: uppercase;
-	font-family: 'Montserrat Medium', sans-serif;
-	color: $peach;
-	padding: 20px 0px 40px 0px;
-	
-	&:after, &:before {
-		content: '';
-		width: 50px;
-		height: 2px;
-		background: $peach;
-		margin: 0 10px;	
-	}
-}
-
-.post-excerpt {
-	text-align: center;
-	width: 60%;
-	margin: 0 auto;
-	padding: 40px 0px;
-	
-	@media all and (max-width: $breakpoint-phone) {
-		width: 90%;
-	}	
-}
-
-/* -- Social Media -- */
-
-.social-media-footer {
-	border-top: 3px solid $peach;
-	border-bottom: 3px solid $peach;
-	margin: 20px 0px 20px 0px;
-	padding: 20px 0px 20px 0px;
-}
-
-.icon img {
-	width: 50px;
-	margin: 0;
-}
-
-/* -- Author bio section -- */
-
-.avatar {
-	border: 5px solid $teal;
-	border-radius: 50%;
-	
-	@media all and (max-width: $breakpoint-phone) {
-		width: 150px;
-	}
-}
-
-/* -- Related Articles -- */
-.related-articles {
-	background-color: $light-grey;
-	padding: 100px 0px;
-	border-top: 1px solid $navy;
-	position: relative;
-}
-
-.line-icon {
-	position: absolute;
-	top: -50px;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 100px;
-	height: 100px;
-}
+@import 'content/posts';
 
 /*-- FOOTER --*/
-#wrapper-footer.wrapper {
-	background-color: $dark-grey;
-	color: $white;
-	padding: 40px 0px;
-	a {
-		color: $white;
-	}
-}
-
-.menu-footer-menu-container, .menu-social-media-menu-container {
-	display: inline;
-	font-family: 'Montserrat Regular', sans-serif;
-	
-	ul#menu-footer-menu, ul#menu-social-media-menu {
-		list-style: none;
-		display: inline;
-		padding: 0;
-			
-		li {
-			display: inline;
-			
-			span.footer-menu-item {
-				margin: 0px 20px 0px 0px;
-				
-				&:hover {
-					color: $peach;
-					text-decoration: none !important;
-				}
-			}	
-			
-		}	
-	}
-}
-
+@import 'navigation/footer';

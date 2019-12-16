@@ -1,0 +1,26 @@
+.navbar-dark .navbar-nav .nav-link {
+	text-transform: uppercase;
+	color: $white;
+	font-size: 11pt;
+	
+	&:hover {
+		color: $peach;
+	}
+}
+
+a.nav-link {
+	margin: 0px 5px 0px 5px;
+}
+
+.login-link {
+	background-color: $peach;
+	
+	a {
+		color: $navy !important;
+	}
+}
+
+.navbar-brand img {
+	width: 200px;
+	padding: 10px 0px;
+}

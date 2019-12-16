@@ -1,0 +1,41 @@
+/*-- MIX-INS --*/
+@mixin centered {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin vertical-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+@mixin no-margins {
+	margin: 0;
+	padding: 0;	
+}
+
+@mixin content {
+	padding: 5% 20% 5% 20%;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		padding: 5% 10% 5% 10%;
+	}
+}
+
+.no-margins {
+	@include no-margins;
+}
+
+.centered {
+	@include centered;
+}
+
+.vertical-center {
+	@include vertical-center;
+}
+
+.content {
+	@include content;
+}
