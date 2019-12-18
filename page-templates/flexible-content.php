@@ -45,10 +45,15 @@ if( have_rows('fc_content_block') ):
             echo "<div>HERE IS SOME FLEXIBLE CONTENT: " . $mcb_title . "</div>";
 
         // Case: Download layout.
-        elseif( get_row_layout() == 'download' ): 
-            $file = get_sub_field('file');
+        elseif( get_row_layout() == 'module_new_video_block' ): 
+            $new_video_url = get_sub_field('new_video_url');
             // Do something...
-
+?>
+			<div class="embed-container">
+				<?php the_sub_field('new_video_url'); ?>
+			</div>
+			<p>Embedded from <?php echo $new_video_url;?></p>
+<?
         endif;
 
     // End loop.
