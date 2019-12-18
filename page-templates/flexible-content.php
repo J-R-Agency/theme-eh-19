@@ -50,9 +50,7 @@ if( have_rows('fc_content_block') ):
             // Do something...
             echo "VIDEO";
 ?>
-			<div class="embed-container">
-				<?php the_sub_field('new_video_url'); ?>
-			</div>
+<?php echo $new_video_url;?>
 <?
         endif;
 
