@@ -42,7 +42,7 @@ if( have_rows('fc_content_block') ):
             $mcb_title = get_sub_field('mcb_title');
             // Do something...
 
-            echo "HERE IS SOME FLEXIBLE CONTENT: " . $mcb_title ;
+            echo "<div>HERE IS SOME FLEXIBLE CONTENT: " . $mcb_title . "</div>";
 
         // Case: Download layout.
         elseif( get_row_layout() == 'download' ): 
