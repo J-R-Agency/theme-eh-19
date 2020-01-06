@@ -100,6 +100,50 @@ if( have_rows('fc_content_block') ):
             	"<div class=\"mib_style\">". $mib_style . "</div>" .
 			"</div>";
 
+        // Case: CTA Feature Block.
+        elseif( get_row_layout() == 'module_cta_feature_block' ): 
+
+            $mcfb_repeater = get_sub_field('mcfb_repeater'); // Repeater --- need sub fields loop
+            
+            // Do something...
+            
+            echo "
+            <div class=\"module_cta_feature_block\"><h2>CTA Feature Block: </h2>" .
+            	"<div class=\"mcfb_repeater\">". $mcfb_repeater . "</div>" .
+
+				// check if the repeater field has rows of data
+				if( have_rows('mcfb_repeater') ):
+
+					// loop through the rows of data
+					while ( have_rows('mcfb_repeater') ) : the_row();
+
+						$mcfb_image = get_sub_field('mcfb_image'); // Image array
+						$mcfb_title = get_sub_field('mcfb_title'); // Text
+						$mcfb_body = get_sub_field('mcfb_body'); // Text area
+						$mcfb_cta_text = get_sub_field('mcfb_cta_text'); // Text
+						$mcfb_cta_link = get_sub_field('mcfb_cta_link'); // Link array
+						$mcfb_cta_style = get_sub_field('mcfb_cta_style'); // Select
+
+						echo "
+			            <div class=\"mcfb_repeater\">CTA Feature Block Repeater: " .
+			            	"<div class=\"mcfb_image\">". $mcfb_image['url'] . " " . $mcfb_image['title'] . " " . $mcfb_image['alt'] . " " . $mcfb_image['caption'] . " " . "</div>" .
+			            	"<div class=\"mcfb_title\">". $mcfb_title . "</div>" .
+			            	"<div class=\"mcfb_body\">". $mcfb_body . "</div>" .
+			            	"<div class=\"mcfb_cta_text\">". $mcfb_cta_text . "</div>" .
+			            	"<div class=\"mcfb_cta_link\">". $mcfb_cta_link['url'] . " " . $mcfb_cta_link['title'] . " " . $mcfb_cta_link['target'] . " " . "</div>" .
+			            	"<div class=\"mcfb_cta_style\">". $mcfb_cta_style . "</div>" .						
+			            "</div>";
+
+					endwhile;
+
+				else :
+
+					// no rows found
+
+				endif;
+
+           	echo "</div>";
+
 
         endif;
 
