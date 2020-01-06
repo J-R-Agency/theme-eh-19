@@ -41,6 +41,22 @@ if( have_rows('fc_content_block') ):
             	"<div class=\"mcb_style\">". $mcb_style . "</div>" .
 			"</div>";
 
+        // Case: Video Block.
+        elseif( get_row_layout() == 'module_video_block' ): 
+
+            $mvb_video_url = get_sub_field('mvb_video_url'); // oEmbed
+			$mvb_video_title = get_sub_field('mvb_video_title'); // Text
+			$mvb_style = get_sub_field('mvb_style'); // Select
+            
+            // Do something...
+            
+            echo "
+            <div class=\"module_video_block\">Video Block: " .
+            	"<div class=\"mvb_video_url\">". $mvb_video_url . "</div>" .
+            	"<div class=\"mvb_video_title\">". $mvb_video_title . "</div>" .
+            	"<div class=\"mvb_style\">". $mvb_style . "</div>" .
+			"</div>";
+
 
 
         endif;
