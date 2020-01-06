@@ -48,12 +48,8 @@ if( have_rows('fc_content_block') ):
         elseif( get_row_layout() == 'module_new_video_block' ): 
             $new_video_url = get_sub_field('new_video_url');
             // Do something...
-?>
-			<div class="embed-container">
-				<?php the_sub_field('new_video_url'); ?>
-			</div>
-			<p>Embedded from <?php echo $new_video_url;?></p>
-<?
+            echo "VIDEO: " . $new_video_url;
+
         endif;
 
     // End loop.
