@@ -32,11 +32,11 @@ if( have_rows('fc_content_block') ):
 
             echo "
             <div class=\"module_content_block\">Content Block: " .
-            	"<div class=\"mcb_divider_icon\">". $mcb_divider_icon . "</div>" .
+            	"<div class=\"mcb_divider_icon\">". $mcb_divider_icon['url'] . " " . $mcb_divider_icon['title'] . " " . $mcb_divider_icon['alt'] . " " . $mcb_divider_icon['caption'] . " " . "</div>" .
             	"<div class=\"mcb_title\">". $mcb_title . "</div>" .
             	"<div class=\"mcb_content\">". $mcb_content . "</div>" .
             	"<div class=\"mcb_cta_text\">". $mcb_cta_text . "</div>" .
-            	"<div class=\"mcb_cta_link\">". $mcb_cta_link . "</div>" .
+            	"<div class=\"mcb_cta_link\">". $mcb_cta_link['url'] . " " . $mcb_cta_link['title'] . " " . $mcb_cta_link['target'] . " " . "</div>" .
             	"<div class=\"mcb_cta_style\">". $mcb_cta_style . "</div>" .
             	"<div class=\"mcb_style\">". $mcb_style . "</div>" .
 			"</div>";
@@ -83,7 +83,7 @@ if( have_rows('fc_content_block') ):
 
 						echo "
 			            <div class=\"mib_icon_repeater\">Icon Repeater: " .
-			            	"<div class=\"mib_icon_image\">". $mib_icon_image . "</div>" .
+			            	"<div class=\"mib_icon_image\">". $mib_icon_image['url'] . " " . $mib_icon_image['title'] . " " . $mib_icon_image['alt'] . " " . $mib_icon_image['caption'] . " " . "</div>" .
 			            	"<div class=\"mib_icon_heading\">". $mib_icon_heading . "</div>" .
 						"</div>";
 
@@ -126,11 +126,11 @@ if( have_rows('fc_content_block') ):
 
 						echo "
 			            <div class=\"mcfb_repeater\">CTA Feature Block Repeater: " .
-			            	"<div class=\"mcfb_image\">". $mcfb_image . "</div>" .
+			            	"<div class=\"mcfb_image\">". $mcfb_image['url'] . " " . $mcfb_image['title'] . " " . $mcfb_image['alt'] . " " . $mcfb_image['caption'] . " " . "</div>" .
 			            	"<div class=\"mcfb_title\">". $mcfb_title . "</div>" .
 			            	"<div class=\"mcfb_body\">". $mcfb_body . "</div>" .
 			            	"<div class=\"mcfb_cta_text\">". $mcfb_cta_text . "</div>" .
-			            	"<div class=\"mcfb_cta_link\">". $mcfb_cta_link . "</div>" .
+			            	"<div class=\"mcfb_cta_link\">". $mcfb_cta_link['url'] . " " . $mcfb_cta_link['title'] . " " . $mcfb_cta_link['target'] . " " . "</div>" .
 			            	"<div class=\"mcfb_cta_style\">". $mcfb_cta_style . "</div>" .						
 			            "</div>";
 
