@@ -25,44 +25,9 @@ get_header();
 	<div class="content">
 		<div class="row">
 			<div class="col-12">
-				<h2>Flexible Content</h2>
-				<p>Example Para<p>
 
-
-<?php
-
-// Check value exists.
-if( have_rows('fc_content_block') ):
-
-    // Loop through rows.
-    while ( have_rows('fc_content_block') ) : the_row();
-
-        // Case: Paragraph layout.
-        if( get_row_layout() == 'module_content_block' ):
-            $mcb_title = get_sub_field('mcb_title');
-            // Do something...
-
-            echo "<div>HERE IS SOME FLEXIBLE CONTENT: " . $mcb_title . "</div>";
-
-        // Case: Download layout.
-        elseif( get_row_layout() == 'module_new_video_block' ): 
-            $new_video_url = get_sub_field('new_video_url');
-            // Do something...
-            echo "VIDEO: " . $new_video_url;
-
-        endif;
-
-    // End loop.
-    endwhile;
-
-// No value.
-else :
-    // Do something...
-endif;
-
-?>
-
-
+				<?php get_template_part( 'loop-templates/content', 'flexible' ); ?>
+ 
 			</div>
 		</div>
 	</div>
