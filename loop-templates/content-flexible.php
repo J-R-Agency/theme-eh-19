@@ -29,17 +29,31 @@ if( have_rows('fc_content_block') ):
             $mcb_style = get_sub_field('mcb_style'); // Select
 
             // Do something...
+						
 
             echo "
-            <div class=\"module_content_block\"><h2>Content Block: </h2>" .
-            	"<div class=\"mcb_divider_icon\">". $mcb_divider_icon['url'] . " " . $mcb_divider_icon['title'] . " " . $mcb_divider_icon['alt'] . " " . $mcb_divider_icon['caption'] . " " . "</div>" .
-            	"<div class=\"mcb_title\">". $mcb_title . "</div>" .
-            	"<div class=\"mcb_content\">". $mcb_content . "</div>" .
-            	"<div class=\"mcb_cta_text\">". $mcb_cta_text . "</div>" .
-            	"<div class=\"mcb_cta_link\">". $mcb_cta_link['url'] . " " . $mcb_cta_link['title'] . " " . $mcb_cta_link['target'] . " " . "</div>" .
-            	"<div class=\"mcb_cta_style\">". $mcb_cta_style . "</div>" .
-            	"<div class=\"mcb_style\">". $mcb_style . "</div>" .
-			"</div>";
+            <div class=\"module_content_block mt-5\"> " .
+	    
+	            	"<div class='row'>
+	            		<div class='col-12'>
+	            			<div class='line'>
+	            				<img src='". $mcb_divider_icon['url'] ."' alt='".$mcb_divider_icon['alt']." class='line-icon'>
+	            			</div>
+	            		</div>
+	            	</div>".
+	            	"<div class=\"mcb_title centered mt-3\"><div class='row'><h2>". $mcb_title . "</h2></div></div>" .
+	            	"<div class=\"mcb_content mt-3\"><div class='row'>". $mcb_content . "</div></div>";
+	            
+	        // Show CTA button if field is filled in. If not, don't display CTA.	
+        	if( !empty($mcb_cta_link) ):
+        		echo 
+        			"<a href=\"". $mcb_cta_link['url'] ."\">
+        				<div class=\"mcb_cta_link centered\">". $mcb_cta_text . "</div>
+        			</a>
+        		</div>";
+        	endif;
+        	
+				echo "</div>";
 
         // Case: Video Block.
         elseif( get_row_layout() == 'module_video_block' ): 
@@ -68,9 +82,9 @@ if( have_rows('fc_content_block') ):
             // Do something...
 
             echo "
-            <div class=\"module_icon_block\"><h2>Icon Block: </h2>" .
-            	"<div class=\"mib_title\">". $mib_title . "</div>" .
-            	"<div class=\"mib_icon_repeater\">". $mib_icon_repeater . "</div>" ;
+            <div class=\"module_icon_block\">" .
+            	"<div class=\"mib_title\"><h2>". $mib_title . "</h2></div>" .
+            		"<div class=\"row\">" ;
 
 				// check if the repeater field has rows of data
 				if( have_rows('mib_icon_repeater') ):
@@ -81,11 +95,12 @@ if( have_rows('fc_content_block') ):
 						$mib_icon_image = get_sub_field('mib_icon_image'); // Image array
 						$mib_icon_heading = get_sub_field('mib_icon_heading'); // Text
 
-						echo "
-			            <div class=\"mib_icon_repeater\">Icon Repeater: " .
-			            	"<div class=\"mib_icon_image\">". $mib_icon_image['url'] . " " . $mib_icon_image['title'] . " " . $mib_icon_image['alt'] . " " . $mib_icon_image['caption'] . " " . "</div>" .
-			            	"<div class=\"mib_icon_heading\">". $mib_icon_heading . "</div>" .
-						"</div>";
+						echo
+						"<div class=\"col-fifth mt-5\">" .
+			            	"<img src='". $mib_icon_image['url'] ."' alt='".$mib_icon_imagen['alt']."'>" .
+			            	"<div class=\"mib_icon_heading mt-1\">". $mib_icon_heading . "</div>" .
+						"</div>"
+						;
 
 					endwhile;
 
@@ -94,11 +109,12 @@ if( have_rows('fc_content_block') ):
 					// no rows found
 
 				endif;
-
-            echo 
-            	"<div class=\"mib_body\">". $mib_body . "</div>" .
-            	"<div class=\"mib_style\">". $mib_style . "</div>" .
-			"</div>";
+			if( !empty($mib_body) ):	
+	            echo 
+	            	"</div>
+	            		<div class=\"mib_body mt-5\">". $mib_body . "</div>" .
+					"</div>";
+			endif;
 
         // Case: CTA Feature Block.
         elseif( get_row_layout() == 'module_cta_feature_block' ): 
@@ -108,8 +124,8 @@ if( have_rows('fc_content_block') ):
             // Do something...
             
             echo "
-            <div class=\"module_cta_feature_block\"><h2>CTA Feature Block: </h2>" .
-            	"<div class=\"mcfb_repeater\">". $mcfb_repeater . "</div>" ;
+            <div class=\"module_cta_feature_block\">" .
+            	"<div class=\"row\">" ;
 
 				// check if the repeater field has rows of data
 				if( have_rows('mcfb_repeater') ):
@@ -124,15 +140,30 @@ if( have_rows('fc_content_block') ):
 						$mcfb_cta_link = get_sub_field('mcfb_cta_link'); // Link array
 						$mcfb_cta_style = get_sub_field('mcfb_cta_style'); // Select
 
-						echo "
-			            <div class=\"mcfb_repeater\">CTA Feature Block Repeater: " .
-			            	"<div class=\"mcfb_image\">". $mcfb_image['url'] . " " . $mcfb_image['title'] . " " . $mcfb_image['alt'] . " " . $mcfb_image['caption'] . " " . "</div>" .
-			            	"<div class=\"mcfb_title\">". $mcfb_title . "</div>" .
-			            	"<div class=\"mcfb_body\">". $mcfb_body . "</div>" .
-			            	"<div class=\"mcfb_cta_text\">". $mcfb_cta_text . "</div>" .
-			            	"<div class=\"mcfb_cta_link\">". $mcfb_cta_link['url'] . " " . $mcfb_cta_link['title'] . " " . $mcfb_cta_link['target'] . " " . "</div>" .
-			            	"<div class=\"mcfb_cta_style\">". $mcfb_cta_style . "</div>" .						
-			            "</div>";
+						echo
+						"<div class=\"col-4 mt-5\">" .
+			            	"<img src='". $mcfb_image['url'] ."' alt='".$mcfb_image['alt']."'>" .
+			            
+				            // Title
+				            "<div class=\"mcfb_title mt-5 mb-3\"><h5>". $mcfb_title . "</h5></div>" .
+				            
+				            //Body
+				            	"<div class=\"mcfb_body mt-3\">". $mcfb_body . "</div>" .
+				            	
+				            // CTA Button
+				            	"<a href=\"". $mcfb_cta_link['url'] ."\">";
+				            	
+				            		if ($mcfb_cta_style == 'primary'):
+				            			echo
+											"<div class=\"mcb_cta_link centered\">". $mcfb_cta_text . "</div>";
+										
+									elseif($mcfb_cta_style == 'secondary'):
+										echo
+											"<div class=\"mcb_cta_link secondary centered\">". $mcfb_cta_text . "</div>";
+									endif;
+							echo
+								"</a>" .					
+				            "</div>";
 
 					endwhile;
 
