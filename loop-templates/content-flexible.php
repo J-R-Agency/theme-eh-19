@@ -109,7 +109,7 @@ if( have_rows('fc_content_block') ):
             
             echo "
             <div class=\"module_cta_feature_block\"><h2>CTA Feature Block: </h2>" .
-            	"<div class=\"mcfb_repeater\">". $mcfb_repeater . "</div>" .
+            	"<div class=\"mcfb_repeater\">". $mcfb_repeater . "</div>" ;
 
 				// check if the repeater field has rows of data
 				if( have_rows('mcfb_repeater') ):
