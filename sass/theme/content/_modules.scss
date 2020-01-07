@@ -1,0 +1,213 @@
+// -- GLOBAL MODULES -- //
+
+// Callout Banner
+.callout-banner {
+	background-color: $peach;
+	text-align: center;
+	padding: 40px;
+	margin: 10px 0px;
+	width: 100%;
+	text-transform: uppercase;
+	p {
+		margin: 0;
+	}
+}
+
+// Subtitle
+.subtitle {
+	font-size: 10pt;
+	text-align: center;
+	width: 100%;
+}
+
+// Lead In
+.lead-in {
+	margin: 30px;
+	text-align: center;
+	border-top: solid $peach 1px;
+	border-bottom: solid $peach 1px;
+}
+
+// Primary Content CTA
+.primary_content_cta {
+	background-color: $light-grey;
+	padding: 50px 20%;
+	text-align: center;
+	
+	h1 {
+		margin: 10px;
+	}
+}
+
+
+// CONTENT BLOCK
+.module_content_block {
+	text-align: center;
+	
+	ul {
+		list-style: none;
+		
+		li {
+			text-align: left;
+			list-style-type: none;
+			
+			&:before {
+			    /* Unicode bullet symbol */
+			    content: '\25CF ';
+			    /* Bullet color */
+			    color: $peach;
+			    padding-right: 0.5em;				
+			}
+		}
+	}
+	
+	.grey-content-block {
+		background-color: $light-grey;
+		text-align: left;
+		font-size: 10pt;
+		padding: 50px 80px;
+		
+		h4 {
+			font-size: 12pt;
+			font-weight: bold;
+		}
+	}
+	
+	.green {
+		h4 {
+			color: $teal;
+		}
+		.mcb_cta_link {
+			background-color: $teal;
+			color: white;	
+		}
+	}
+	
+	.navy {
+		h4 {
+			color: $navy;
+		}
+		.mcb_cta_link {
+			background-color: $navy;
+			color: white;	
+		}
+		ul {
+			
+			li {
+				
+				&:before {
+				    color: black;			
+				}
+			}
+		}		
+		
+	}	
+}
+
+.small {
+	font-size: 10pt;
+	
+}
+
+.mcb_cta_link {
+	display: inline-block;
+	background-color: $peach;
+	color: $navy;
+	text-transform: uppercase;
+	padding: 10px 30px;
+	font-weight: 500;
+}
+
+
+// ICON BLOCK
+.module_icon_block {
+	text-align: center;
+	
+	img {
+		height: 100px;
+	}
+	
+	.mib_icon_heading {
+		font-weight: 500;
+	}
+	
+	.navy {
+		.mib_title h2, .mib_icon_heading {
+			color: $navy;
+		}	
+	}
+	
+	.green {
+		.mib_title h2, .mib_icon_heading {
+			color: $teal;
+		}		
+	}
+}
+
+
+// CTA FEATURE BLOCK
+.module_cta_feature_block {
+	text-align: center;
+	
+	img {
+		height: 150px;
+	}
+	.mcfb_title {
+		font-size: 12pt;
+	}
+	.mcfb_body {
+		height: 125px;
+	}
+	
+	.mcb_cta_link {
+		width: 200px;
+		padding: 10px;
+	}
+	
+	.navy {
+		background-color: $navy;
+		color: white;	
+	}
+	
+	.green {
+		background-color: $teal;
+		color: white;	
+	}
+}
+
+.avatar-peach {
+	border: 3px solid $peach;
+	border-radius: 50%;
+}
+
+// RICH CALLOUT BANNER BLOCK
+.module_rich_callout_banner_block {
+	background-color: $ambitious-mint;
+	text-align: center;
+	padding: 40px;
+	margin: 10px 0px;
+	text-transform: uppercase;
+	margin-left: -20vw;
+	margin-right: -20vw;
+}
+
+.module_rich_callout_banner_block_navy {
+	background-color: $dark-blue;
+	text-align: center;
+	color: $peach;
+	text-transform: none;
+	margin-left: -20vw;
+	margin-right: -20vw;
+	padding: 40px;
+	
+	.mrcbb_title {
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	
+	.mrcbb_body {
+		width: 50%;
+		margin: 0 auto;
+	}
+}
+

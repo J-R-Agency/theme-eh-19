@@ -1,0 +1,40 @@
+.line-icon-overlap {
+	position: absolute;
+	top: -50px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100px;
+	height: 100px;
+}
+
+.line {
+	display: block;
+	overflow: hidden;
+	text-align: center; 
+	color: $navy; 
+	
+	img {
+	  vertical-align: middle;
+	  width: 50px;
+	}
+}
+
+.line:before, .line:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 50%;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.line:before {
+  right: -0.25em;
+  margin-left: -50%;
+}
+
+.line:after {
+  left: -0.25em;
+  margin-right: -50%;
+}

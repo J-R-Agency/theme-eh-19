@@ -15,8 +15,15 @@ html,body
     overflow-x: hidden; 
 }
 
+/*-- Columns --*/
 .col-fifth {
     flex: 1 0 18%;
+}
+
+.two-col {
+	column-count: 2;
+	text-align: left;
+	font-size: 10pt;
 }
 
 /*-- Typography --*/
@@ -29,58 +36,7 @@ a:hover {
 }
 
 /*-- Horizontal Lines --*/
-
-.line-icon-overlap {
-	position: absolute;
-	top: -50px;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 100px;
-	height: 100px;
-}
-
-.line {
-	display: block;
-	overflow: hidden;
-	text-align: center; 
-	color: $navy; 
-	
-	img {
-	  vertical-align: middle;
-	  width: 50px;
-	}
-}
-
-.line:before, .line:after {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  width: 50%;
-  border-top-style: solid;
-  border-top-width: 1px;
-}
-
-.line:before {
-  right: -0.25em;
-  margin-left: -50%;
-}
-
-.line:after {
-  left: -0.25em;
-  margin-right: -50%;
-}
-
-/*-- Buttons --*/
-
-.mcb_cta_link {
-	display: inline-block;
-	background-color: $peach;
-	color: $navy;
-	text-transform: uppercase;
-	padding: 10px 30px;
-	font-weight: 500;
-}
+@import 'content/lines';
 
 /* -- Navigation Menu -- */
 @import'navigation/header';
@@ -97,66 +53,9 @@ a:hover {
 }
 
 /*-- MODULE CONTENT --*/
-.module_content_block {
-	text-align: center;
-	
-	ul {
-		list-style: none;
-		
-		li {
-			text-align: left;
-			list-style-type: none;
-			
-			&:before {
-			    /* Unicode bullet symbol */
-			    content: '\25CF ';
-			    /* Bullet color */
-			    color: $peach;
-			    padding-right: 0.5em;				
-			}
-		}
-	}
-}
-
-.module_icon_block {
-	text-align: center;
-	
-	img {
-		height: 100px;
-	}
-	
-	.mib_icon_heading {
-		text-transform: uppercase;
-		font-weight: 500;
-	}
-}
-
-.module_cta_feature_block {
-	text-align: center;
-	
-	img {
-		height: 150px;
-	}
-	.mcfb_title {
-		font-size: 12pt;
-	}
-	.mcfb_body {
-		height: 125px;
-	}
-	
-	.mcb_cta_link {
-		width: 200px;
-		padding: 10px;
-	}
-	
-	.secondary {
-		background-color: $navy;
-		color: white;	
-	}
-}
+@import 'content/modules';
 
 /*-- POSTS --*/
-
 @import 'content/posts';
 
 /*-- FOOTER --*/
