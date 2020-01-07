@@ -176,6 +176,40 @@ if( have_rows('fc_content_block') ):
            	echo "</div>";
 
 
+        // Case:  Rich Callout Banner Block.
+        elseif( get_row_layout() == 'module_rich_callout_banner_block' ): 
+
+			$mrcbb_title = get_sub_field('mrcbb_title'); // Text
+			$mrcbb_body = get_sub_field('mrcbb_body'); // WYSIWYG block
+			$mrcbb_cta_text = get_sub_field('mrcbb_cta_text'); // Text
+			$mrcbb_cta_link = get_sub_field('mrcbb_cta_link'); // Link array
+			$mrcbb_cta_style = get_sub_field('mrcbb_cta_style'); // Select            
+            
+            // Do something...
+            
+            echo "
+            <div class=\"module_rich_callout_banner_block\"><h2>Rich Callout Banner Block: </h2>" .
+            	"<div class=\"mrcbb_title\">". $mrcbb_title . "</div>" .
+            	"<div class=\"mrcbb_body\">". $mrcbb_body . "</div>" .
+            	"<div class=\"mrcbb_cta_text\">". $mrcbb_cta_text . "</div>" .
+            	"<div class=\"mrcbb_cta_link\">". $mrcbb_cta_link['url'] . $mrcbb_cta_link['title'] . $mrcbb_cta_link['target'] . "</div>" .
+            	"<div class=\"mrcbb_cta_style\">". $mrcbb_cta_style . "</div>" .
+			"</div>";
+
+        // Case:  Module Divider.
+        elseif( get_row_layout() == 'module_divider' ): 
+
+			$md_icon = get_sub_field('md_icon'); // Image array
+			$md_class = get_sub_field('md_class'); // Text        
+            
+            // Do something...
+            
+            echo "
+            <div class=\"module_divider\"><h2>Rich Callout Banner Block: </h2>" .
+            	"<div class=\"md_icon\">" . $md_icon['url'] . $md_icon['alt'] . "</div>" .
+            	"<div class=\"md_class\">" . $md_class . "</div>" .
+			"</div>";
+
         endif;
 
     // End loop.
