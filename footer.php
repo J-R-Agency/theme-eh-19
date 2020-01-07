@@ -10,6 +10,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+$themes_path = get_theme_root_uri();  
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
@@ -40,15 +41,31 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div class="col-md-6 col-12">
 								<div class="row mt-4 mb-4">
 									<div class="col-12">
-										<?php
-											wp_nav_menu(
-											  array(
-											    'menu' => 'social-media-menu',
-											    'link_before' => '<span class="footer-menu-item">',
-											    'link_after' => '</span>',
-											  )
-											);	
-										?>									
+									
+										<span class="footer-menu-item">
+											<a href="https://www.facebook.com/empwrmenthouse/?__tn__=%2Cd%2CP-R&eid=ARCKAGZQDgh8aQUeF-acsP-5bOnU8jjC-A3UuYQUdAgJCyRf6qMlX2kS1VPoXbFLP3-MkyaKFGzc74h-" target="_blank">
+												<img src="<?=$themes_path;?>/theme-eh-19/images/icons/grey-facebook.png" >
+											</a>
+										</span>
+									
+										<span class="footer-menu-item">
+											<a href="https://www.instagram.com/empowrmenthouse/" target="_blank">
+												<img src="<?=$themes_path;?>/theme-eh-19/images/icons/grey-instagram.png" class="footer-menu-item">
+											</a>
+										</span>
+
+										<span class="footer-menu-item">
+											<a href="https://twitter.com/empowrmenthouse" target="_blank">
+												<img src="<?=$themes_path;?>/theme-eh-19/images/icons/grey-twitter.png">
+											</a>
+										</span>
+									
+										<span class="footer-menu-item">
+											<a href="https://www.linkedin.com/in/mariehallempowr/" target="_blank">
+												<img src="<?=$themes_path;?>/theme-eh-19/images/icons/grey-linkedin.png" class="footer-menu-item">
+											</a>
+										</span>
+										
 									</div>
 								</div>
 								
@@ -62,7 +79,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											    'link_after' => '</span>',
 											  )
 											);	
-										?>
+										?>																		
 									</div>
 								</div>
 								
