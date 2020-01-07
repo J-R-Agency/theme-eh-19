@@ -36,8 +36,12 @@ defined( 'ABSPATH' ) || exit;
 			<div class="row social-media-header centered">
 					<?php include get_template_directory() ."/inc/social-media-share.php"; ?>
 			</div>
-	
-			<?php the_content(); ?>
+			
+			<div class="row">
+				<div class="col-12 mt-5">
+					<?php the_content(); ?>					
+				</div>
+			</div>
 				
 			<?php
 			wp_link_pages(
