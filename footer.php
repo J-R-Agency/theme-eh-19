@@ -50,7 +50,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 									
 										<span class="footer-menu-item">
 											<a href="https://www.instagram.com/empowrmenthouse/" target="_blank">
-												<img src="<?=$themes_path;?>/theme-eh-19/images/icons/grey-instagram.png" class="footer-menu-item">
+												<img src="<?=$themes_path;?>/theme-eh-19/images/icons/grey-instagram.png">
 											</a>
 										</span>
 
@@ -62,7 +62,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 									
 										<span class="footer-menu-item">
 											<a href="https://www.linkedin.com/in/mariehallempowr/" target="_blank">
-												<img src="<?=$themes_path;?>/theme-eh-19/images/icons/grey-linkedin.png" class="footer-menu-item">
+												<img src="<?=$themes_path;?>/theme-eh-19/images/icons/grey-linkedin.png">
 											</a>
 										</span>
 										

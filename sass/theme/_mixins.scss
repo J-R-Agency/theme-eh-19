@@ -17,7 +17,7 @@
 }
 
 @mixin content {
-	padding: 0% 20% 2% 20%;
+	padding: 0% 20% 0% 20%;
 	
 	@media all and (max-width: $breakpoint-phone) {
 		padding: 5% 10% 5% 10%;

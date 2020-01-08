@@ -91,7 +91,7 @@ get_header();
 							
 							<div class='col-12'>
 								<a href=\"". $primary_content_cta_link['url'] ."\">
-						        	<div class=\"mcb_cta_link\">". $primary_content_cta_button . "</div>
+						        	<div class=\"cta_link\">". $primary_content_cta_button . "</div>
 						        </a>
 						    </div>						
 						</div>		

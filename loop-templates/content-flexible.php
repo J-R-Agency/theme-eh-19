@@ -64,13 +64,13 @@ if( have_rows('fc_content_block') ):
 	            	// PRIMARY STYLE
 	            	if ($mcb_style == 'primary'):
 	            		echo
-	            		"<div class=\"mcb_content mt-5 mb-5\">". $mcb_content;
-				        // Show CTA button if field is filled in. If not, don't display CTA.
-				        	
+	            		"<div class=\"mcb_content mt-3 mb-3\">". $mcb_content;
+	            		
+				        // Show CTA button if field is filled in. If not, don't display CTA.	
 			        	if( !empty($mcb_cta_link) ):
 			        		echo 
 			        			"<a href=\"". $mcb_cta_link['url'] ."\">
-			        				<div class=\"mcb_cta_link centered\">". $mcb_cta_text . "</div>
+			        				<div class=\"cta_link centered\">". $mcb_cta_text . "</div>
 			        			</a>";
 			        	endif;
 			        	echo "</div>"; // Close mcb_content       	            		
@@ -86,7 +86,7 @@ if( have_rows('fc_content_block') ):
 			        	if( !empty($mcb_cta_link) ):
 			        		echo 
 			        			"<a href=\"". $mcb_cta_link['url'] ."\">
-			        				<div class=\"mcb_cta_link centered\">". $mcb_cta_text . "</div>
+			        				<div class=\"cta_link centered\">". $mcb_cta_text . "</div>
 			        			</a>";
 			        	endif;
 			        	echo "</div>"; // Close mcb_content	            			            		
@@ -96,17 +96,17 @@ if( have_rows('fc_content_block') ):
 	            	// TERTIARY STYLE (GREY BACKGROUND)
 	            	elseif ($mcb_style == 'tertiary' ):
 	            	
-	            		// PRIMARY CTA
+	            		// PRIMARY CTA (PEACH)
 	            		if ($mcb_cta_style == 'primary') :
 		            		echo
 		            		"<div class=\"mcb_content grey-content-block mt-3\">". $mcb_content;
 	            		
-	            		// SECONDARY CTA
+	            		// SECONDARY CTA (GREEN)
 	            		elseif ($mcb_cta_style == 'secondary') :
 		            		echo
 		            		"<div class=\"mcb_content grey-content-block green mt-3\">". $mcb_content;
 	            		
-	            		//TERTIARY CTA
+	            		//TERTIARY CTA (NAVY)
 	            		elseif ($mcb_cta_style == 'tertiary') :
 		            		echo
 		            		"<div class=\"mcb_content grey-content-block navy mt-3\">". $mcb_content;
@@ -117,7 +117,7 @@ if( have_rows('fc_content_block') ):
 			        	if( !empty($mcb_cta_link)):
 			        		echo 
 			        			"<a href=\"". $mcb_cta_link['url'] ."\">
-			        				<div class=\"mcb_cta_link centered\">". $mcb_cta_text . "</div>
+			        				<div class=\"cta_link centered\">". $mcb_cta_text . "</div>
 			        			</a>";
 			        	endif;
 			        	
@@ -144,10 +144,9 @@ if( have_rows('fc_content_block') ):
                         
             echo "
             <!-- Module Video Block -->
-            <div class=\"module_video_block\"><h2>Video Block: </h2>" .
+            <div class=\"module_video_block green\">" .
+            	"<div class=\"mvb_video_title centered\"><h3>". $mvb_video_title . "</h3></div>" .            
             	"<div class=\"mvb_video_url\">". $mvb_video_url . "</div>" .
-            	"<div class=\"mvb_video_title\">". $mvb_video_title . "</div>" .
-            	"<div class=\"mvb_style\">". $mvb_style . "</div>" .
 			"</div>";
 
 
@@ -218,6 +217,7 @@ if( have_rows('fc_content_block') ):
         elseif( get_row_layout() == 'module_cta_feature_block' ): 
 
             $mcfb_repeater = get_sub_field('mcfb_repeater'); // Repeater --- need sub fields loop
+            $mcfb_style = get_sub_field('mcfb_style');
                         
             echo "
             <!-- CTA Feature Block -->
@@ -236,11 +236,18 @@ if( have_rows('fc_content_block') ):
 						$mcfb_cta_text = get_sub_field('mcfb_cta_text'); // Text
 						$mcfb_cta_link = get_sub_field('mcfb_cta_link'); // Link array
 						$mcfb_cta_style = get_sub_field('mcfb_cta_style'); // Select
-
-						echo
-						"<div class=\"col-4 mt-5\">" .
-			            	"<img src='". $mcfb_image['url'] ."' alt='".$mcfb_image['alt']."'>" .
+						
+						
+						echo "<div class=\"col-4 mt-5\">";
+						if ($mcfb_style == "primary"):
+							echo
+				            "<img src='". $mcfb_image['url'] ."' alt='".$mcfb_image['alt']."'>";
+				        elseif ($mcfb_style == "profile"):
+				        	echo
+				        	"<img src='". $mcfb_image['url'] ."' alt='".$mcfb_image['alt']."' class='avatar-peach'>";
+			            endif;
 			            
+			            echo
 				            // Title
 				            "<div class=\"mcfb_title mt-5 mb-3\"><h5>". $mcfb_title . "</h5></div>" .
 				            
@@ -254,15 +261,15 @@ if( have_rows('fc_content_block') ):
 					            	
 					            		if ($mcfb_cta_style == 'primary'):
 					            			echo
-												"<div class=\"mcb_cta_link centered\">". $mcfb_cta_text . "</div>";
+												"<div class=\"cta_link centered\">". $mcfb_cta_text . "</div>";
 											
 										elseif($mcfb_cta_style == 'secondary'):
 											echo
-												"<div class=\"mcb_cta_link navy centered\">". $mcfb_cta_text . "</div>";
+												"<div class=\"cta_link navy centered\">". $mcfb_cta_text . "</div>";
 												
 										elseif($mcfb_cta_style == 'tertiary'):
 											echo
-												"<div class=\"mcb_cta_link green centered\">". $mcfb_cta_text . "</div>";
+												"<div class=\"cta_link green centered\">". $mcfb_cta_text . "</div>";
 										
 										endif;
 								echo
@@ -297,9 +304,10 @@ if( have_rows('fc_content_block') ):
 			if ($mrcbb_cta_style == 'primary'):            
 	            echo "
 	            <div class=\"module_rich_callout_banner_block\">";
+	            
 	        elseif($mrcbb_cta_style == 'secondary'):
 	            echo "
-	            <div class=\"module_rich_callout_banner_block_navy\">";	        
+	            <div class=\"module_rich_callout_banner_block navy\">";	        
 	        endif;
 	        
 	        echo
@@ -311,7 +319,7 @@ if( have_rows('fc_content_block') ):
 	        	if( !empty($mrcbb_cta_link) ):
 	        		echo 
 	        			"<a href=\"". $mrcbb_cta_link['url'] ."\">
-	        				<div class=\"mcb_cta_link centered\">". $mrcbb_cta_text . "</div>
+	        				<div class=\"cta_link centered\">". $mrcbb_cta_text . "</div>
 	        			</a>";
 	        	endif;           	
 			echo
