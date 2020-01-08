@@ -12,7 +12,22 @@
 	overflow: hidden;
 	text-align: center; 
 	color: $navy; 
+	margin-left: -20vw;
+	margin-right: -20vw;
 	
+	&.shortened {
+		margin-left: 12vw;
+		margin-right: 12vw;
+	}
+	
+	&.green {
+		color: $teal;
+	}
+
+	&.navy {
+		color: $navy;
+	}
+		
 	img {
 	  vertical-align: middle;
 	  width: 50px;

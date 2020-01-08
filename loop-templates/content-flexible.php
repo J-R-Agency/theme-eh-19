@@ -341,8 +341,8 @@ if( have_rows('fc_content_block') ):
             <!-- Module Divider -->
             <div class='row mt-5 mb-5'>
         		<div class='col-12'>
-        			<div class='line'>
-        				<img src='". $md_icon['url'] ."' alt='".$md_icon['alt']." class='".$md_class."'>
+        			<div class=\"line $md_class\">
+        				<img src='". $md_icon['url'] ."' alt='".$md_icon['alt']."'>
         			</div>
         		</div>
         	</div>";
