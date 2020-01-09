@@ -230,6 +230,7 @@
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	margin: 0 auto;
 }
 
 .avatar--success-stories{
@@ -241,6 +242,11 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
+ .avatar-header--success-stories h5{
+ 	font-weight:bold;
+ }
+
 
 // RICH CALLOUT BANNER BLOCK
 .module_rich_callout_banner_block {
@@ -291,5 +297,5 @@
 .subsection-cards{display: flex; flex-wrap: wrap;}
 .subsection-cards__item{flex-basis: 50%;}
 .subsection-cards__item h2{font-size: 2rem;color: $dark-green};
-.subsection-cards__item h3{font-size: 1rem;font-family:"Montserrat Medium";};
+.subsection-cards__item h3{font-size: 1rem;font-family:"Montserrat Medium";font-weight: bold;};
 

@@ -45,7 +45,7 @@ if ( $parent->have_posts() ) : ?>
                 <?php while ( $parent->have_posts() ) : $parent->the_post(); ?>
 
                     <div class="col-fifth">
-                        <div class="avatar-header--success-stories centered" style="background-image: url('<?php echo get_the_post_thumbnail_url(  $post->ID, 'medium_large' ) ;?>');"></div>
+                        <div class="avatar-header--success-stories" style="background-image: url('<?php echo get_the_post_thumbnail_url(  $post->ID, 'medium_large' ) ;?>');"></div>
                         <div class="mcfb_title mt-5 mb-3">
                             <h5><?php the_title(); ?></h5>
                         </div>
