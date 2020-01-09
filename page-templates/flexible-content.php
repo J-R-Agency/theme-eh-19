@@ -18,7 +18,7 @@ get_header();
 		<?php $thumb = get_the_post_thumbnail_url(); ?>
 		<div class="row">
 			<div class="col-12">					
-				<div class="hero" style="background: url('<?php echo $thumb; ?>') no-repeat; background-size: cover;"></div>
+				<div class="hero" style="background: url('<?php echo $thumb; ?>');"></div>
 			</div>
 		</div>					
 	<?php endif ?>

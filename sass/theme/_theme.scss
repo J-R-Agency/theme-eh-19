@@ -64,9 +64,12 @@ a:hover {
 
 /*-- HOMEPAGE --*/
 .hero {
-	height: 500px;
+	height: 33vw;
 	width: 100vw;
 	margin: auto;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 	
 	@media all and (max-width: $breakpoint-phone) {
 		height: 250px;
@@ -75,7 +78,7 @@ a:hover {
 
 .homepage-introduction {
 	background-color: $light-grey;
-	padding: 5%;
+	padding: 5% 20% 5% 20%;
 	margin-bottom: 20px;
 	
 	h1 {

@@ -135,7 +135,7 @@
 // CTA VIDEO BLOCK
 .module_video_block {
 	background-color: $light-grey;
-	padding: 50px;
+	padding: 2rem;
 	text-align: center;
 	margin-top: 20px;
 	margin-left: -20vw;
@@ -147,6 +147,7 @@
 		h1, h2, h3, h4, h5, p {
 			color: white;
 			width: 45%;
+			margin-bottom: 2rem;
 		}
 	}
 }
@@ -155,6 +156,7 @@
 // CTA FEATURE BLOCK
 .module_cta_feature_block {
 	text-align: center;
+	padding: 2rem 0;
 	
 	img {
 		height: 150px;

@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 	
 		<?php if ( has_post_thumbnail() ): ?>
 			<?php $thumb = get_the_post_thumbnail_url(); ?>
-				<div class="hero" style="background: url('<?php echo $thumb; ?>') no-repeat; background-size: cover; background-position: center;"></div>	
+				<div class="hero" style="background: url('<?php echo $thumb; ?>');"></div>
 		<?php endif ?>
 	
 		<header class="entry-header">

@@ -240,11 +240,11 @@ if( have_rows('fc_content_block') ):
 						
 						if ($mcfb_style == "primary"):
 							echo
-							"<div class=\"col-4 mt-5\">" .
+							"<div class=\"col-4\">" .
 				            "<img src='". $mcfb_image['url'] ."' alt='".$mcfb_image['alt']."'>";
 				        elseif ($mcfb_style == "profile"):
 				        	echo
-				        	"<div class=\"col-fifth mt-5\">" .
+				        	"<div class=\"col-fifth\">" .
 				        	"<img src='". $mcfb_image['url'] ."' alt='".$mcfb_image['alt']."' class='avatar-peach'>";
 			            endif;
 			            
