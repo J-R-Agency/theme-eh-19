@@ -42,7 +42,7 @@ if ( $parent->have_posts() ) : ?>
                     $class = "col-md-4";
                 }
                 ?>
-
+4
                 <?php while ( $parent->have_posts() ) : $parent->the_post(); ?>
 
                     <div class="col-fifth">
@@ -85,7 +85,6 @@ if ( $parent->have_posts() ) : ?>
 
 
 
-
 <section class="related-links capped-width">
     <div class="container">
         <div class="row">
@@ -103,18 +102,18 @@ if ( $parent->have_posts() ) : ?>
 
                 <?php while ( $parent->have_posts() ) : $parent->the_post(); ?>
 
-                        <div class="col-sm-12 related-links__card <?php echo $class; ?>">
-                            <a href="<?php the_permalink(); ?>">
-                                <div 
-                                    class="related-links__img d-flex align-items-center"
-                                    style="background-image:url('<?php echo get_the_post_thumbnail_url(  $post->ID, 'medium_large' ) ;?>');">
-                                </div>
-                                <h3><?php the_title(); ?></h3>
-                                <div class="related-links__excerpt"><?php echo $post->post_excerpt ;?></div>
-                                <a class="wo-btn <?php echo $theme_colour; ?> wo-btn--cards" href="<?php the_permalink()?>">Hear her story</a>
-                            </a>
+                    <div class="subsection-cards">
+                        <div class="subsection-cards__items">
+                            <img src="<?php echo get_the_post_thumbnail_url(  $post->ID, 'medium_large' ) ;?>" alt="" class="avatar-peach">
                         </div>
-                        <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                        <div class="subsection-cards__items">
+                            <h3 class="subsection-cards__excerpt"><?php the_title(); ?></h3>
+                            <div class="subsection-cards__excerpt"><?php echo $post->post_excerpt ;?></div>
+                            <div class="subsection-cards__content"><?php echo $post->post_content ;?></div>
+                        </div>
+                    </div>
+
+                    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
                     
                 <?php endwhile; ?>
             <?php endif ?>
