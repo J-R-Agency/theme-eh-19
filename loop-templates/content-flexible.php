@@ -38,7 +38,7 @@ if( have_rows('fc_content_block') ):
 			
             echo 
             "<!-- Module Content Block -->
-            <div class=\"module_content_block " . $module_content_block_modifier . " mt-5\">";
+            <div class=\"module_content_block " . $module_content_block_modifier . "\">";
             
 					// DIVIDER
 					if( !empty($mcb_divider_icon) ):
