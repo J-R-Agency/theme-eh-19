@@ -45,7 +45,7 @@ if ( $parent->have_posts() ) : ?>
                 <?php while ( $parent->have_posts() ) : $parent->the_post(); ?>
 
                     <div class="col-fifth">
-                        <img src="<?php echo get_the_post_thumbnail_url(  $post->ID, 'medium_large' ) ;?>" alt="" class="avatar-peach">
+                        <img src="<?php echo get_the_post_thumbnail_url(  $post->ID, 'medium_large' ) ;?>" alt="" class="avatar-green">
                         <div class="mcfb_title mt-5 mb-3">
                             <h5><?php the_title(); ?></h5>
                         </div>
@@ -107,7 +107,6 @@ if ( $parent->have_posts() ) : ?>
                         </div>
                         <div class="subsection-cards__item">
                             <h3 class="subsection-cards__excerpt"><?php the_title(); ?></h3>
-                            <div class="subsection-cards__excerpt"><?php echo $post->post_excerpt ;?></div>
                             <div class="subsection-cards__content"><?php echo $post->post_content ;?></div>
                         </div>
                     </div>
