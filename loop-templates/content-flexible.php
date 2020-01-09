@@ -80,7 +80,7 @@ if( have_rows('fc_content_block') ):
 	            	// PRIMARY STYLE
 	            	if ($mcb_style == 'primary'):
 	            		echo
-	            		"<div class=\"mcb_content mt-3 mb-3\">". $mcb_content;
+	            		"<div class=\"mcb_content\">". $mcb_content;
 	            		
 				        // Show CTA button if field is filled in. If not, don't display CTA.	
 			        	if( !empty($mcb_cta_link) ):
