@@ -30,10 +30,15 @@ if( have_rows('fc_content_block') ):
             $mcb_cta_link = get_sub_field('mcb_cta_link'); // Link array
             $mcb_cta_style = get_sub_field('mcb_cta_style'); // Select
             $mcb_style = get_sub_field('mcb_style'); // Select
+
+            // Check for style modifier 
+            if( !empty($mcb_style) ){
+            	$module_content_block_modifier = "module_content_block--" . $mcb_style ;
+            }
 			
             echo 
             "<!-- Module Content Block -->
-            <div class=\"module_content_block mt-5\">";
+            <div class=\"module_content_block " . $module_content_block_modifier . " mt-5\">";
             
 					// DIVIDER
 					if( !empty($mcb_divider_icon) ):
@@ -55,10 +60,21 @@ if( have_rows('fc_content_block') ):
 			            	"<div class=\"mcb_title centered mt-3\"><div class='row'><h2>". $mcb_title . "</h2></div></div>";
 			            elseif ($mcb_style == 'small'):
 			            	echo
-			            	"<div class=\"mcb_title centered mt-3\"><div class='row'><h5>". $mcb_title . "</h5></div></div>";
+			            	"<div class=\"mcb_title mcb_title--small centered mt-3\"><div class='row'><h2>". $mcb_title . "</h2></div></div>";
 			            endif;			            
 	            	endif;
 	            	
+	            	// GM: Consider refactoring this type of code from JL to something like:
+	            	// if( !empty( $mcb_title ) ) {
+	            	// 		if ( !empty( $mcb_style ) {
+	            	//			$mcb_title_modifier = "mcb_title--" . $mbs_style ;
+	            	// 			echo
+			        //    		"<h2 class=\"mcb_title $mcb_title_modifier\">". $mcb_title . "</h2>";
+	            	//		}
+			        // }
+
+
+
 	            	
 	            	
 	            	// PRIMARY STYLE
@@ -126,7 +142,7 @@ if( have_rows('fc_content_block') ):
 			        // SMALL
 	            	elseif ($mcb_style == 'small' ) :
 	            		echo
-	            		"<div class=\"mcb_content small mt-3\">". $mcb_content ."</div>";								        
+	            		"<div class=\"mcb_content mcb_content--small mt-3\">". $mcb_content ."</div>";								        
 	            	endif;
         	
 			echo "</div>"; // Close module_content_block
