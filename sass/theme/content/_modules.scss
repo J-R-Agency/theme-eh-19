@@ -260,3 +260,8 @@
 	}
 }
 
+
+// CONSIDER MOVING THESE STYLES 
+
+.subsection-cards{display: flex; flex-wrap: wrap;}
+.subsection-cards__item{flex-basis: 50%;}
