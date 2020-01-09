@@ -28,7 +28,7 @@ if ( $parent->have_posts() ) : ?>
 
 
 
-<section class="success-stories--header">
+<section class="success-stories--header" id="success-stories--header">
     <div class="module_cta_feature_block">
         <div class="row centered">
             <?php  if( $parent->have_posts() ): ?>
@@ -106,8 +106,9 @@ if ( $parent->have_posts() ) : ?>
                             <div class="avatar--success-stories" style="background-image: url('<?php echo get_the_post_thumbnail_url(  $post->ID, 'medium_large' ) ;?>');"></div>
                         </div>
                         <div class="subsection-cards__item">
-                            <h3 class="subsection-cards__excerpt"><?php the_title(); ?></h3>
+                            <h2 class="subsection-cards__title"><?php the_title(); ?></h2>
                             <div class="subsection-cards__content"><?php echo $post->post_content ;?></div>
+                            <div class="back-to-top"><a href="#success-stories--header">Back to Top</a></div>
                         </div>
                     </div>
 

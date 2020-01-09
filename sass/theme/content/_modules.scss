@@ -280,3 +280,6 @@
 
 .subsection-cards{display: flex; flex-wrap: wrap;}
 .subsection-cards__item{flex-basis: 50%;}
+.subsection-cards__item h2{font-size: 2rem;color: $dark-green};
+.subsection-cards__item h3{font-size: 1rem;font-family:"Montserrat Medium";color: $dark-green};
+
