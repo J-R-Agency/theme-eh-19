@@ -60,6 +60,17 @@
 		}
 	}
 
+	&.module_content_block--small{
+
+		h2{
+		    font-size: 1rem;
+		    font-weight: normal;
+		    font-family: "Montserrat Medium";
+		    margin: 1rem 0;
+		}
+
+	}
+
 	.mcb_content {
 		margin: 2rem 0;
 	}
