@@ -45,11 +45,13 @@ if ( $parent->have_posts() ) : ?>
                 <?php while ( $parent->have_posts() ) : $parent->the_post(); ?>
 
                     <div class="col-fifth">
+                        <a href="#subsection-<?php echo $post->ID ;?>">
                         <div class="avatar-header--success-stories" style="background-image: url('<?php echo get_the_post_thumbnail_url(  $post->ID, 'medium_large' ) ;?>');"></div>
                         <div class="mcfb_title mt-5 mb-3">
                             <h5><?php the_title(); ?></h5>
                         </div>
                         <div class="mcfb_body mt-3"><?php echo $post->post_excerpt ;?></div>
+                    </a>
                     </div>
 
                         <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
@@ -107,7 +109,7 @@ if ( $parent->have_posts() ) : ?>
                         </div>
                     </div>
 
-                    <div class="subsection-cards">
+                    <div class="subsection-cards" id="#subsection-<?php echo $post->ID ;?>">
                         <div class="subsection-cards__item">
                             <div class="avatar--success-stories" style="background-image: url('<?php echo get_the_post_thumbnail_url(  $post->ID, 'medium_large' ) ;?>');"></div>
                         </div>
