@@ -28,7 +28,6 @@ if ( $parent->have_posts() ) : ?>
 
 
 
-<section class="success-stories">
     <div class="module_cta_feature_block">
         <div class="row centered">
             <?php  if( $parent->have_posts() ): ?>
@@ -59,7 +58,6 @@ if ( $parent->have_posts() ) : ?>
             <?php endif ?>
         </div>
     </div>
-</section>
 
 
 <?php endif; wp_reset_query(); ?>
