@@ -44,6 +44,12 @@ if ( $parent->have_posts() ) : ?>
                 ?>
                 <?php while ( $parent->have_posts() ) : $parent->the_post(); ?>
 
+                    <?php
+                        // Get Partner Logos
+                        $partner_logo = get_field('partner_logo', $child->ID);
+                        echo $partner_logo['url'];
+                    ?>
+
                     <div class="col-fifth">
                         <a href="#subsection-<?php echo $post->ID ;?>">
                         <div class="avatar-header--success-stories" style="background-image: url('<?php echo get_the_post_thumbnail_url(  $post->ID, 'medium_large' ) ;?>');"></div>
