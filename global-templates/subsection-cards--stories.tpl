@@ -101,18 +101,11 @@ if ( $parent->have_posts() ) : ?>
 
                 <?php while ( $parent->have_posts() ) : $parent->the_post(); ?>
 
-                                <!-- Module Divider -->
-            <div class='row mt-5 mb-5 centered'>
-                <div class='col-12'>
-                    <div class="line shortened">
-                        <img src='https://empowermenthouse.co.uk/wp-content/uploads/2020/01/hr-icon-house-dark.png' alt=''>
-                    </div>
-                </div>
-            </div>
-                    <div class='row'>
-                        <div class='col-12'>
-                            <div class='line'>
-                                <img src='https://empowermenthouse.co.uk/wp-content/uploads/2020/01/hr-icon-house-dark.png' alt=' class='line-icon'>
+                    <!-- Module Divider -->
+                    <div class="row centered">
+                        <div class="col-12">
+                            <div class="line">
+                                <img src="https://empowermenthouse.co.uk/wp-content/uploads/2020/01/hr-icon-house-dark.png" alt="" class="line-icon">
                             </div>
                         </div>
                     </div>
