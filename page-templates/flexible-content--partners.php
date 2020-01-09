@@ -1,6 +1,6 @@
- <?php
+<?php
 /**
- * Template Name: Flexible Content Template
+ * Template Name: Partners - Flexible Content Template
  *
  * @package understrap
  */
@@ -102,7 +102,12 @@ get_header();
 			endwhile;
 		endif;
 	?>	
+
+	<!-- Get Child Pages as subcontent -->
 	
+    <?php include_once (get_template_directory() . '/global-templates/subsection-cards--stories.tpl'); ?>
+
+
 </div>
 
 <?php 
