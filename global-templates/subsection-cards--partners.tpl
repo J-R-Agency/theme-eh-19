@@ -52,13 +52,8 @@ if ( $parent->have_posts() ) : ?>
 
                     <div class="col-fifth">
                         <a href="#subsection-<?php echo $post->ID ;?>">
-                            <img src="<?php echo $partner_logo['url'];?>" alt="<?php the_title(); ?>">
-                        <div class="avatar-header--success-stories" style="background-image: url('<?php echo get_the_post_thumbnail_url(  $post->ID, 'medium_large' ) ;?>');"></div>
-                        <div class="mcfb_title mt-5 mb-3">
-                            <h5><?php the_title(); ?></h5>
-                        </div>
-                        <div class="mcfb_body mt-3"><?php echo $post->post_excerpt ;?></div>
-                    </a>
+                            <img src="<?php echo $partner_logo['url'];?>" alt="<?php the_title(); ?>" height="100">
+                        </a>
                     </div>
 
                         <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
@@ -119,6 +114,14 @@ if ( $parent->have_posts() ) : ?>
                     <div class="subsection-cards" id="subsection-<?php echo $post->ID ;?>">
                         <div class="subsection-cards__item">
                             <div class="avatar--success-stories" style="background-image: url('<?php echo get_the_post_thumbnail_url(  $post->ID, 'medium_large' ) ;?>');"></div>
+                            <div>
+                                <p><a href="#subsection-<?php echo $post->ID ;?>"><img src="<?php echo $partner_logo['url'];?>" alt="<?php the_title(); ?>" height="100"></a></p>
+                             </div>
+                    <?php
+                        // Get Partner Logos
+                        $partner_logo = get_field('partner_logo', $child->ID);
+                        
+                    ?>
                         </div>
                         <div class="subsection-cards__item">
                             <h2 class="subsection-cards__title"><?php the_title(); ?></h2>
