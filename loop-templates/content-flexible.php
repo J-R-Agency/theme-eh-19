@@ -132,9 +132,7 @@ if( have_rows('fc_content_block') ):
 				        // Show CTA button if field is filled in. If not, don't display CTA.	
 			        	if( !empty($mcb_cta_link)):
 			        		echo 
-			        			"<a href=\"". $mcb_cta_link['url'] ."\">
-			        				<div class=\"cta_link centered\">". $mcb_cta_text . "</div>
-			        			</a>";
+			        			"<a href=\"". $mcb_cta_link['url'] ." class=\"cta_link centered\">". $mcb_cta_text . "</a>";
 			        	endif;
 			        	
 			        echo "</div>"; // Close mcb_content
