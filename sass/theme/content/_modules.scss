@@ -294,6 +294,8 @@
 
 // CONSIDER MOVING THESE STYLES 
 
+.success-divider {width:inherit; margin:2rem auto;}
+
 .subsection-cards{display: flex; flex-wrap: wrap;}
 .subsection-cards__item{flex-basis: 50%;}
 .subsection-cards__item h2{font-size: 2rem;color: $dark-green};
