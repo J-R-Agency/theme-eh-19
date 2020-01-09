@@ -101,7 +101,7 @@ if ( $parent->have_posts() ) : ?>
 
                 <?php while ( $parent->have_posts() ) : $parent->the_post(); ?>
 
-                    <div class="subsection-cards centered">dssdsdsdsd
+                    <div class="centered">
                         <!-- Module Divider -->
                         <div class="row centered">
                             <div class="col-12">
