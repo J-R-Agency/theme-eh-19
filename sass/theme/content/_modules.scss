@@ -222,13 +222,21 @@
 	border-radius: 50%;
 }
 
+.avatar-header--success-stories{
+	border: 3px solid $dark-green;
+	border-radius: 50%;
+	height: 150px;
+	width: 150px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
 .avatar--success-stories{
 	border: 3px solid $dark-green;
 	border-radius: 50%;
-	height: 320px;
-	width: 320px;
-	margin: 10px;
-	top:-10px;
+	height: 300px;
+	width: 300px;
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
