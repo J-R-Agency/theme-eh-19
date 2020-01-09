@@ -84,7 +84,7 @@ if ( $parent->have_posts() ) : ?>
 
 
 
-<section class="related-links capped-width">
+<section class="success-stories--content capped-width">
     <div class="container">
         <div class="row">
             <?php  if( $parent->have_posts() ): ?>

@@ -296,11 +296,11 @@
 // CONSIDER MOVING THESE STYLES 
 
 .success-divider {width:inherit; margin:3rem auto;}
-
+.success-stories--content{margin-bottom: 3rem;}
 .subsection-cards{display: flex; flex-wrap: wrap;}
 .subsection-cards__item{flex-basis: 50%;}
 .subsection-cards__item h2{font-size: 2rem;color: $dark-green};
-.subsection-cards__item h3{font-size: 1rem;font-family:"Montserrat Medium";font-weight: bold;};
+.subsection-cards__item h3{font-size: 1rem;font-family:"Montserrat Medium";font-weight: bold;margin:1rem 0};
 .subsection-cards__item .back-to-top{width:inherit;text-align: right;}
 .subsection-cards__item .back-to-top a{color: $peach;font-weight: bold;}
 .subsection-cards__item .back-to-top a:hover{text-decoration: underline;}
