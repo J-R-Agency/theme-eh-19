@@ -109,6 +109,13 @@ if ( $parent->have_posts() ) : ?>
                     </div>
                 </div>
             </div>
+            <div class='row'>
+                            <div class='col-12'>
+                                <div class='line'>
+                                    <img src='https://empowermenthouse.co.uk/wp-content/uploads/2020/01/hr-icon-workshop.png' alt=' class='line-icon'>
+                                </div>
+                            </div>
+                        </div>
 
                     <div class="subsection-cards">
                         <div class="subsection-cards__item">
