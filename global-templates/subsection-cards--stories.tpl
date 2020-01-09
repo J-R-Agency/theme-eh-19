@@ -28,7 +28,7 @@ if ( $parent->have_posts() ) : ?>
 
 
 
-<section class="success-stories">
+<section class="success-stories--header">
     <div class="module_cta_feature_block">
         <div class="row centered">
             <?php  if( $parent->have_posts() ): ?>
