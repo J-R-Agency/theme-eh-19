@@ -103,10 +103,10 @@ get_header();
 		endif;
 	?>	
 
-	<!-- Get Child Pages as subcontent -->
-	
-    <?php include_once (get_template_directory() . '/global-templates/subsection-cards--stories.tpl'); ?>
-
+	<div class="content">
+		<!-- Get Child Pages as subcontent -->
+	    <?php include_once (get_template_directory() . '/global-templates/subsection-cards--stories.tpl'); ?>
+	</div>
 
 </div>
 
