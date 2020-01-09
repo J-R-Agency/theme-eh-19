@@ -50,7 +50,7 @@ if ( $parent->have_posts() ) : ?>
                         <div class="mcfb_title mt-5 mb-3">
                             <h5><?php the_title(); ?></h5>
                         </div>
-                        <div class="mcfb_body mt-3"><?php echo $post->post_excerpt ;?><</div>
+                        <div class="mcfb_body mt-3"><?php echo $post->post_excerpt ;?></div>
                     </div>
 
                         <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
