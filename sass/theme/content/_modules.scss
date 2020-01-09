@@ -249,6 +249,14 @@
 	&.navy {
 		background-color: $dark-blue;
 		color: $peach;
+
+		& a{
+			color: $peach;
+			font-weight: bold;
+		}
+		& a:hover{
+			text-decoration: underline;
+		}
 	}
 }
 
