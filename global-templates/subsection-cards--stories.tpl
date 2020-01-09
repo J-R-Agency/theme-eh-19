@@ -103,7 +103,7 @@ if ( $parent->have_posts() ) : ?>
 
                     <div class="subsection-cards">
                         <div class="subsection-cards__item">
-                            <div class="avatar--success-stories" style="background-color:#576;background-image: url('<?php echo get_the_post_thumbnail_url(  $post->ID, 'medium_large' ) ;?>');"></div>
+                            <div class="avatar--success-stories" style="background-image: url('<?php echo get_the_post_thumbnail_url(  $post->ID, 'medium_large' ) ;?>');"></div>
                         </div>
                         <div class="subsection-cards__item">
                             <h3 class="subsection-cards__excerpt"><?php the_title(); ?></h3>
