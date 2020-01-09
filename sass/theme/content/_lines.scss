@@ -34,6 +34,11 @@
 	}
 }
 
+.line--subsection{
+	border: 3px solid $navy;
+	border-radius: 50%;
+}
+
 .line:before, .line:after {
   content: "";
   display: inline-block;
