@@ -241,6 +241,7 @@
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	margin:0 auto;
 }
 
  .avatar-header--success-stories h5{
@@ -301,5 +302,5 @@
 .subsection-cards__item h2{font-size: 2rem;color: $dark-green};
 .subsection-cards__item h3{font-size: 1rem;font-family:"Montserrat Medium";font-weight: bold;};
 .subsection-cards__item .back-to-top{width:inherit;text-align: right;}
-.subsection-cards__item .back-to-top a{color: $peach;}
+.subsection-cards__item .back-to-top a{color: $peach;font-weight: bold;}
 .subsection-cards__item .back-to-top a:hover{text-decoration: underline;}
