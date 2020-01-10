@@ -57,6 +57,7 @@ if ( $parent->have_posts() ) : ?>
                     </div>
 
                         <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                        <?php unset($partner_logo); ?>
                     
                 <?php endwhile; ?>
             <?php endif ?>
@@ -141,7 +142,8 @@ if ( $parent->have_posts() ) : ?>
                     </div>
 
                     <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-                    
+                    <?php unset($partner_logo); ?>
+
                 <?php endwhile; ?>
             <?php endif ?>
         </div>
