@@ -101,7 +101,7 @@ get_header();
     endif;
 	if ($afib_body):
 		echo 
-        "<div class=\"afib_body\">" . $afib_body . "</div>";
+        "<div class=\"afib_body mcb_content grey-content\">" . $afib_body . "</div>";
     endif;
 	if ($afib_twitter_cta):
 		echo "
