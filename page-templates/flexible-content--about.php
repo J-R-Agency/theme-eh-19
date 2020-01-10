@@ -101,32 +101,33 @@ get_header();
         "<img src=\"". $afib_image['url'] ."\" alt=\"".$afib_image['alt']."\" class=\"avatar--about\">";
     endif;
 	if ($afib_body):
-		echo 
-        "<div class=\"afib_body mcb_content grey-content\">" . $afib_body . "</div>";
+		echo "<div class=\"afib_body mcb_content grey-content\">" . $afib_body ;
+
+	    if ($afib_twitter_cta || $afib_linkedin_cta):
+			echo "<div class=\"cfelx-wrapper\">";
+
+			if ($afib_twitter_cta):
+				echo "
+				<div class=\"flex-item col-12\">
+					<a href=\"". $afib_twitter_cta['url'] ."\">
+				    	<div class=\"cta_link\">". $afib_twitter_cta['title'] . "</div>
+				    </a>
+				</div>";
+			endif;
+			if ($afib_linkedin_cta):
+				echo "
+				<div class=\"flex-item col-12\">
+					<a href=\"". $afib_linkedin_cta['url'] ."\">
+				    	<div class=\"cta_link\">". $afib_linkedin_cta['title'] . "</div>
+				    </a>
+				</div>";
+			endif;
+
+			echo "</div>";
+		endif;
+		
+        echo "</div>";
     endif;
-    if ($afib_twitter_cta || $afib_linkedin_cta):
-		echo "<div class=\"cfelx-wrapper\">";
-
-		if ($afib_twitter_cta):
-			echo "
-			<div class=\"flex-item col-12\">
-				<a href=\"". $afib_twitter_cta['url'] ."\">
-			    	<div class=\"cta_link\">". $afib_twitter_cta['title'] . "</div>
-			    </a>
-			</div>";
-		endif;
-		if ($afib_linkedin_cta):
-			echo "
-			<div class=\"flex-item col-12\">
-				<a href=\"". $afib_linkedin_cta['url'] ."\">
-			    	<div class=\"cta_link\">". $afib_linkedin_cta['title'] . "</div>
-			    </a>
-			</div>";
-		endif;
-
-		echo "</div>";
-	endif;
-
 
 		echo		
         "	</div>
