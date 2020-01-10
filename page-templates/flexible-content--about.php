@@ -85,7 +85,7 @@ get_header();
 
 	echo "
     <!-- About Feature Image Block -->
-    <div class=\"content\">
+    <div class=\"content module_content_block\">
 	    <div class=\"module_about_feature_image_block\">" .
 	    	"<div class=\"row centered\">" ;
 	if ($afib_title):
