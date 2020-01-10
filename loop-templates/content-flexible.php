@@ -11,11 +11,6 @@ defined( 'ABSPATH' ) || exit;
 
 <?php
 
-function create_block_id($block_ref){
-	$block_ref = strt
-	return;
-}
-
 // Check value exists.
 if( have_rows('fc_content_block') ):
 
