@@ -21,7 +21,11 @@ html,body
 }
 
 .two-col {
+	@media all and (max-width: $breakpoint-phone) {
+			column-count: 1;
+	}	
 	column-count: 2;
+	column-fill: balance;
 	text-align: left;
 	/*font-size: 10pt;*/
 }
