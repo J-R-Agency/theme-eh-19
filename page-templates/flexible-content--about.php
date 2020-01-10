@@ -24,9 +24,9 @@ get_header();
 	<?php endif ?>
 
 	<!-- Page title -->
-
-				<h1><?php the_title(); ?></h1>
-
+	<div class="content">
+		<h1><?php the_title(); ?></h1>
+	</div>
 	<!-- Lead in -->
 	<?php
 		$subtitle = get_field('subtitle');
