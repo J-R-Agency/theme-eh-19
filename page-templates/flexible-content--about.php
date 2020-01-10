@@ -24,9 +24,12 @@ get_header();
 	<?php endif ?>
 
 	<!-- Page title -->
-	<div class="content">
-		<h1><?php the_title(); ?></h1>
+	<div class="row">
+		<div class="col-12 centered mt-5 mb-5">
+			<h1 class="title--about"><?php the_title(); ?></h1>
+		</div>
 	</div>
+
 	<!-- Lead in -->
 	<?php
 		$subtitle = get_field('subtitle');
