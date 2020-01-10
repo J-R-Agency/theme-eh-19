@@ -72,7 +72,7 @@ if ( $parent->have_posts() ) : ?>
     <?php
         $callout_banner = get_field('callout_banner');
         if (!empty ($callout_banner)): ?>
-        <div class="row callout-banner">
+        <div class="row callout-banner callout-banner--tertiary">
             <div class="col-12">
                 <h2><?php echo $callout_banner; ?></h2>
             </div>
