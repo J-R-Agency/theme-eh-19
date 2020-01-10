@@ -11,6 +11,11 @@ defined( 'ABSPATH' ) || exit;
 
 <?php
 
+function create_block_id($block_ref){
+	$block_ref = strt
+	return;
+}
+
 // Check value exists.
 if( have_rows('fc_content_block') ):
 
@@ -38,7 +43,7 @@ if( have_rows('fc_content_block') ):
 			
             echo 
             "<!-- Module Content Block -->
-            <div class=\"module_content_block " . $module_content_block_modifier . "\">";
+            <div class=\"module_content_block " . $module_content_block_modifier . "\" id=\"" . sanitize_title( $mcb_title ) . "\">";
             
 					// DIVIDER
 					if( !empty($mcb_divider_icon) ):
