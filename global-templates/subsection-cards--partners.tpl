@@ -27,7 +27,7 @@ $parent = new WP_Query( $args );
 if ( $parent->have_posts() ) : ?>
 
 
-
+<div class="content">
 <section class="success-stories--header" id="success-stories--header">
     <div class="module_cta_feature_block module_cta_feature_block--partners">
         <div class="row centered">
@@ -64,7 +64,7 @@ if ( $parent->have_posts() ) : ?>
         </div>
     </div>
 </section>
-
+</div>
 
 <?php endif; wp_reset_query(); ?>
 
