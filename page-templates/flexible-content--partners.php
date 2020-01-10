@@ -26,7 +26,7 @@ get_header();
 	<!-- Page title -->
 	<div class="row callout-banner">
 		<div class="col-12">
-			<p><?php echo $the_title(); ?></p>
+			<h1><?php the_title(); ?></h1>
 		</div>
 	</div>
 	
