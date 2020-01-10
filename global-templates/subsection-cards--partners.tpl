@@ -123,7 +123,7 @@ if ( $parent->have_posts() ) : ?>
                     <div class="subsection-cards" id="subsection-<?php echo $post->ID ;?>">
                         <div class="subsection-cards__item">
                             <div class="avatar--success-stories" style="background-image: url('<?php echo get_the_post_thumbnail_url(  $post->ID, 'medium_large' ) ;?>');"></div>
-                            <div>
+                            <div class="avatar--partner-logo centered">
                                 <p><a href="#subsection-<?php echo $post->ID ;?>"><img src="<?php echo $partner_logo['url'];?>" alt="<?php the_title(); ?>" height="100"></a></p>
                              </div>
                     <?php
