@@ -43,16 +43,6 @@ get_header();
 	<?php endif ?>
 
 	
-	<!-- Callout Banner -->
-	<?php
-		$callout_banner = get_field('callout_banner');
-		if (!empty ($callout_banner)): ?>
-		<div class="row callout-banner">
-			<div class="col-12">
-				<p><?php echo $callout_banner; ?></p>
-			</div>
-		</div>
-	<?php endif ?>
 
 	<div class="content">
 		
