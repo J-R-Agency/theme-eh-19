@@ -332,6 +332,24 @@
 }
 
 
+.module_about_feature_image_block{
+	& h2 {
+		display: block;
+	}
+	& h3 {
+		display: block;
+	}
+}
+
+.flex-wrapper {
+	display: flex; 
+	flex-wrap: wrap;
+}
+
+.flex-item {
+	flex-basis: 50%;
+}
+
 // CONSIDER MOVING THESE STYLES 
 
 .success-divider {width:inherit; margin:3rem auto;}

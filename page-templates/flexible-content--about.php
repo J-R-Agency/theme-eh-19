@@ -84,7 +84,8 @@ get_header();
 
 
 	echo "
-	    <!-- About Feature Image Block -->
+    <!-- About Feature Image Block -->
+    <div class=\"content\">
 	    <div class=\"module_about_feature_image_block\">" .
 	    	"<div class=\"row centered\">" ;
 	if ($afib_title):
@@ -103,26 +104,34 @@ get_header();
 		echo 
         "<div class=\"afib_body mcb_content grey-content\">" . $afib_body . "</div>";
     endif;
-	if ($afib_twitter_cta):
-		echo "
-		<div class=\"col-12\">
-			<a href=\"". $afib_twitter_cta['url'] ."\">
-		    	<div class=\"cta_link\">". $afib_twitter_cta['title'] . "</div>
-		    </a>
-		</div>";
+    if ($afib_twitter_cta || $afib_linkedin_cta):
+		echo "<div class=\"cfelx-wrapper\">";
+
+		if ($afib_twitter_cta):
+			echo "
+			<div class=\"flex-item col-12\">
+				<a href=\"". $afib_twitter_cta['url'] ."\">
+			    	<div class=\"cta_link\">". $afib_twitter_cta['title'] . "</div>
+			    </a>
+			</div>";
+		endif;
+		if ($afib_linkedin_cta):
+			echo "
+			<div class=\"flex-item col-12\">
+				<a href=\"". $afib_linkedin_cta['url'] ."\">
+			    	<div class=\"cta_link\">". $afib_linkedin_cta['title'] . "</div>
+			    </a>
+			</div>";
+		endif;
+
+		echo "</div>";
 	endif;
-	if ($afib_linkedin_cta):
-		echo "
-		<div class=\"col-12\">
-			<a href=\"". $afib_linkedin_cta['url'] ."\">
-		    	<div class=\"cta_link\">". $afib_linkedin_cta['title'] . "</div>
-		    </a>
-		</div>";
-	endif;
+
 
 		echo		
         "	</div>
-        </div>";
+        </div>
+    </div>";
 
 
 ?>
