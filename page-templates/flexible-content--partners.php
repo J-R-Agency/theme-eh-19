@@ -24,7 +24,7 @@ get_header();
 	<?php endif ?>
 
 	<!-- Page title -->
-	<div class="row callout-banner">
+	<div class="row callout-banner callout-banner--partners">
 		<div class="col-12">
 			<h1><?php the_title(); ?></h1>
 		</div>
@@ -42,7 +42,7 @@ get_header();
 		</div>
 	<?php endif ?>
 
-	
+
 
 	<div class="content">
 		

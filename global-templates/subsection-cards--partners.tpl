@@ -74,7 +74,7 @@ if ( $parent->have_posts() ) : ?>
         if (!empty ($callout_banner)): ?>
         <div class="row callout-banner">
             <div class="col-12">
-                <p><?php echo $callout_banner; ?></p>
+                <h2><?php echo $callout_banner; ?></h2>
             </div>
         </div>
     <?php endif ?>
