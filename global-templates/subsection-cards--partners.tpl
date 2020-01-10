@@ -119,6 +119,11 @@ if ( $parent->have_posts() ) : ?>
                             <img src="https://empowermenthouse.co.uk/wp-content/uploads/2020/01/hr-icon-house-dark.png" alt="" class="line-icon">
                         </div>
                     </div>
+                   <?php
+                        // Get Partner Logos
+                        $partner_logo = get_field('partner_logo',  $post->ID);
+                        
+                    ?>
 
                     <div class="subsection-cards" id="subsection-<?php echo $post->ID ;?>">
                         <div class="subsection-cards__item">
@@ -126,11 +131,7 @@ if ( $parent->have_posts() ) : ?>
                             <div class="avatar--partner-logo centered">
                                 <p><a href="#subsection-<?php echo $post->ID ;?>"><img src="<?php echo $partner_logo['url'];?>" alt="<?php the_title(); ?>" height="100"></a></p>
                              </div>
-                    <?php
-                        // Get Partner Logos
-                        $partner_logo = get_field('partner_logo',  $post->ID);
-                        
-                    ?>
+
                         </div>
                         <div class="subsection-cards__item">
                             <h2 class="subsection-cards__title"><?php the_title(); ?></h2>
