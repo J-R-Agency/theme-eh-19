@@ -109,7 +109,7 @@ get_header();
 			if ($afib_twitter_cta):
 				echo "
 				<div class=\"flex-item col-12\">
-					<a href=\"". $afib_twitter_cta['url'] ."\">
+					<a href=\"". $afib_twitter_cta['url'] ."\" target=\"_blank\">
 				    	<div class=\"cta_link\">". $afib_twitter_cta['title'] . "</div>
 				    </a>
 				</div>";
@@ -117,7 +117,7 @@ get_header();
 			if ($afib_linkedin_cta):
 				echo "
 				<div class=\"flex-item col-12\">
-					<a href=\"". $afib_linkedin_cta['url'] ."\">
+					<a href=\"". $afib_linkedin_cta['url'] ."\" target=\"_blank\">
 				    	<div class=\"cta_link\">". $afib_linkedin_cta['title'] . "</div>
 				    </a>
 				</div>";
