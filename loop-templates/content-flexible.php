@@ -158,7 +158,7 @@ if( have_rows('fc_content_block') ):
                         
             echo "
             <!-- Module Video Block -->
-            <div class=\"module_video_block green\">" .
+            <div class=\"module_video_block green\" id=\"" . sanitize_title( $mvb_video_title ) . "\">" .
             	"<div class=\"mvb_video_title centered\"><h3>". $mvb_video_title . "</h3></div>" .            
             	"<div class=\"mvb_video_url\">". $mvb_video_url . "</div>" .
 			"</div>";
@@ -179,13 +179,13 @@ if( have_rows('fc_content_block') ):
 			
 			if ($mib_style == 'primary'):
 	            echo
-	            "<div class=\"module_icon_block mb-5\">";
+	            "<div class=\"module_icon_block mb-5\" id=\"" . sanitize_title( $mib_title ) . "\">";
 	        elseif ($mib_style == 'secondary'):
 	        	echo
-	            "<div class=\"module_icon_block green mb-5\">";
+	            "<div class=\"module_icon_block green mb-5\" id=\"" . sanitize_title( $mib_title ) . "\">";
 	        elseif ($mib_style == 'tertiary'):
 	        	echo
-	            "<div class=\"module_icon_block navy mb-5\">";
+	            "<div class=\"module_icon_block navy mb-5\" id=\"" . sanitize_title( $mib_title ) . "\">";
 	        endif;   
             
             echo
@@ -318,11 +318,11 @@ if( have_rows('fc_content_block') ):
             
 			if ($mrcbb_cta_style == 'primary'):            
 	            echo "
-	            <div class=\"module_rich_callout_banner_block\">";
+	            <div class=\"module_rich_callout_banner_block\" id=\"" . sanitize_title( $mrcbb_title ) . "\">";
 	            
 	        elseif($mrcbb_cta_style == 'secondary'):
 	            echo "
-	            <div class=\"module_rich_callout_banner_block navy\">";	        
+	            <div class=\"module_rich_callout_banner_block navy\" id=\"" . sanitize_title( $mrcbb_title ) . "\">";	        
 	        endif;
 	        
 	        echo
