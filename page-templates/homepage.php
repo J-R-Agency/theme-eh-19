@@ -93,7 +93,7 @@ get_header();
 		</div>
 		<div class="col-6 get-in-touch">
 			<div class="row">
-				<div class="col-12">
+				<div class="col-12 centered">
 					<p>Email us for more information about how we can&nbsp;help</p>			
 				</div>
 			</div>
