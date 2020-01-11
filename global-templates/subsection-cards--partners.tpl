@@ -137,7 +137,7 @@ if ( $parent->have_posts() ) : ?>
                         <div class="subsection-cards__item">
                             <h2 class="subsection-cards__title"><?php the_title(); ?></h2>
                             <div class="subsection-cards__content"><?php echo $post->post_content ;?></div>
-                            <div class="back-to-top"><a href="#partners--header">Back to Top</a></div>
+                            <div class="back-to-top"><a href="#page">Back to Top</a></div>
                         </div>
                     </div>
 
