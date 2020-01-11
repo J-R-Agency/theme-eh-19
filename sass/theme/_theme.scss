@@ -130,6 +130,10 @@ a:hover {
 	}
 }
 
+div:focus{
+	outline: none;
+}
+
 /*-- MODULE CONTENT --*/
 @import 'content/modules';
 
