@@ -202,7 +202,7 @@ if( have_rows('fc_content_block') ):
 						$mib_icon_heading = get_sub_field('mib_icon_heading'); // Text
 
 						echo
-						"<div class=\"col-fifth mt-5\">" .
+						"<div class=\"mib_icon_repeater col-fifth mt-5\">" .
 			            	"<img src='". $mib_icon_image['url'] ."' alt='".$mib_icon_imagen['alt']."'>" .
 			            	"<div class=\"mib_icon_heading mt-1\">". $mib_icon_heading . "</div>" .
 						"</div>"
@@ -215,6 +215,7 @@ if( have_rows('fc_content_block') ):
 					// no rows found
 
 				endif;
+
 			if( !empty($mib_body) ):	
 	            echo 
 	            	"	<div class=\"mib_body mt-5\">". $mib_body . "</div>";
