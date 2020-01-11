@@ -179,13 +179,13 @@ if( have_rows('fc_content_block') ):
 			
 			if ($mib_style == 'primary'):
 	            echo
-	            "<div class=\"module_icon_block mb-5\" id=\"" . sanitize_title( $mib_title ) . "\">";
+	            "<div class=\"module_icon_block\" id=\"" . sanitize_title( $mib_title ) . "\">";
 	        elseif ($mib_style == 'secondary'):
 	        	echo
-	            "<div class=\"module_icon_block green mb-5\" id=\"" . sanitize_title( $mib_title ) . "\">";
+	            "<div class=\"module_icon_block green\" id=\"" . sanitize_title( $mib_title ) . "\">";
 	        elseif ($mib_style == 'tertiary'):
 	        	echo
-	            "<div class=\"module_icon_block navy mb-5\" id=\"" . sanitize_title( $mib_title ) . "\">";
+	            "<div class=\"module_icon_block navy\" id=\"" . sanitize_title( $mib_title ) . "\">";
 	        endif;   
             
             echo
@@ -202,9 +202,9 @@ if( have_rows('fc_content_block') ):
 						$mib_icon_heading = get_sub_field('mib_icon_heading'); // Text
 
 						echo
-						"<div class=\"mib_icon_repeater col-fifth mt-5\">" .
+						"<div class=\"mib_icon_repeater col-fifth\">" .
 			            	"<img src='". $mib_icon_image['url'] ."' alt='".$mib_icon_imagen['alt']."'>" .
-			            	"<div class=\"mib_icon_heading mt-1\">". $mib_icon_heading . "</div>" .
+			            	"<div class=\"mib_icon_heading\">". $mib_icon_heading . "</div>" .
 						"</div>"
 						;
 
@@ -218,7 +218,7 @@ if( have_rows('fc_content_block') ):
 
 			if( !empty($mib_body) ):	
 	            echo 
-	            	"	<div class=\"mib_body mt-5\">". $mib_body . "</div>";
+	            	"	<div class=\"mib_body\">". $mib_body . "</div>";
 			endif;
 			
 			echo "</div>
