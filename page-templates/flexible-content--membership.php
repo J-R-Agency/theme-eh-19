@@ -80,22 +80,6 @@ get_header();
 				$primary_content_cta_text = get_sub_field('primary_content_cta_text');
 				$primary_content_cta_link = get_sub_field('primary_content_cta_link');
 				$primary_content_cta_button = get_sub_field('primary_content_cta_button'); // Button text
-				
-					echo
-					"
-						<div class='row primary_content_cta'>
-							<div class='col-12'>
-								<p>". $primary_content_cta_text ."</p>
-							</div>
-							
-							<div class='col-12'>
-								<a href=\"". $primary_content_cta_link['url'] ."\">
-						        	<div class=\"cta_link\">". $primary_content_cta_button . "</div>
-						        </a>
-						    </div>						
-						</div>		
-					";
-
 
 				if ( $primary_content_cta_text || $primary_content_cta_link || $primary_content_cta_button ):
 					echo
