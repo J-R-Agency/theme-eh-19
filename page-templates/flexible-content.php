@@ -24,8 +24,8 @@ get_header();
 	<?php endif ?>
 
 	<!-- Page title -->
-	<div class="row callout-banner callout-banner--membership">
-		<div class="col-12">
+	<div class="row">
+		<div class="col-12 centered mt-5 mb-5">
 			<h1><?php the_title(); ?></h1>
 		</div>
 	</div>
