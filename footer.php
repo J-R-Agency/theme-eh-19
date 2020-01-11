@@ -71,6 +71,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								
 								<div class="row mt-4">
 									<div class="col-12">
+										<!-- Disable footer menu
 										<?php
 											wp_nav_menu(
 											  array(
@@ -79,7 +80,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 											    'link_after' => '</span>',
 											  )
 											);	
-										?>																		
+										?>			
+										-->															
 									</div>
 								</div>
 								
