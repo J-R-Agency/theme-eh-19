@@ -1,6 +1,6 @@
  <?php
 /**
- * Template Name: Membership - Flexible Content Template
+ * Template Name: Flexible Content Template
  *
  * @package understrap
  */
