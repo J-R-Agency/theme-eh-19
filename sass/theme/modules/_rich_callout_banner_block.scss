@@ -1,0 +1,48 @@
+.module_rich_callout_banner_block {
+	background-color: $ambitious-mint;
+	text-align: center;
+	padding: 40px;
+	margin-top: 2rem;
+	text-transform: uppercase;
+	margin-left: -20vw;
+	margin-right: -20vw;
+}
+
+.module_rich_callout_banner_block {
+	text-align: center;
+	text-transform: none;
+	margin-top: 50px;
+	margin-left: -20vw;
+	margin-right: -20vw;
+	padding: 40px;
+	
+	.mrcbb_title {
+		text-transform: uppercase;
+		font-weight: bold;
+		@media all and (max-width: $breakpoint-phone) {
+			width: 85%;
+			margin: 0 auto;
+		}		
+	}
+	
+	.mrcbb_body {
+		width: 50%;
+		margin: 0 auto;
+		@media all and (max-width: $breakpoint-phone) {
+			width: 85%;
+		}		
+	}
+		
+	&.navy {
+		background-color: $dark-blue;
+		color: $peach;
+
+		& a{
+			color: $peach;
+			font-weight: bold;
+		}
+		& a:hover{
+			text-decoration: underline;
+		}
+	}
+}

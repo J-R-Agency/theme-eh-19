@@ -1,314 +1,21 @@
 // -- GLOBAL MODULES -- //
 
-// Callout Banner
-.callout-banner {
-	background-color: $peach;
-	font-size: 1.5rem;
-	text-align: center;
-	padding: 40px;
-	margin: 0;
-	width: 100%;
-	text-transform: uppercase;
-	p {
-		margin: 0;
-	}
-}
-
-.callout-banner--partners{
-	margin: 0;
-	background-color: $ambitious-mint;
-}
-
-.callout-banner--membership{
-	margin: 0;
-	background-color: $peach;
-	color: $dark-peach;
-}
-
-.callout-banner--tertiary{
-	margin: 0;
-	background-color: $navy;
-	color: $peach
-}
-
-.title--about{
-	margin-bottom: -9rem;
-}
-
-// Subtitle
-.subtitle {
-	/* font-size: 10pt; */
-	text-align: center;
-	width: 100%;
-}
-
-// Lead In
-.lead-in {
-	margin: 2rem 0;
-	font-size: 1.5rem;
-	text-align: center;
-	border-top: solid $peach 1px;
-	border-bottom: solid $peach 1px;
-}
-
-// Primary Content CTA
-.primary_content_cta {
-	background-color: $light-grey;
-	padding: 50px 20%;
-	text-align: center;
-	
-	h1 {
-		margin: 10px;
-	}
-}
+@import '../modules/global';
 
 // CONTENT BLOCK
-.module_content_block {
-	text-align: center;
-	margin: 2rem 0;
-	
-	ul {
-		list-style: none;
-		
-		li {
-			text-align: left;
-			list-style-type: none;
-			
-			&:before {
-			    /* Unicode bullet symbol */
-			    content: '\25CF ';
-			    /* Bullet color */
-			    color: $peach;
-			    padding-right: 0.5em;
-			
-				display: inline-block; /* Needed to add space between the bullet and the text */
-				width: 1em; /* Also needed for space (tweak if needed) */
-				margin-left: -1em; /* Also needed for space (tweak if needed) */			
-			}
-		}
-	}
+@import '../modules/content_block';
 
-	h2{
-		margin: 2rem 0;
-	}
-
-	h3{
-		font-size: 1rem;
-	}
-
-	&.module_content_block--small{
-
-		h2{
-		    font-size: 1rem;
-		    font-weight: normal;
-		    font-family: "Montserrat Medium";
-		    margin: 1rem 0;
-		}
-
-	}
-
-
-	.mcb_content {
-
-		margin: 0 0 2rem 0;
-
-	}
-	
-	/*
-	.mcb_title{
-
-		margin: 2rem 0;
-
-	}
-	*/
-
-	.grey-content-block {
-		background-color: $light-grey;
-		text-align: left;
-		font-size: 1rem;
-		padding: 50px 80px;
-		
-		h4 {
-			font-size: 1rem;
-			font-weight: bold;
-			margin-bottom: 1rem;
-		}
-		
-		&.green {
-			h4 {
-				color: $teal;
-			}
-			.cta_link {
-				background-color: $teal;
-				color: white;	
-			}
-		}
-		
-		&.navy {
-				h4 {
-					color: $navy;
-				}
-				.cta_link {
-					background-color: $navy;
-					color: white;	
-				}
-				ul {
-					
-					li {
-						
-						&:before {
-						    color: black;			
-						}
-					}
-				}
-			}	
-	}	
-}
-
-.small {
-	font-size: 10pt;
-	
-}
 
 // ICON BLOCK
-.module_icon_block {
-	text-align: center;
-	margin: 2rem 0;
-	img {
-		height: 100px;
-	}
-	
-	.row{
-		justify-content: center;
-	}
+@import '../modules/icon_block';
 
-	.mib_icon_repeater{
-		margin: 1rem;
-	}
-
-	.mib_icon_repeater .col-fifth{
-		max-width: 150px !important;
-	}
-
-	.mib_icon_heading {
-		font-weight: bold;
-		margin:1rem;
-	}
-	
-	.mib_title{
-		margin-bottom: 3rem;
-	}
-
-	&.navy {
-		.mib_title h2, .mib_icon_heading {
-			color: $navy;
-		}	
-	}
-	
-	&.green {
-		.mib_title h2, .mib_icon_heading {
-			color: $teal;
-		}		
-	}
-}
 
 // CTA VIDEO BLOCK
-.module_video_block {
-	background-color: $light-grey;
-	padding: 2rem;
-	text-align: center;
-	margin-top: 20px;
-	margin-left: -20vw;
-	margin-right: -20vw;
-	
-	&.green {
-		background-color: $teal;
-		
-		h1, h2, h3, h4, h5, p {
-			color: white;
-			width: 45%;
-			margin-bottom: 2rem;
-		}
-	}
-}
+@import '../modules/cta_video_block';
 
 
 // CTA FEATURE BLOCK
-.module_cta_feature_block {
-	text-align: center;
-	padding: 2rem 0;
-	
-	img {
-		height: 150px;
-	}
-	
-	h2 {
-		height: 50px;
-	}
-	.mcfb_title {
-		font-size: 1rem;
-		font-weight: bold;
-	}
-	.mcfb_body {
-		height: 125px;
-	}
-}
-
-.module_cta_feature_block--partners {
-	text-align: center;
-	padding: 2rem 0;
-	margin-bottom: 2rem;
-	
-	img {
-		height: 100px;
-	}
-}
-
-.avatar-peach {
-	border: 3px solid $peach;
-	border-radius: 50%;
-}
-
-.avatar-green {
-	border: 3px solid $dark-green;
-	border-radius: 50%;
-}
-
-.avatar-header--success-stories{
-	border: 3px solid $dark-green;
-	border-radius: 50%;
-	height: 150px;
-	width: 150px;
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	margin: 0 auto;
-}
-
-.avatar--success-stories{
-	border: 3px solid $dark-green;
-	border-radius: 50%;
-	height: 300px;
-	width: 300px;
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	margin:0 auto;
-	padding: 0 1rem;
-}
-
- .avatar-header--success-stories h5{
- 	font-weight:bold;
- }
-
-
-.avatar--about{
-	border: 3px solid $peach;
-	border-radius: 50%;
-	height: 400px;
-	height: 400px;
-	margin: 2rem;
-}
+@import '../modules/cta_feature_block';
 
 // PARTNER LOGOS
 .avatar--partner-logo{
@@ -316,48 +23,7 @@
 }
 
 // RICH CALLOUT BANNER BLOCK
-.module_rich_callout_banner_block {
-	background-color: $ambitious-mint;
-	text-align: center;
-	padding: 40px;
-	margin-top: 2rem;
-	text-transform: uppercase;
-	margin-left: -20vw;
-	margin-right: -20vw;
-}
-
-.module_rich_callout_banner_block {
-	text-align: center;
-	text-transform: none;
-	margin-top: 50px;
-	margin-left: -20vw;
-	margin-right: -20vw;
-	padding: 40px;
-	
-	.mrcbb_title {
-		text-transform: uppercase;
-		font-weight: bold;
-	}
-	
-	.mrcbb_body {
-		width: 50%;
-		margin: 0 auto;
-	}
-		
-	&.navy {
-		background-color: $dark-blue;
-		color: $peach;
-
-		& a{
-			color: $peach;
-			font-weight: bold;
-		}
-		& a:hover{
-			text-decoration: underline;
-		}
-	}
-}
-
+@import '../modules/rich_callout_banner_block';
 
 .module_about_feature_image_block{
 	& h2 {
@@ -390,8 +56,24 @@
 .success-divider {width:inherit; margin:3rem auto;}
 .success-stories--content{margin-bottom: 3rem;}
 .subsection-cards{display: flex; flex-wrap: wrap;}
-.subsection-cards__item{flex-basis: 50%;}
-.subsection-cards__item h2{font-size: 2rem;color: $dark-green};
+
+.subsection-cards__item {
+	flex-basis: 50%;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		flex-basis: 100%;
+		padding: 0 1rem;
+	}
+}
+.subsection-cards__item h2 {
+	font-size: 2rem;
+	color: $dark-green;
+	@media all and (max-width: $breakpoint-phone) {
+		margin-top: 1rem;
+	}
+	
+}
+
 .subsection-cards__item h3{font-size: 1rem;font-family:"Montserrat Medium";font-weight: bold;margin:1rem 0};
 .subsection-cards__item .back-to-top{width:inherit;text-align: right;}
 .subsection-cards__item .back-to-top a{color: $peach;font-weight: bold;}

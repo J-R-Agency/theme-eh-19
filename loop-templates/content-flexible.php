@@ -57,21 +57,24 @@ if( have_rows('fc_content_block') ):
 		            if( !empty($mcb_title) ):
 		            	if ($mcb_style == 'primary' or $mcb_style == 'secondary' or $mcb_style == 'tertiary'):
 		            		echo
-			            	"<div class=\"mcb_title centered mt-3\"><div class='row'><h2>". $mcb_title . "</h2></div></div>";
+			            	"<div class=\"mcb_title centered\"><div class='row'><h2>". $mcb_title . "</h2></div></div>";
 			            elseif ($mcb_style == 'small'):
 			            	echo
-			            	"<div class=\"mcb_title mcb_title--small centered mt-3\"><div class='row'><h2>". $mcb_title . "</h2></div></div>";
+			            	"<div class=\"mcb_title mcb_title--small centered\"><div class='row'><h2>". $mcb_title . "</h2></div></div>";
 			            endif;			            
 	            	endif;
 	            	
 	            	// GM: Consider refactoring this type of code from JL to something like:
-	            	// if( !empty( $mcb_title ) ) {
-	            	// 		if ( !empty( $mcb_style ) {
-	            	//			$mcb_title_modifier = "mcb_title--" . $mbs_style ;
-	            	// 			echo
-			        //    		"<h2 class=\"mcb_title $mcb_title_modifier\">". $mcb_title . "</h2>";
-	            	//		}
-			        // }
+/*
+	            	if ( !empty( $mcb_title ) ):
+	            			if ( !empty( $mcb_style ):
+	            				$mcb_title_modifier = "mcb_title--" . $mbs_style ;
+	            				echo
+			           		"<h2 class=\"mcb_title $mcb_title_modifier\">". $mcb_title . "</h2>";
+			           		endif;
+	            	endif;		
+*/
+			       
 
 
 
@@ -96,7 +99,7 @@ if( have_rows('fc_content_block') ):
 					// SECONDARY STYLE (TWO COLUMNS)
 	            	elseif ($mcb_style == 'secondary'):
 	            		echo
-	            		"<div class=\"mcb_content two-col mt-3\">". $mcb_content;
+	            		"<div class=\"mcb_content two-col\">". $mcb_content;
 	            		
 				        // Show CTA button if field is filled in. If not, don't display CTA.	
 			        	if( !empty($mcb_cta_link) ):
@@ -115,17 +118,17 @@ if( have_rows('fc_content_block') ):
 	            		// PRIMARY CTA (PEACH)
 	            		if ($mcb_cta_style == 'primary') :
 		            		echo
-		            		"<div class=\"mcb_content grey-content-block mt-3\">". $mcb_content;
+		            		"<div class=\"mcb_content grey-content-block\">". $mcb_content;
 	            		
 	            		// SECONDARY CTA (GREEN)
 	            		elseif ($mcb_cta_style == 'secondary') :
 		            		echo
-		            		"<div class=\"mcb_content grey-content-block green mt-3\">". $mcb_content;
+		            		"<div class=\"mcb_content grey-content-block green\">". $mcb_content;
 	            		
 	            		//TERTIARY CTA (NAVY)
 	            		elseif ($mcb_cta_style == 'tertiary') :
 		            		echo
-		            		"<div class=\"mcb_content grey-content-block navy mt-3\">". $mcb_content;
+		            		"<div class=\"mcb_content grey-content-block navy\">". $mcb_content;
 	            		
 	            		endif;
 	            		
@@ -140,7 +143,7 @@ if( have_rows('fc_content_block') ):
 			        // SMALL
 	            	elseif ($mcb_style == 'small' ) :
 	            		echo
-	            		"<div class=\"mcb_content mcb_content--small mt-3\">". $mcb_content ."</div>";								        
+	            		"<div class=\"mcb_content mcb_content--small\">". $mcb_content ."</div>";								        
 	            	endif;
         	
 			echo "</div>"; // Close module_content_block
@@ -255,7 +258,7 @@ if( have_rows('fc_content_block') ):
 						
 						if ($mcfb_style == "primary"):
 							echo
-							"<div class=\"col-4\">" .
+							"<div class=\"col-md-4 col-12\">" .
 				            "<img src='". $mcfb_image['url'] ."' alt='".$mcfb_image['alt']."'>";
 				        elseif ($mcfb_style == "profile"):
 				        	echo
@@ -265,10 +268,10 @@ if( have_rows('fc_content_block') ):
 			            
 			            echo
 				            // Title
-				            "<div class=\"mcfb_title mt-5 mb-3\"><h5>". $mcfb_title . "</h5></div>" .
+				            "<div class=\"mcfb_title\"><h5>". $mcfb_title . "</h5></div>" .
 				            
 				            //Body
-				            	"<div class=\"mcfb_body mt-3\">". $mcfb_body . "</div>";
+				            	"<div class=\"mcfb_body\">". $mcfb_body . "</div>";
 				            
 				            if( !empty($mcfb_cta_link) ):
 					            // CTA Button
@@ -327,7 +330,7 @@ if( have_rows('fc_content_block') ):
 	        endif;
 	        
 	        echo
-            	"<div class=\"mrcbb_title mt-2 mb-2\">". $mrcbb_title . "</div>" .
+            	"<div class=\"mrcbb_title\">". $mrcbb_title . "</div>" .
             	"<div class=\"mrcbb_body\">". $mrcbb_body . "</div>" .
             	"<div class=\"mrcbb_cta_text\">". $mrcbb_cta_text . "</div>";
             	
@@ -351,11 +354,9 @@ if( have_rows('fc_content_block') ):
 			$md_icon = get_sub_field('md_icon'); // Image array
 			$md_class = get_sub_field('md_class'); // Text        
             
-            // Do something...
-            
             echo "
             <!-- Module Divider -->
-            <div class='row mt-5 mb-5'>
+            <div class='row'>
         		<div class='col-12'>
         			<div class=\"line $md_class\">
         				<img src='". $md_icon['url'] ."' alt='".$md_icon['alt']."'>
@@ -370,7 +371,7 @@ if( have_rows('fc_content_block') ):
 
 // No value.
 else :
-    // Do something...
+    
 endif;
 
 ?>
