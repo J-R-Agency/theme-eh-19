@@ -24,8 +24,8 @@ get_header();
 	<?php endif ?>
 
 	<!-- Page title -->
-	<div class="row">
-		<div class="col-12 centered mt-5 mb-5">
+	<div class="row page-title">
+		<div class="col-12 centered">
 			<h1><?php the_title(); ?></h1>
 		</div>
 	</div>

@@ -1,0 +1,18 @@
+.module_video_block {
+	background-color: $light-grey;
+	padding: 2rem;
+	text-align: center;
+	margin-top: 20px;
+	margin-left: -20vw;
+	margin-right: -20vw;
+	
+	&.green {
+		background-color: $teal;
+		
+		h1, h2, h3, h4, h5, p {
+			color: white;
+			width: 45%;
+			margin-bottom: 2rem;
+		}
+	}
+}

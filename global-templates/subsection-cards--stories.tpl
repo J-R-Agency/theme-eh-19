@@ -47,10 +47,10 @@ if ( $parent->have_posts() ) : ?>
                     <div class="col-fifth">
                         <a href="#subsection-<?php echo $post->ID ;?>">
                         <div class="avatar-header--success-stories" style="background-image: url('<?php echo get_the_post_thumbnail_url(  $post->ID, 'medium_large' ) ;?>');"></div>
-                        <div class="mcfb_title mt-5 mb-3">
+                        <div class="mcfb_title">
                             <h5><?php the_title(); ?></h5>
                         </div>
-                        <div class="mcfb_body mt-3"><?php echo $post->post_excerpt ;?></div>
+                        <div class="mcfb_body"><?php echo $post->post_excerpt ;?></div>
                     </a>
                     </div>
 

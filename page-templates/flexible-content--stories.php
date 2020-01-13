@@ -13,7 +13,7 @@ get_header();
 
 <div class="container-fluid no-margins">
 
-	<!-- Hero image -->
+	<!-- Hero image --> 
 	<?php if ( has_post_thumbnail() ): ?>
 		<?php $thumb = get_the_post_thumbnail_url(); ?>
 		<div class="row">
@@ -24,8 +24,8 @@ get_header();
 	<?php endif ?>
 
 	<!-- Page title -->
-	<div class="row">
-		<div class="col-12 centered mt-5 mb-5">
+	<div class="row callout-banner callout-banner--stories">
+		<div class="col-12 centered">
 			<h1><?php the_title(); ?></h1>
 		</div>
 	</div>

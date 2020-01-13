@@ -25,7 +25,7 @@ get_header();
 
 	<!-- Page title -->
 	<div class="row">
-		<div class="col-12 centered mt-5 mb-5">
+		<div class="col-12 centered">
 			<h1 class="title--about"><?php the_title(); ?></h1>
 		</div>
 	</div>

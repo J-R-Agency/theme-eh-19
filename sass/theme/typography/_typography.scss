@@ -5,6 +5,7 @@ body, p {
 h1, h2 {
 	font-family: 'Montserrat Extra Bold', sans-serif;
 	text-transform: uppercase;
+	margin: 1rem;
 	
 	@media all and (max-width: $breakpoint-phone) {
 		font-size: 7vw;
