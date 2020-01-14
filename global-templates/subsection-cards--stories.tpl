@@ -104,8 +104,8 @@ if ( $parent->have_posts() ) : ?>
                 <?php while ( $parent->have_posts() ) : $parent->the_post(); ?>
 
                     <div class="success-divider">
-                        <div class="line line--subsection">
-                            <img src="https://empowermenthouse.co.uk/wp-content/uploads/2020/01/hr-icon-house-dark.png" alt="" class="line-icon">
+                        <div class="line">
+                            <img src="https://empowermenthouse.co.uk/wp-content/uploads/2020/01/hr-icon-house-circle-white.png" alt="" class="line-icon">
                         </div>
                     </div>
 

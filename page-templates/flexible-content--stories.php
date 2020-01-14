@@ -71,37 +71,6 @@ get_header();
 		<?php get_template_part( 'loop-templates/content', 'flexible' ); ?>
 		
 	</div>
-	
-	<!-- Primary Content CTA -->
-	<?php
-		if( have_rows('primary_content_cta') ):
-			while ( have_rows('primary_content_cta') ) : the_row();
-		
-				$primary_content_cta_text = get_sub_field('primary_content_cta_text');
-				$primary_content_cta_link = get_sub_field('primary_content_cta_link');
-				$primary_content_cta_button = get_sub_field('primary_content_cta_button'); // Button text
-				
-				if (!empty ($primary_content_cta_text)):
-					echo
-					"
-						<div class='row primary_content_cta'>
-							<div class='col-12'>
-								<p>". $primary_content_cta_text ."</p>
-							</div>
-							
-							<div class='col-12'>
-								<a href=\"". $primary_content_cta_link['url'] ."\">
-						        	<div class=\"cta_link\">". $primary_content_cta_button . "</div>
-						        </a>
-						    </div>						
-						</div>		
-					";
-				else:
-					echo "";
-				endif;
-			endwhile;
-		endif;
-	?>	
 
 	<div class="content">
 		<!-- Get Child Pages as subcontent -->
