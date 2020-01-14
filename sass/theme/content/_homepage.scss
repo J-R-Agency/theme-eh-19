@@ -1,6 +1,6 @@
 .homepage-introduction {
 	background-color: $light-grey;
-	padding: 5% 20% 5% 20%;
+	padding: 2% 20% 2% 20%;
 	margin-bottom: 20px;
 	
 	@media all and (max-width: $breakpoint-phone) {
@@ -12,20 +12,25 @@
 		text-align: center;
 		margin: 30px 0px;
 	}
-	.first-copy {
+	.first-copy { 
 		border-top: 1px solid $peach;
 		border-bottom: 1px solid $peach;
 		padding: 20px 15% 20px 0px;
+		font-size: 1.2rem;
+		margin-right: 1rem;
 		
 		@media all and (max-width: $breakpoint-phone) {
-			font-size: 0.75rem;
+			text-align: center;
+			padding: 20px 0px;
+			margin: 0;
 		}
 	}
 	.second-copy {
-		padding: 10px;
+		padding: 1rem;
+		margin-left: 1rem;
 		
 		@media all and (max-width: $breakpoint-phone) {
-			padding: 0;
+			margin: 0;
 		}		
 	}
 }

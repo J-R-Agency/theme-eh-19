@@ -25,17 +25,6 @@ html,body
 	}
 }
 
-.two-col {
-	column-count: 2;
-	text-align: left;
-		
-	@media all and (max-width: $breakpoint-phone) {
-		column-count: 1;
-	}	
-
-	/*font-size: 10pt;*/
-}
-
 /*-- Typography --*/
 
 @import 'typography/typography';
@@ -76,24 +65,10 @@ a:hover {
 @import 'content/lines';
 
 /* -- Navigation Menu -- */
-@import'navigation/header';
+@import'navigation/header'; 
 
 /*-- HOMEPAGE --*/
 @import'content/homepage';
-
-.hero {
-	height: 33vw;
-	width: 100vw;
-	margin: auto;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	
-	@media all and (max-width: $breakpoint-phone) {
-		height: 250px; 
-	}	
-}
-
 
 
 /*-- MODULE CONTENT --*/

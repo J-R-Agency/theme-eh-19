@@ -9,7 +9,9 @@
 	}
 	
 	img {
-		height: auto;
+		min-height: 150px;
+		max-height: 200px;
+		margin: 1rem;
 		@media all and (max-width: $breakpoint-phone) {
 			height: 200px;
 		}		
@@ -24,10 +26,11 @@
 		margin: 1rem;
 	}
 	.mcfb_body {
-		height: 125px;
+		min-height: 100px;
+		max-height: 200px;
 		
 		@media all and (max-width: $breakpoint-phone) {
-			height: auto;
+			min-height: 50px;
 			padding-bottom: 1rem;
 			margin: 0 auto;
 			width: 80%;
@@ -47,7 +50,7 @@
 	
 	img {
 		height: auto;
-		padding: 0rem 1rem;
+		padding: 0 1rem;
 		
 		@media all and (max-width: $breakpoint-phone) {
 			height: 75px;

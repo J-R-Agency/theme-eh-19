@@ -17,10 +17,16 @@
 // CTA FEATURE BLOCK
 @import '../modules/cta_feature_block';
 
+// ACCORDION BLOCK
+@import '../modules/accordion_block';
+
 // PARTNER LOGOS
 .avatar--partner-logo{
 	margin: 2rem 0;
 }
+
+// GENERAL CONTENT BLOCK
+@import '../modules/general_content_block';
 
 // RICH CALLOUT BANNER BLOCK
 @import '../modules/rich_callout_banner_block';
@@ -67,8 +73,11 @@
 }
 .subsection-cards__item h2 {
 	font-size: 2rem;
-	color: $dark-green;
+	color: black;
+	margin-bottom: 1rem;
+	
 	@media all and (max-width: $breakpoint-phone) {
+		text-align: left;
 		margin-top: 1rem;
 	}
 	

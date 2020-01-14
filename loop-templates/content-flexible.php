@@ -53,98 +53,37 @@ if( have_rows('fc_content_block') ):
 		            endif;
 		            
 		            
-		            // TITLE
-		            if( !empty($mcb_title) ):
-		            	if ($mcb_style == 'primary' or $mcb_style == 'secondary' or $mcb_style == 'tertiary'):
-		            		echo
-			            	"<div class=\"mcb_title centered\"><div class='row'><h2>". $mcb_title . "</h2></div></div>";
-			            elseif ($mcb_style == 'small'):
-			            	echo
-			            	"<div class=\"mcb_title mcb_title--small centered\"><div class='row'><h2>". $mcb_title . "</h2></div></div>";
-			            endif;			            
-	            	endif;
-	            	
-	            	// GM: Consider refactoring this type of code from JL to something like:
-/*
+		            // TITLE      	
 	            	if ( !empty( $mcb_title ) ):
-	            			if ( !empty( $mcb_style ):
-	            				$mcb_title_modifier = "mcb_title--" . $mbs_style ;
+	            			if ( !empty( $mcb_style ) ):
+	            				$mcb_title_modifier = "mcb_title--" . $mcb_style;
 	            				echo
-			           		"<h2 class=\"mcb_title $mcb_title_modifier\">". $mcb_title . "</h2>";
+								"<h2 class=\"mcb_title $mcb_title_modifier\">". $mcb_title . "</h2>";
 			           		endif;
-	            	endif;		
-*/
-			       
-
-
-
-	            	
-	            	
-	            	// PRIMARY STYLE
-	            	if ($mcb_style == 'primary'):
-	            		echo
-	            		"<div class=\"mcb_content\">". $mcb_content;
-	            		
-				        // Show CTA button if field is filled in. If not, don't display CTA.	
-			        	if( !empty($mcb_cta_link) ):
-			        		echo 
-			        			"<a href=\"". $mcb_cta_link['url'] ."\">
-			        				<div class=\"cta_link centered\">". $mcb_cta_text . "</div>
-			        			</a>";
-			        	endif;
-			        	echo "</div>"; // Close mcb_content       	            		
-					
-					
-					
-					// SECONDARY STYLE (TWO COLUMNS)
-	            	elseif ($mcb_style == 'secondary'):
-	            		echo
-	            		"<div class=\"mcb_content two-col\">". $mcb_content;
-	            		
-				        // Show CTA button if field is filled in. If not, don't display CTA.	
-			        	if( !empty($mcb_cta_link) ):
-			        		echo 
-			        			"<a href=\"". $mcb_cta_link['url'] ."\">
-			        				<div class=\"cta_link centered\">". $mcb_cta_text . "</div>
-			        			</a>";
-			        	endif;
-			        	echo "</div>"; // Close mcb_content	            			            		
-	            		
-	            		
-	            		
-	            	// TERTIARY STYLE (GREY BACKGROUND)
-	            	elseif ($mcb_style == 'tertiary' ):
-	            	
-	            		// PRIMARY CTA (PEACH)
-	            		if ($mcb_cta_style == 'primary') :
-		            		echo
-		            		"<div class=\"mcb_content grey-content-block\">". $mcb_content;
-	            		
-	            		// SECONDARY CTA (GREEN)
-	            		elseif ($mcb_cta_style == 'secondary') :
-		            		echo
-		            		"<div class=\"mcb_content grey-content-block green\">". $mcb_content;
-	            		
-	            		//TERTIARY CTA (NAVY)
-	            		elseif ($mcb_cta_style == 'tertiary') :
-		            		echo
-		            		"<div class=\"mcb_content grey-content-block navy\">". $mcb_content;
-	            		
-	            		endif;
-	            		
-				        // Show CTA button if field is filled in. If not, don't display CTA.	
-			        	if( !empty($mcb_cta_link)):
-			        		echo 
-			        			"<a href=\"". $mcb_cta_link['url'] ."\" class=\"cta_link centered\">". $mcb_cta_text . "</a>";
-			        	endif;
-			        	
-			        echo "</div>"; // Close mcb_content
-			        	
-			        // SMALL
-	            	elseif ($mcb_style == 'small' ) :
-	            		echo
-	            		"<div class=\"mcb_content mcb_content--small\">". $mcb_content ."</div>";								        
 	            	endif;
+	            	
+	            	
+	            	// STYLES
+	            	
+        			if ( !empty( $mcb_style ) ):
+        				$mcb_style_modifier = "mcb_style--" . $mcb_style;
+        				$mcb_cta_style_modifier = "mcb_cta_style--" . $mcb_cta_style;
+        				
+        				echo
+	            		"<div class=\"mcb_content $mcb_style_modifier $mcb_cta_style_modifier\">". $mcb_content; 
+	            		
+	            		
+	            		
+				        // Show CTA button if field is filled in. If not, don't display CTA.	
+			        	if( !empty($mcb_cta_link) ):
+			        		echo 
+			        			"<a href=\"". $mcb_cta_link['url'] ."\">
+			        				<div class=\"cta_link centered\">". $mcb_cta_text . "</div>
+			        			</a>";
+			        	endif;
+			        	echo "</div>"; // Close mcb_content  	            		
+	            		      				
+	           		endif;
         	
 			echo "</div>"; // Close module_content_block
 
@@ -180,16 +119,11 @@ if( have_rows('fc_content_block') ):
             
 			echo "<!-- Module Icon Block -->";
 			
-			if ($mib_style == 'primary'):
-	            echo
-	            "<div class=\"module_icon_block\" id=\"" . sanitize_title( $mib_title ) . "\">";
-	        elseif ($mib_style == 'secondary'):
-	        	echo
-	            "<div class=\"module_icon_block green\" id=\"" . sanitize_title( $mib_title ) . "\">";
-	        elseif ($mib_style == 'tertiary'):
-	        	echo
-	            "<div class=\"module_icon_block navy\" id=\"" . sanitize_title( $mib_title ) . "\">";
-	        endif;   
+	    	if ( !empty( $mib_style ) ):
+				$mib_style_modifier = "mib_style--" . $mib_style;
+				echo
+	            "<div class=\"module_icon_block $mib_style_modifier\" id=\"" . sanitize_title( $mib_title ) . "\">";
+	    	endif;
             
             echo
             	"<div class=\"mib_title\"><h2>". $mib_title . "</h2></div>" .
@@ -320,14 +254,11 @@ if( have_rows('fc_content_block') ):
 			$mrcbb_cta_link = get_sub_field('mrcbb_cta_link'); // Link array
 			$mrcbb_cta_style = get_sub_field('mrcbb_cta_style'); // Select            
             
-			if ($mrcbb_cta_style == 'primary'):            
-	            echo "
-	            <div class=\"module_rich_callout_banner_block\" id=\"" . sanitize_title( $mrcbb_title ) . "\">";
-	            
-	        elseif($mrcbb_cta_style == 'secondary'):
-	            echo "
-	            <div class=\"module_rich_callout_banner_block navy\" id=\"" . sanitize_title( $mrcbb_title ) . "\">";	        
-	        endif;
+ 	    	if ( !empty( $mrcbb_cta_style ) ):
+				$mrcbb_style_modifier = "mrcbb_style--" . $mrcbb_cta_style;
+				echo
+	            "<div class=\"module_rich_callout_banner_block $mrcbb_style_modifier\" id=\"" . sanitize_title( $mrcbb_title ) . "\">";
+	    	endif;
 	        
 	        echo
             	"<div class=\"mrcbb_title\">". $mrcbb_title . "</div>" .
@@ -363,8 +294,53 @@ if( have_rows('fc_content_block') ):
         			</div>
         		</div>
         	</div>";
+        
+          // ----------------------------- //
+         // ---- CASE: MODULE DIVIDER ----//
+        // ----------------------------- //
+        elseif( get_row_layout() == 'module_accordion_block' ): 
 
-        endif;
+			$mab_title = get_sub_field('mab_title'); // Text
+			$mab_style = get_sub_field('mab_style'); // Style (select)			  
+            
+            echo "
+            <!-- Accordion Block -->
+            <div class='accordion-container'>
+	            <div class='row'>
+	        		<div class='col-12'>
+	        			<h2 class='mab_title'>".$mab_title."</h2>
+	        		</div>
+	        	</div>
+        	";
+        	
+			if( have_rows('mab_repeater') ):
+			
+				$check_id = 1;
+							
+				// loop through the rows of data
+				while ( have_rows('mab_repeater') ) : the_row();       	
+					$question = get_sub_field('question'); // Text
+					$answer = get_sub_field('answer');
+					$check_id++;
+					
+		        	echo
+		        	"
+		        	<div class='question-tabs'>
+			        	<div class='question-tab'>
+			        		<input type='checkbox' id='check-".$check_id."'>
+			        			<label class='question-label' for='check-".$check_id."'>".$question."</label>
+				        	<div class='answer-box'>
+				        		<p>".$answer."</p>
+				        	</div>
+			        	</div>
+		        	</div>
+		        	";
+		        endwhile;		        
+		    endif;
+		    
+		    echo "</div>"; //end accordion-container
+		    
+        endif;        
 
     // End loop.
     endwhile;

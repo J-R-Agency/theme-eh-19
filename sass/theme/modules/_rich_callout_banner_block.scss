@@ -1,17 +1,9 @@
 .module_rich_callout_banner_block {
-	background-color: $ambitious-mint;
-	text-align: center;
-	padding: 40px;
-	margin-top: 2rem;
-	text-transform: uppercase;
-	margin-left: -20vw;
-	margin-right: -20vw;
-}
-
-.module_rich_callout_banner_block {
+	text-transform: uppercase;	
 	text-align: center;
 	text-transform: none;
-	margin-top: 50px;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 	margin-left: -20vw;
 	margin-right: -20vw;
 	padding: 40px;
@@ -32,17 +24,23 @@
 			width: 85%;
 		}		
 	}
-		
-	&.navy {
-		background-color: $dark-blue;
-		color: $peach;
+}
 
-		& a{
-			color: $peach;
-			font-weight: bold;
-		}
-		& a:hover{
-			text-decoration: underline;
-		}
+// PRIMARY STYLE (Ambitious mint)
+.mrcbb_style--primary {
+	background-color: $ambitious-mint;
+}
+
+// SECONDARY STYLE (Dark blue with peach text)
+.mrcbb_style--secondary {
+	background-color: $dark-blue;
+	color: $peach;
+
+	& a{
+		color: $peach;
+		font-weight: bold;
+	}
+	& a:hover{
+		text-decoration: underline;
 	}
 }

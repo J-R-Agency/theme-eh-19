@@ -1,0 +1,38 @@
+.general_content_block {
+	background-color: $grey;
+	padding: 3rem;
+	text-align: center;
+
+	@media all and (max-width: $breakpoint-phone) {
+		padding: 1rem;
+	}	
+	
+	img {
+		max-height: 500px;
+		margin: 2rem 0;
+		
+	}
+	
+	.gcb_title{
+		width: 50%;
+		margin: 0 auto;
+		padding: 1rem 0;
+		
+		@media all and (max-width: $breakpoint-phone) {
+			width: 100%;
+		}		
+	}
+	.gcb_body {
+		width: 60%;
+		margin: 0 auto;
+		@media all and (max-width: $breakpoint-phone) {
+			width: 100%;
+		}		
+	}
+}
+
+.divider-top {
+	border-top: 1px solid $navy;
+	background-color: $light-grey;
+	margin-top: 2rem;
+}

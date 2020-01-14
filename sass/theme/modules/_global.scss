@@ -1,5 +1,18 @@
-// Page Title
+// Hero
+.hero {
+	height: 33vw;
+	width: 100vw;
+	margin: auto;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		height: 250px; 
+	}	
+}
 
+// Page Title
 .page-title {
 	margin: 2rem;	
 }
@@ -28,7 +41,7 @@
 	background-color: $ambitious-mint;
 }
 
-.callout-banner--membership{
+.callout-banner--membership, .callout-banner--contact{
 	margin: 0;
 	background-color: $peach;
 	color: $dark-peach;
@@ -41,13 +54,18 @@
 }
 
 .title--about{
-	display: none;
+	margin-top: 5rem;
 }
 
 // Subtitle
 .subtitle {
 	text-align: center;
-	width: 100%;
+	padding: 1rem;
+	width: 50%;
+	margin: 0 auto;
+	@media all and (max-width: $breakpoint-phone) {
+		width: 100%;
+	}	
 }
 
 // Lead In

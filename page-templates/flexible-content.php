@@ -72,36 +72,74 @@ get_header();
 		
 	</div>
 	
-	<!-- Primary Content CTA -->
+	<!-- General Content Block -->	
 	<?php
-		if( have_rows('primary_content_cta') ):
-			while ( have_rows('primary_content_cta') ) : the_row();
-		
-				$primary_content_cta_text = get_sub_field('primary_content_cta_text');
-				$primary_content_cta_link = get_sub_field('primary_content_cta_link');
-				$primary_content_cta_button = get_sub_field('primary_content_cta_button'); // Button text
+		if( have_rows('content_block_repeater') ):
+			while ( have_rows('content_block_repeater') ) : the_row();
+			
+		        $gcb_divider_icon = get_sub_field('gcb_divider_icon'); // Image
+				$gcb_title = get_sub_field('gcb_title'); // Title
+				$gcb_image = get_sub_field('gcb_image'); // Image
+				$gcb_body = get_sub_field('gcb_body'); // Body text
+				$gcb_cta = get_sub_field('gcb_cta'); // CTA Link
+				$gcb_modifier = get_sub_field('modifier'); // CTA Link
+	
+				// DIVIDER
+				if( !empty($gcb_divider_icon) ):
+		        	echo
+		        	"<div class='row'>
+		        		<div class='col-12'>
+		        			<div class='line-icon-overlap'>
+		        				<img src='". $gcb_divider_icon['url'] ."' alt='".$gcb_divider_icon['alt']." class='line-icon'>
+		        			</div>
+		        		</div>
+		        	</div>";
+		        endif;	
 				
-				if (!empty ($primary_content_cta_text)):
+				echo
+				"
+					<div class='general_content_block $gcb_modifier'>
+				";
+			
+				
+				if (!empty ($gcb_image)):
 					echo
 					"
-						<div class='row primary_content_cta'>
+					<div class='row'>
 							<div class='col-12'>
-								<p>". $primary_content_cta_text ."</p>
+			            		<img src='". $gcb_image['url'] ."' alt='".$gcb_image['alt']."'>
+			            	</div>	
+			            </div>
+				    ";
+			    endif;
+			    
+			    echo
+			    "				
+						<div class='row gcb_title'>
+							<div class='col-12'>
+								<h2>". $gcb_title ."</h2>
 							</div>
-							
+						</div>
+						
+						<div class='row gcb_body'>
 							<div class='col-12'>
-								<a href=\"". $primary_content_cta_link['url'] ."\">
-						        	<div class=\"cta_link\">". $primary_content_cta_button . "</div>
-						        </a>
+								<p>". $gcb_body ."</p>
 						    </div>						
-						</div>		
-					";
-				else:
-					echo "";
-				endif;
+						</div>
+				";
+				
+	        	if( !empty($gcb_cta) ):
+	        		echo 
+	        			"<a href=\"". $gcb_cta['url'] ."\">
+	        				<div class=\"cta_link centered\">". $gcb_cta['title'] ."</div>
+	        			</a>";
+	        	endif;
+	        	
+	        	echo "</div>"; // Close general content block
+				
 			endwhile;
 		endif;
-	?>	
+	?>
 	
 </div>
 
