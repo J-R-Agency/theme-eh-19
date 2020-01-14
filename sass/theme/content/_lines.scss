@@ -6,6 +6,10 @@
 	width: 75px;
 	height: 75px;
 	margin-top: 2rem;
+		
+	@media all and (max-width: $breakpoint-phone) {
+		margin-bottom: 2rem;
+	}	
 }
 
 .line {
