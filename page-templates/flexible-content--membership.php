@@ -70,6 +70,54 @@ get_header();
 
 		<?php get_template_part( 'loop-templates/content', 'flexible' ); ?>
 		
+		<!-- Membership Benefits Section -->
+
+		<?php
+
+		$membership_benefits_copy = get_field('membership_benefits_copy');
+		$membership_benefits_list = get_field('membership_benefits_list');
+		$membership_benefits_cta = get_field('membership_benefits_cta');
+		$modifier = get_field('modifier');
+		
+		if ( $membership_benefits_copy && $membership_benefits_list ):
+
+			echo "<div class=\"membership_benefits_container\">";
+
+			if( $membership_benefits_copy ):
+				echo "<div class=\"membership_benefits_item membership_benefits_copy\" id=\"membership_benefits_copy\">";
+				echo $membership_benefits_copy;
+				echo "</div>";
+			endif;
+
+
+			if( have_rows('membership_benefits_list') ):
+
+				echo "<div class=\"membership_benefits_item membership_benefits_list\" id=\"membership_benefits_list\">";
+
+					echo "<ul id=\"membership_benefits_list_items\">";
+
+				while ( have_rows('membership_benefits_list') ) : the_row();
+			
+					$membership_benefits_list_item = get_sub_field('membership_benefits_list_item');
+
+					if ( $membership_benefits_list_item ):
+						echo "<li>" . $membership_benefits_list_item . "</li>";
+					else:
+						echo "";
+					endif;
+				endwhile;
+
+					echo "</ul>";
+				echo "</div>";
+
+			endif;
+
+			echo "</div>";
+		endif;
+
+		?>
+
+
 	</div>
 	
 	<!-- Primary Content CTA -->
