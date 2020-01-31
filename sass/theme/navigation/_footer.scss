@@ -18,16 +18,24 @@
 			
 		li {
 			display: inline;
+			list-style: none;
 			
-			span.footer-menu-item {
+			span.footer-menu-item, img.footer-menu-item {
 				margin: 0px 20px 0px 0px;
 				
 				&:hover {
 					color: $peach;
 					text-decoration: none !important;
 				}
-			}	
+			}
 			
 		}	
+	}
+}
+
+.footer-menu-item {
+	margin: 0px 20px 0px 0px;
+	img {
+		padding-right: 10px;	
 	}
 }

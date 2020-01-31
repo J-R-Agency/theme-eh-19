@@ -122,7 +122,7 @@
 
 /* -- Author bio section -- */
 
-.avatar {
+.avatar-teal {
 	border: 5px solid $teal;
 	border-radius: 50%;
 }
@@ -133,13 +133,4 @@
 	padding: 100px 0px;
 	border-top: 1px solid $navy;
 	position: relative;
-}
-
-.line-icon {
-	position: absolute;
-	top: -50px;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 100px;
-	height: 100px;
 }

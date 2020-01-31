@@ -1,0 +1,46 @@
+.module_rich_callout_banner_block {
+	text-transform: uppercase;	
+	text-align: center;
+	text-transform: none;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	margin-left: -20vw;
+	margin-right: -20vw;
+	padding: 40px;
+	
+	.mrcbb_title {
+		text-transform: uppercase;
+		font-weight: bold;
+		@media all and (max-width: $breakpoint-phone) {
+			width: 85%;
+			margin: 0 auto;
+		}		
+	}
+	
+	.mrcbb_body {
+		width: 50%;
+		margin: 0 auto;
+		@media all and (max-width: $breakpoint-phone) {
+			width: 85%;
+		}		
+	}
+}
+
+// PRIMARY STYLE (Ambitious mint)
+.mrcbb_style--primary {
+	background-color: $ambitious-mint;
+}
+
+// SECONDARY STYLE (Dark blue with peach text)
+.mrcbb_style--secondary {
+	background-color: $dark-blue;
+	color: $peach;
+
+	& a{
+		color: $peach;
+		font-weight: bold;
+	}
+	& a:hover{
+		text-decoration: underline;
+	}
+}

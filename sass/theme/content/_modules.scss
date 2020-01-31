@@ -1,0 +1,93 @@
+// -- GLOBAL MODULES -- //
+
+@import '../modules/global';
+
+// CONTENT BLOCK
+@import '../modules/content_block';
+
+
+// ICON BLOCK
+@import '../modules/icon_block';
+
+
+// CTA VIDEO BLOCK
+@import '../modules/cta_video_block';
+
+
+// CTA FEATURE BLOCK
+@import '../modules/cta_feature_block';
+
+// ACCORDION BLOCK
+@import '../modules/accordion_block';
+
+// PARTNER LOGOS
+.avatar--partner-logo{
+	margin: 2rem 0;
+}
+
+// GENERAL CONTENT BLOCK
+@import '../modules/general_content_block';
+
+// RICH CALLOUT BANNER BLOCK
+@import '../modules/rich_callout_banner_block';
+
+// MEMBERSHIP BENEFITS
+@import '../modules/_membership_benefits';
+
+.module_about_feature_image_block{
+	& h2 {
+		display: block;
+	}
+	& h3 {
+		display: block;
+		font-size: 1.5rem;
+		font-family: "Montserrat Medium";
+		padding-bottom: 0;
+		margin: 0;
+	}
+	.afib_body{
+		background-color: $light-grey;
+		padding: 2rem;
+	}
+}
+
+.flex-wrapper {
+	display: flex; 
+	flex-wrap: wrap;
+}
+
+.flex-item {
+	flex-basis: 50%;
+}
+
+// CONSIDER MOVING THESE STYLES 
+
+.success-divider {width:inherit; margin:3rem auto;}
+.success-stories--content{margin-bottom: 3rem;}
+.subsection-cards{display: flex; flex-wrap: wrap;}
+
+.subsection-cards__item {
+	flex-basis: 50%;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		flex-basis: 100%;
+		padding: 0 1rem;
+	}
+}
+.subsection-cards__item h2 {
+	font-size: 2rem;
+	color: black;
+	margin-bottom: 1rem;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		text-align: left;
+		margin-top: 1rem;
+	}
+	
+}
+
+.subsection-cards__item h3{font-size: 1rem;font-family:"Montserrat Medium";font-weight: bold;margin:1rem 0};
+.subsection-cards__item .back-to-top{width:inherit;text-align: right;}
+.subsection-cards__item .back-to-top a{color: $peach;font-weight: bold;}
+.subsection-cards__item .back-to-top a:hover{text-decoration: underline;}
+div:focus { outline: 0; }

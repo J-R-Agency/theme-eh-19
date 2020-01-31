@@ -15,6 +15,16 @@ html,body
     overflow-x: hidden; 
 }
 
+/*-- Columns --*/
+.col-fifth {
+    flex: 0 0 20%;
+    
+    @media all and (max-width: $breakpoint-phone) {
+	    flex: auto;
+		width: 100%;
+	}
+}
+
 /*-- Typography --*/
 
 @import 'typography/typography';
@@ -24,22 +34,51 @@ a:hover {
 	text-decoration: none;
 }
 
-/* -- Navigation Menu -- */
-@import'navigation/header';
-
-/*-- HOMEPAGE --*/
-.hero {
-	height: 500px;
-	width: 100vw;
-	margin: auto;
+// CTA Links
+.cta_link {
+	display: inline-block;
+	background-color: $peach;
+	color: $navy;
+	text-transform: uppercase;
+	padding: 10px 30px;
+	font-weight: 500;
+	margin: 1rem;
 	
 	@media all and (max-width: $breakpoint-phone) {
-		height: 250px;
+		text-align: center;
+	}
+	
+	&.navy {
+		background-color: $navy;
+		color: white;	
+	}
+	
+	&.green {
+		background-color: $teal;
+		color: white;	
 	}	
 }
 
-/*-- POSTS --*/
 
+
+/*-- Horizontal Lines --*/
+@import 'content/lines';
+
+/* -- Navigation Menu -- */
+@import'navigation/header'; 
+
+/*-- HOMEPAGE --*/
+@import'content/homepage';
+
+
+/*-- MODULE CONTENT --*/
+@import 'content/modules';
+
+
+/*-- SHAME / PAGE-SPECIFIC CONTENT --*/
+@import 'content/shame';
+
+/*-- POSTS --*/
 @import 'content/posts';
 
 /*-- FOOTER --*/

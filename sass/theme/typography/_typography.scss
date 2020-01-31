@@ -1,13 +1,15 @@
 body, p {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat', 'Montserrat Regular', sans-serif;
 }
 
 h1, h2 {
 	font-family: 'Montserrat Extra Bold', sans-serif;
 	text-transform: uppercase;
+	margin: 1rem;
 	
 	@media all and (max-width: $breakpoint-phone) {
 		font-size: 7vw;
+		text-align: center;
 	}	
 }
 
@@ -20,11 +22,26 @@ h3 {
 	}
 }
 
-h4, h5 {
+h4 {
 	font-family: 'Montserrat Medium', sans-serif;
 	text-transform: uppercase;
 	
 	@media all and (max-width: $breakpoint-phone) {
 		font-size: 5vw;
 	}
+}
+
+h5 {
+	font-family: 'Montserrat Medium', sans-serif;
+	text-transform: uppercase;
+	font-size: 1rem;
+	font-weight: bold;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		font-size: 5vw;
+	}
+}
+
+h1, h2, h3, h4, h5, h6{
+	margin:0;
 }

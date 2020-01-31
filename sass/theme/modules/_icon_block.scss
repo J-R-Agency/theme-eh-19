@@ -1,0 +1,47 @@
+.module_icon_block {
+	text-align: center;
+	margin: 2rem 0;
+	img {
+		height: 100px;
+	}
+	
+	.row{
+		justify-content: center;
+	}
+
+	.mib_icon_repeater{
+		margin: 0rem;
+	}
+
+	.mib_icon_repeater .col-fifth{
+		max-width: 150px !important;
+	}
+
+	.mib_icon_heading {
+		font-weight: bold;
+		margin:1rem;
+	}
+	
+	.mib_title{
+		margin-bottom: 3rem;
+	}
+}
+
+// PRIMARY STYLE (Peach)
+.mib_style--primary {
+	
+}
+
+// SECONDARY STYLE (green)
+.mib_style--secondary {
+	.mib_title h2, .mib_icon_heading {
+		color: $teal;
+	}	
+}
+
+// TERTIARY STYLE (navy)
+.mib_style--tertiary {
+	.mib_title h2, .mib_icon_heading {
+		color: $navy;
+	}		
+}

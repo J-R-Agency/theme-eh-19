@@ -1,0 +1,81 @@
+.accordion-container {
+	margin: 5rem 0;
+}
+
+.mab_title {
+	text-align: center;
+	margin: 2rem 0;
+}
+
+
+/* Accordion styles */
+
+.question-tabs {
+  overflow: hidden;
+}
+
+.question-tab {
+	width: 100%;
+	color: white;
+	overflow: hidden;
+	background-color: $dark-blue;	
+
+	input {
+	  position: absolute;
+	  opacity: 0;
+	  z-index: -1;
+	}	
+	
+	.question-label {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: $peach;
+		text-transform: uppercase;	
+		margin: 0.75rem 1rem;
+		font-weight: bold;	
+		cursor: pointer;
+	
+		/* Icon */	
+		&::after {
+		  content: "\2295";
+		  font-size: 1.5rem;
+		  font-weight: lighter;
+		  text-align: center;
+		  transition: all .35s;
+		}
+	}
+	
+	.answer-box {
+		max-height: 0;
+		padding: 0.1em 1.5em;
+		background-color: $light-grey;
+		transition: all .5s;
+		color: black;
+	}
+	
+	&-close {
+		display: flex;
+		justify-content: flex-end;
+		font-size: 0.75em;
+		background: $dark-blue;
+		cursor: pointer;
+		&:hover {
+		  background: darken($dark-blue, 10%);
+		}
+	}
+}
+
+// :checked
+input:checked {
+  + .question-label {
+    &::after {
+		content: "\2296";
+    }
+  }
+  ~ .answer-box {
+    max-height: 100vh;
+    padding: 1.5em;
+  }
+}
+

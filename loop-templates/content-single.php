@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 	
 		<?php if ( has_post_thumbnail() ): ?>
 			<?php $thumb = get_the_post_thumbnail_url(); ?>
-				<div class="hero" style="background: url('<?php echo $thumb; ?>') no-repeat; background-size: cover; background-position: center;"></div>	
+				<div class="hero" style="background-image: url('<?php echo $thumb; ?>');"></div>
 		<?php endif ?>
 	
 		<header class="entry-header">
@@ -36,8 +36,12 @@ defined( 'ABSPATH' ) || exit;
 			<div class="row social-media-header centered">
 					<?php include get_template_directory() ."/inc/social-media-share.php"; ?>
 			</div>
-	
-			<?php the_content(); ?>
+			
+			<div class="row">
+				<div class="col-12 mt-5">
+					<?php the_content(); ?>					
+				</div>
+			</div>
 				
 			<?php
 			wp_link_pages(
@@ -104,7 +108,7 @@ defined( 'ABSPATH' ) || exit;
 		</div><!-- .entry-content -->
 		
 		<div class="row related-articles">
-			<img class="line-icon" src="http://192.168.33.10/empowerment-house/wp-content/uploads/2019/12/eh-house-icon-grey.png" alt="icon">
+			<img class="line-icon-overlap" src="http://192.168.33.10/empowerment-house/wp-content/uploads/2019/12/eh-house-icon-grey.png" alt="icon">
 			<div class="col-12">
 				<h1 class="centered">Related Articles</h1>
 			</div>

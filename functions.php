@@ -96,3 +96,7 @@ function save_extra_user_profile_fields( $user_id ) {
     }
     update_user_meta( $user_id, 'job-role', $_POST['job-role'] );
 }
+
+
+/* -- ADD POST TYPE SUPPORT FOR EXCERPTS ON PAGES -- */
+add_post_type_support( 'page', 'excerpt' );

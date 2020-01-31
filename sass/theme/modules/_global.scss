@@ -1,0 +1,93 @@
+// Hero
+.hero {
+	height: 33vw;
+	width: 100vw;
+	margin: auto;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		height: 250px; 
+	}	
+}
+
+// Page Title
+.page-title {
+	margin: 2rem;	
+}
+
+// Callout Banner
+.callout-banner {
+	background-color: $peach;
+	font-size: 1.5rem;
+	text-align: center;
+	padding: 40px;
+	margin: 0;
+	width: 100%;
+	text-transform: uppercase;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		font-size: 0.75rem;
+	}	
+	
+	p {
+		margin: 0;
+	}
+} 
+
+.callout-banner--partners, .callout-banner--stories{
+	margin: 0;
+	background-color: $ambitious-mint;
+}
+
+.callout-banner--membership, .callout-banner--contact{
+	margin: 0;
+	background-color: $peach;
+	color: $dark-peach;
+}
+
+.callout-banner--tertiary{
+	margin: 0;
+	background-color: $navy;
+	color: $peach
+}
+
+.title--about{
+	margin-top: 5rem;
+}
+
+// Subtitle
+.subtitle {
+	text-align: center;
+	padding: 0 1rem;
+	width: 50%;
+	margin: 0 auto;
+	@media all and (max-width: $breakpoint-phone) {
+		width: 100%;
+	}	
+}
+
+// Lead In
+.lead-in {
+	margin: 2rem 0;
+	font-size: 1.5rem;
+	text-align: center;
+	border-top: solid $peach 1px;
+	border-bottom: solid $peach 1px;
+}
+
+// Primary Content CTA
+.primary_content_cta {
+	background-color: $light-grey;
+	padding: 50px 20%;
+	text-align: center;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		padding: 40px 10%;
+	}		
+	
+	h1 {
+		margin: 10px;
+	}
+}
