@@ -108,7 +108,7 @@ defined( 'ABSPATH' ) || exit;
 		</div><!-- .entry-content -->
 		
 		<div class="row related-articles">
-			<img class="line-icon-overlap" src="http://192.168.33.10/empowerment-house/wp-content/uploads/2019/12/eh-house-icon-grey.png" alt="icon">
+			<img class="line-icon-overlap" src="<?php echo wp_get_upload_dir(); ?>/2019/12/eh-house-icon-grey.png" alt="icon">
 			<div class="col-12">
 				<h1 class="centered">Related Articles</h1>
 			</div>
