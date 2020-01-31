@@ -29,7 +29,7 @@ defined( 'ABSPATH' ) || exit;
 			// Get custom Blog Post Options
             $standfirst = get_field('standfirst'); //  WYSIWYG block
             if ( $standfirst ){
-            	echo "<h4 class=\"post-excerpt\">" . $standfirst . "</h4>";
+            	echo "<div class=\"post-excerpt\">" . $standfirst . "</div>";
             }
             ?>
 	
