@@ -108,7 +108,7 @@ defined( 'ABSPATH' ) || exit;
 		</div><!-- .entry-content -->
 		<?php $uploads = wp_upload_dir(); ?>
 		<div class="row related-articles">
-			<img class="line-icon-overlap" src="<?php echo wp_basename( $uploads['baseurl'] ); ?>/2019/12/eh-house-icon-grey.png" alt="icon">
+			<img class="line-icon-overlap" src="<?php echo $uploads['baseurl'] ; ?>/2019/12/eh-house-icon-grey.png" alt="icon">
 			<div class="col-12">
 				<h1 class="centered">Related Articles</h1>
 			</div>
