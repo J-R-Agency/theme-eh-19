@@ -38,10 +38,11 @@ defined( 'ABSPATH' ) || exit;
 		<div class="entry-content">
 
 			<!-- Social Media 1 -->
+			<!-- HIDE FOR NOW
 			<div class="row social-media-header centered">
 					<?php include get_template_directory() ."/inc/social-media-share.php"; ?>
 			</div>
-			
+			-->
 			<div class="row">
 				<div class="col-12 mt-5">
 					<?php the_content(); ?>					
@@ -58,10 +59,11 @@ defined( 'ABSPATH' ) || exit;
 			?>
 			
 		<!-- Social Media 2 -->
+		<!-- HIDE FOR NOW
 		<div class="row social-media-footer centered">
 				<?php include get_template_directory() ."/inc/social-media-share.php"; ?>
 		</div>
-		
+		-->
 		<!-- AUTHOR BIO -->
 		<?php		
 			// Get author's display name 
