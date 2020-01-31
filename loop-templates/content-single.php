@@ -25,8 +25,13 @@ defined( 'ABSPATH' ) || exit;
 			<span class="category-title centered"><?php echo $firstCategory; ?></span>
 				
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			
-			<h4 class="post-excerpt">Vestibulum molestie, ex vitae ornare ullamcorper, mi sapien commodo mi, maximus volutpat orci nibh nec dolor. Proin vitae justo id ipsum ultricies molestie. Sed vitae tortor sagittis, malesuada elit quis, ornare lorem. Orci varius natoque penatibus et magnis dis parturient montes.</h4>
+			<?php 
+			// Get custom Blog Post Options
+            $standfirst = get_field('standfirst'); //  WYSIWYG block
+            if ( $standfirst ){
+            	echo "<h4 class=\"post-excerpt\">" . $standfirst . "</h4>";
+            }
+            ?>
 	
 		</header><!-- .entry-header -->
 		
