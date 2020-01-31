@@ -40,7 +40,7 @@ defined( 'ABSPATH' ) || exit;
 			<!-- Social Media 1 -->
 			<!-- HIDE FOR NOW
 			<div class="row social-media-header centered">
-					<?php include get_template_directory() ."/inc/social-media-share.php"; ?>
+					<?php //include get_template_directory() ."/inc/social-media-share.php"; ?>
 			</div>
 			-->
 			<div class="row">
@@ -61,7 +61,7 @@ defined( 'ABSPATH' ) || exit;
 		<!-- Social Media 2 -->
 		<!-- HIDE FOR NOW
 		<div class="row social-media-footer centered">
-				<?php include get_template_directory() ."/inc/social-media-share.php"; ?>
+				<?php //include get_template_directory() ."/inc/social-media-share.php"; ?>
 		</div>
 		-->
 		<!-- AUTHOR BIO -->
