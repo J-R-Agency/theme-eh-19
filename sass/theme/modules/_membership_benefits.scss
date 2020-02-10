@@ -1,0 +1,25 @@
+
+.membership_benefits_container{
+
+	display: -webkit-box;
+	display: flex;
+	flex-wrap: wrap; 
+
+	.membership_benefits_item {
+	  flex-basis: 50%; 
+	  padding-right: 2rem;
+
+	}
+
+	.membership_benefits_list ul{
+		font-family: 'Montserrat Medium', sans-serif;
+		text-transform: uppercase;
+		list-style-image: url('../images/icons/tick-small.png');
+	}
+
+	.membership_benefits_list ul li{
+		padding-left:0.25rem;
+	}
+
+
+}

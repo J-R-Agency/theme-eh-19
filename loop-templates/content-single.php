@@ -25,18 +25,24 @@ defined( 'ABSPATH' ) || exit;
 			<span class="category-title centered"><?php echo $firstCategory; ?></span>
 				
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			
-			<h4 class="post-excerpt">Vestibulum molestie, ex vitae ornare ullamcorper, mi sapien commodo mi, maximus volutpat orci nibh nec dolor. Proin vitae justo id ipsum ultricies molestie. Sed vitae tortor sagittis, malesuada elit quis, ornare lorem. Orci varius natoque penatibus et magnis dis parturient montes.</h4>
+			<?php 
+			// Get custom Blog Post Options
+            $standfirst = get_field('standfirst'); //  WYSIWYG block
+            if ( $standfirst ){
+            	echo "<div class=\"post-excerpt\">" . $standfirst . "</div>";
+            }
+            ?>
 	
 		</header><!-- .entry-header -->
 		
 		<div class="entry-content">
 
 			<!-- Social Media 1 -->
+			<!-- HIDE FOR NOW
 			<div class="row social-media-header centered">
-					<?php include get_template_directory() ."/inc/social-media-share.php"; ?>
+					<?php //include get_template_directory() ."/inc/social-media-share.php"; ?>
 			</div>
-			
+			-->
 			<div class="row">
 				<div class="col-12 mt-5">
 					<?php the_content(); ?>					
@@ -53,10 +59,11 @@ defined( 'ABSPATH' ) || exit;
 			?>
 			
 		<!-- Social Media 2 -->
+		<!-- HIDE FOR NOW
 		<div class="row social-media-footer centered">
-				<?php include get_template_directory() ."/inc/social-media-share.php"; ?>
+				<?php //include get_template_directory() ."/inc/social-media-share.php"; ?>
 		</div>
-		
+		-->
 		<!-- AUTHOR BIO -->
 		<?php		
 			// Get author's display name 
@@ -106,14 +113,16 @@ defined( 'ABSPATH' ) || exit;
 		
 			
 		</div><!-- .entry-content -->
-		
+
+		<!--
+		<?php $uploads = wp_upload_dir(); ?>
 		<div class="row related-articles">
-			<img class="line-icon-overlap" src="http://192.168.33.10/empowerment-house/wp-content/uploads/2019/12/eh-house-icon-grey.png" alt="icon">
+			<img class="line-icon-overlap" src="<?php //echo $uploads['baseurl'] ; ?>/2019/12/eh-house-icon-grey.png" alt="icon">
 			<div class="col-12">
 				<h1 class="centered">Related Articles</h1>
 			</div>
 		</div>
-
+		-->
 		
 		<!--<footer class="entry-footer">
 			<?php understrap_entry_footer(); ?>-->
