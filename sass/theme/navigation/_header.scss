@@ -13,10 +13,17 @@ a.nav-link {
 }
 
 .login-link {
-	background-color: $peach;
 	margin-left: 1rem;
 	
+	@media all and (max-width: $breakpoint-phone) {
+		margin-left: 0rem;
+	}		
+	
 	a {
+		display: table;
+		width: 75px;
+		text-align: center;
+		background-color: $peach;
 		color: $navy !important;
 	}
 } 
