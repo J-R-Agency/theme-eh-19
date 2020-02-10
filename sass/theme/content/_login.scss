@@ -1,0 +1,121 @@
+.form-area {
+	background-color: $light-grey;
+	padding: 4rem 4rem 7rem 4rem;
+	margin: 0 0 -133px 0;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		padding: 0rem;
+	}	
+}
+
+.form {
+	width: 80%;
+	padding: 4rem;
+					
+	h1, p {
+		text-transform: uppercase;
+	}
+	p {
+		font-weight: bold;
+		font-size: 18pt;
+		margin: 1.2rem 0;
+		@media all and (max-width: $breakpoint-phone) {
+			font-size: 14pt;
+		}		
+	}
+			
+	@media all and (max-width: $breakpoint-phone) {
+		width: 100%;
+		padding: 1rem;
+	}
+		
+	&__login {
+		position: absolute;
+		background-color: $navy;
+		color: white;
+		top: 75px;
+
+		@media all and (max-width: $breakpoint-phone) {
+			position: relative;
+			margin: 0.2rem 0 4rem 0;
+			top: 0;
+		}		
+		
+	}
+	
+	&__registration {
+		background-color: $peach;
+		float: right;
+		
+		@media all and (max-width: $breakpoint-phone) {
+			float: left;
+			margin: 4rem 0 0.2rem 0;
+		}
+		
+		h1 {
+			color: $navy;
+		}
+		p {
+			color: white;
+		}		
+	}
+}
+
+#loginform-custom {
+	label[for=user_login], label[for=user_pass]
+	{
+	    display: none;
+	}	
+	input {
+		padding: 0.5rem;
+		border: 1px solid $grey;
+		margin: 0;
+		width: 100%;
+	}
+	
+	.login-submit {
+		text-align: center;
+		background-color: $peach;
+		
+		#wp-submit {
+			padding: 1rem;
+			width: 100%;
+			border: none;
+			background: none;
+		}
+	}
+}
+
+#registerform-custom {
+
+	input {
+		padding: 0.5rem;
+		border: 1px solid $grey;
+		margin: 0;
+		width: 100%;
+	}
+	
+	.register-submit {
+		text-align: center;
+		background-color: $navy;
+		
+		#wp-submit {
+			color: white;
+			padding: 1rem;
+			width: 100%;
+			border: none;
+			background: none;
+		}
+	}	
+}
+
+.logout-link {
+	display:block;
+	text-align: center;
+	padding: 1rem;
+	text-transform: uppercase;
+	font-size: 18pt;
+	width: 100%;
+	background-color: $peach;
+}
+

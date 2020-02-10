@@ -140,7 +140,7 @@ if( have_rows('fc_content_block') ):
 
 						echo
 						"<div class=\"mib_icon_repeater col-fifth\">" .
-			            	"<img src='". $mib_icon_image['url'] ."' alt='".$mib_icon_imagen['alt']."'>" .
+			            	"<img src='". $mib_icon_image['url'] ."' alt='".$mib_icon_image['alt']."'>" .
 			            	"<div class=\"mib_icon_heading\">". $mib_icon_heading . "</div>" .
 						"</div>"
 						;
