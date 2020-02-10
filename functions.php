@@ -107,8 +107,15 @@ add_post_type_support( 'page', 'excerpt' );
 */
 add_action ('admin_init','add_sub_caps');
  
-function add_sub_caps() {
-    global $wp_roles;
-    $role = get_role('subscriber');
-    $role->add_cap('read_private_posts');
+ // Allow subscribers to see Private posts and pages
+
+ $subRole = get_role( 'subscriber' ); 
+ $subRole->add_cap( 'read_private_posts' );
+ $subRole->add_cap( 'read_private_pages' );
+
+// remove "Private: " from titles
+function remove_private_prefix($title) {
+	$title = str_replace('Private: ', '', $title);
+	return $title;
 }
+add_filter('the_title', 'remove_private_prefix');
