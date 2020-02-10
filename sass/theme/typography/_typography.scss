@@ -45,3 +45,33 @@ h5 {
 h1, h2, h3, h4, h5, h6{
 	margin:0;
 }
+
+/*-- Links --*/
+a:hover {
+	text-decoration: none;
+}
+
+// CTA Links
+.cta_link {
+	display: inline-block;
+	background-color: $peach;
+	color: $navy;
+	text-transform: uppercase;
+	padding: 10px 30px;
+	font-weight: 500;
+	margin: 1rem;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		text-align: center;
+	}
+	
+	&.navy {
+		background-color: $navy;
+		color: white;	
+	}
+	
+	&.green {
+		background-color: $teal;
+		color: white;	
+	}	
+}

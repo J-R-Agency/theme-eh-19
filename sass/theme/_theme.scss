@@ -4,62 +4,9 @@
 /* -- MIXINS -- */
 @import 'mixins';
 
-/*-- GLOBAL --*/
-
-html,body
-{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden; 
-}
-
-/*-- Columns --*/
-.col-fifth {
-    flex: 0 0 20%;
-    
-    @media all and (max-width: $breakpoint-phone) {
-	    flex: auto;
-		width: 100%;
-	}
-}
-
 /*-- Typography --*/
 
 @import 'typography/typography';
-
-/*-- Links --*/
-a:hover {
-	text-decoration: none;
-}
-
-// CTA Links
-.cta_link {
-	display: inline-block;
-	background-color: $peach;
-	color: $navy;
-	text-transform: uppercase;
-	padding: 10px 30px;
-	font-weight: 500;
-	margin: 1rem;
-	
-	@media all and (max-width: $breakpoint-phone) {
-		text-align: center;
-	}
-	
-	&.navy {
-		background-color: $navy;
-		color: white;	
-	}
-	
-	&.green {
-		background-color: $teal;
-		color: white;	
-	}	
-}
-
-
 
 /*-- Horizontal Lines --*/
 @import 'content/lines';
@@ -70,10 +17,8 @@ a:hover {
 /*-- HOMEPAGE --*/
 @import'content/homepage';
 
-
 /*-- MODULE CONTENT --*/
 @import 'content/modules';
-
 
 /*-- SHAME / PAGE-SPECIFIC CONTENT --*/
 @import 'content/shame';

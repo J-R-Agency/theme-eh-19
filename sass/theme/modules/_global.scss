@@ -1,3 +1,22 @@
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+/*-- Columns --*/
+.col-fifth {
+    flex: 0 0 20%;
+    
+    @media all and (max-width: $breakpoint-phone) {
+	    flex: auto;
+		width: 100%;
+	}
+}
+
 // Hero
 .hero {
 	height: 33vw;
@@ -14,7 +33,7 @@
 
 // Page Title
 .page-title {
-	margin: 2rem;	
+	margin: 3rem;	
 }
 
 // Callout Banner
@@ -22,7 +41,7 @@
 	background-color: $peach;
 	font-size: 1.5rem;
 	text-align: center;
-	padding: 40px;
+	padding: 5rem;
 	margin: 0;
 	width: 100%;
 	text-transform: uppercase;
@@ -60,7 +79,7 @@
 // Subtitle
 .subtitle {
 	text-align: center;
-	padding: 0 1rem;
+	padding: 3rem;
 	width: 50%;
 	margin: 0 auto;
 	@media all and (max-width: $breakpoint-phone) {
@@ -91,3 +110,4 @@
 		margin: 10px;
 	}
 }
+
