@@ -16,8 +16,7 @@ $themes_path = get_theme_root_uri();
 $wpb_query = new WP_Query(array(
 	'post_type'=>'post',
 	'post_status'=>'publish',
-	'posts_per_page'=>3,
-	'orderby' => 1;
+	'posts_per_page'=> 3,
 )); ?>
 
 <div class="row">							
