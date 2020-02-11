@@ -32,7 +32,75 @@ get_header();
 	
 	<!-- Flexible Content -->
 	<div class="content">
-		<?php get_template_part( 'loop-templates/content', 'flexible' ); ?>					
+			<?php
+			
+			// Check value exists.
+			if( have_rows('fc_content_block') ):
+			
+			    // Loop through rows.
+			    while ( have_rows('fc_content_block') ) : the_row();
+					    
+		          // -------------------------- //
+		         // --- CASE: CONTENT BLOCK ---//
+		        // -------------------------- //
+		        if( get_row_layout() == 'module_content_block' ):
+		
+		            $mcb_divider_icon = get_sub_field('mcb_divider_icon'); // Image
+		            $mcb_title = get_sub_field('mcb_title'); // Text
+		            $mcb_content = get_sub_field('mcb_content'); // WYSIWYG block
+		            $mcb_cta_text = get_sub_field('mcb_cta_text'); // Tect
+		            $mcb_cta_link = get_sub_field('mcb_cta_link'); // Link array
+		            $mcb_cta_style = get_sub_field('mcb_cta_style'); // Select
+		            $mcb_style = get_sub_field('mcb_style'); // Select
+		
+		            // Check for style modifier 
+		            if( !empty($mcb_style) ){
+		            	$module_content_block_modifier = "module_content_block--" . $mcb_style ;
+		            }
+					
+		            echo 
+		            "<!-- Module Content Block -->
+		            <div class=\"module_content_block " . $module_content_block_modifier . "\" id=\"" . sanitize_title( $mcb_title ) . "\">";
+
+				            
+				            // TITLE      	
+			            	if ( !empty( $mcb_title ) ):
+			            			if ( !empty( $mcb_style ) ):
+			            				$mcb_title_modifier = "mcb_title--" . $mcb_style;
+			            				echo
+										"<h2 class=\"mcb_title $mcb_title_modifier\">". $mcb_title . "</h2>";
+					           		endif;
+			            	endif;
+			            	
+			            	
+			            	// STYLES
+			            	
+		        			if ( !empty( $mcb_style ) ):
+		        				$mcb_style_modifier = "mcb_style--" . $mcb_style;
+		        				$mcb_cta_style_modifier = "mcb_cta_style--" . $mcb_cta_style;
+		        				
+		        				echo
+			            		"<div class=\"mcb_content $mcb_style_modifier $mcb_cta_style_modifier\">". $mcb_content; 
+			            		
+						        // Show CTA button if field is filled in. If not, don't display CTA.	
+					        	if( !empty($mcb_cta_link) ):
+					        		echo 
+					        			"<a href=\"". $mcb_cta_link['url'] ."\">
+					        				<div class=\"cta_link centered\">". $mcb_cta_text . "</div>
+					        			</a>";
+					        	endif;
+					        	echo "</div>"; // Close mcb_content  	            		
+			            		      				
+			           		endif;
+		        	
+					echo "</div>"; // Close module_content_block
+					endif;
+				endwhile;
+			else:
+				//Do nothing
+			endif;
+			 
+			?>				
 	</div>
 </div>
 
@@ -61,7 +129,34 @@ get_header();
 		
 	<div class="row">
 		<div class="col-12">
-			Video here
+			<?php
+			
+			// Check value exists.
+			if( have_rows('fc_content_block') ):
+			
+			    // Loop through rows.
+			    while ( have_rows('fc_content_block') ) : the_row();
+			    
+			          // -------------------------- //
+			         // ---- CASE: VIDEO BLOCK ----//
+			        // -------------------------- //
+			        if( get_row_layout() == 'module_video_block' ): 
+			
+			            $mvb_video_url = get_sub_field('mvb_video_url'); // oEmbed
+						$mvb_video_title = get_sub_field('mvb_video_title'); // Text
+						$mvb_style = get_sub_field('mvb_style'); // Select
+			                        
+			            echo '
+			            <!-- Module Video Block -->
+			            <div class="mvb_video_url">'. $mvb_video_url . '</div>';
+					endif;
+				endwhile;
+			
+			else:
+				//Do nothing
+			endif;
+			 
+			?>
 		</div>
 	</div>
 		
