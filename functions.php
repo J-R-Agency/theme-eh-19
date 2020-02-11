@@ -119,3 +119,12 @@ function remove_private_prefix($title) {
 	return $title;
 }
 add_filter('the_title', 'remove_private_prefix');
+
+// Remove "ellipses" and "read more" from blog excerpt
+function trim_excerpt($text) {
+	$string = " [...]";
+    $text = str_replace( $string, '...', $text);
+    return $text;
+}
+add_filter('get_the_excerpt', 'trim_excerpt', 99);
+ 

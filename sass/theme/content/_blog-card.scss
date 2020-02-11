@@ -1,0 +1,82 @@
+.blog-area {
+	background-color: #eaeaea;
+	text-align: center;
+	padding: 4rem 8rem;
+	margin: 2rem 0;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		padding: 4rem 1rem;
+	}	
+}
+
+.blog-card {
+	background-color: white;
+	padding: 2rem;
+	-webkit-box-shadow: -14px -14px 0px 0px rgba(29,31,52,1), 0px 0px 5px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: -14px -14px 0px 0px rgba(29,31,52,1), 0px 0px 5px 0px rgba(0,0,0,0.5);
+	box-shadow: -14px -14px 0px 0px rgba(29,31,52,1), 0px 0px 5px 0px rgba(0,0,0,0.5);
+	margin: 2rem 0;
+	
+	@media all and (max-width: $breakpoint-phone) {
+		height: 350px;
+		padding: 1rem;
+	}
+			
+	h3, p {
+		text-align: left;
+		margin: 1rem 0 0 0;
+	}
+	
+	p {
+		@media all and (max-width: $breakpoint-phone) {
+			display: block;
+			width: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}		
+	}
+	
+	img {
+		width: 100%;
+		height: 400px;
+		object-fit: cover;
+		@media all and (max-width: $breakpoint-phone) {
+			height: 200px;
+		}			
+	}
+	
+	&__small {
+		padding: 1rem;
+		height: 500px;
+		
+		@media all and (max-width: $breakpoint-phone) {
+			height: 350px;
+		}	
+						
+		img{
+			width: 100%;
+			height: 300px;
+			object-fit: cover;
+			@media all and (max-width: $breakpoint-phone) {
+				height: 200px;
+			}			
+		}
+				
+		h3, p {
+			margin: 0.5rem 0 0 0;
+		}		
+	
+		p {
+			display: block;
+			width: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;			
+		}			
+	}
+}
+
+.understrap-read-more-link {
+	display: none;
+}

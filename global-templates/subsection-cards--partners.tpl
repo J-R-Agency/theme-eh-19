@@ -46,7 +46,7 @@ if ( $parent->have_posts() ) : ?>
 
                     <?php
                         // Get Partner Logos
-                        $partner_logo = get_field('partner_logo', $child->ID);
+                        $partner_logo = get_field('partner_logo');
                         
                     ?>
 

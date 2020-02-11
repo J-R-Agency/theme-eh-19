@@ -30,22 +30,47 @@ get_header();
 		</div>
 	</div>
 	
-	<!-- Subtitle -->
-	<?php
-		$subtitle = get_field('subtitle');
-		
-		if (!empty ($subtitle)): ?>
-		<div class="row subtitle">
-			<div class="col-12">
-				<h1><?php echo $subtitle; ?></h1>
-			</div>
-		</div>
-	<?php endif ?>
-	
+	<!-- Flexible Content -->
 	<div class="content">
 		<?php get_template_part( 'loop-templates/content', 'flexible' ); ?>					
 	</div>
+</div>
+
+<div class="container-fluid blog-area">
+	<!-- Recent blog posts -->
+	<div class="row">
+		<div class="col-12">
+			<h1>Latest from the Members Blog</h1>
+		</div>
+	</div>
+
+	<?php include_once (get_template_directory() . '/global-templates/subsection-cards--blog.tpl'); ?>
 	
+	<div class="row">
+		<div class="col-12">
+			<div class="cta_link float-right">More from the Blog ></div>
+		</div>
+	</div>
+	
+	<!-- Videos -->
+	<div class="row">
+		<div class="col-12">
+			<h1>Video channel</h1>
+		</div>
+	</div>
+		
+	<div class="row">
+		<div class="col-12">
+			Video here
+		</div>
+	</div>
+		
+	<div class="row">
+		<div class="col-12">
+			<div class="cta_link float-right">More of our Videos ></div>
+		</div>
+	</div>
+		
 </div>
 
 <?php 
