@@ -51,7 +51,15 @@ $wpb_query = new WP_Query(array(
 									} else {
 										echo "<img src='".$themes_path."/theme-eh-19/images/blog/placeholder.jpg'>";
 									}?>
-								<h3><?php the_title(); ?></h3>
+								<h3>
+									<?php
+									$thetitle = $post->post_title; /* or you can use get_the_title() */
+									$getlength = strlen($thetitle);
+									$thelength = 30;
+									echo substr($thetitle, 0, $thelength);
+									if ($getlength > $thelength) echo "...";
+									?>									
+								</h3>
 								<p class="blog-excerpt"><?php the_excerpt() ?></p>
 							</div>
 						</a>
