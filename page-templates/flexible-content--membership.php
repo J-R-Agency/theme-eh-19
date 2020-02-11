@@ -138,8 +138,8 @@ get_header();
 							</div>
 							
 							<div class='col-12'>
-								<a href=\"". $primary_content_cta_link['url'] ."\">
-						        	<div class=\"cta_link\">". $primary_content_cta_button . "</div>
+								<a href='". $primary_content_cta_link['url'] ."'>
+						        	<div class='cta_link'>". $primary_content_cta_button . "</div>
 						        </a>
 						    </div>						
 						</div>		

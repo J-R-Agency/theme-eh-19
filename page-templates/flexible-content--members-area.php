@@ -44,6 +44,7 @@ get_header();
 		</div>
 	</div>
 
+	<?php get_template_part( 'global-templates/subsection-cards--blog' ); ?>
 	
 	<div class="row">
 		<div class="col-12">
@@ -133,9 +134,9 @@ get_header();
 				echo
 				"
 					<div class='module_rich_callout_banner_block mrcbb_style--tertiary'>
-						<img src='".$themes_path."'/theme-eh-19/images/separators/separator-white-nocircle.png' class='line-icon'>
+						<img src='".$themes_path."/theme-eh-19/images/separators/separator-white-nocircle.png' class='line-icon'>
 						". $primary_content_cta_text ."
-						<a href='". $primary_content_cta_link['url'] .">
+						<a href='". $primary_content_cta_link['url'] ."'>
 							<div class='cta_link'>". $primary_content_cta_button . "</div>
 						</a>
 					</div>	
