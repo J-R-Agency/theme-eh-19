@@ -1,12 +1,8 @@
 .blog-area {
 	background-color: #eaeaea;
 	text-align: center;
-	padding: 4rem 8rem;
-	margin: 2rem 0 -133px;
-	
-	@media all and (max-width: $breakpoint-phone) {
-		padding: 4rem 1rem;
-	}	
+	padding: 5rem 0;
+	margin: 0 0 -133px;	
 }
 
 .blog-card {
@@ -48,7 +44,7 @@
 	
 	&__small {
 		padding: 1rem;
-		height: 500px;
+		height: 450px;
 		
 		@media all and (max-width: $breakpoint-phone) {
 			height: 350px;
@@ -84,4 +80,8 @@
 iframe {
 	width: 887px;
 	height: 500px;
+	@media all and (max-width: $breakpoint-phone) {
+		width: 100%;
+		height: 194px;
+	}		
 }

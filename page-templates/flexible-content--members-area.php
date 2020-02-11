@@ -42,74 +42,73 @@ get_header();
 	</div>
 </div>
 
-<div class="container-fluid blog-area">
-	<!-- Recent blog posts -->
-	<div class="row">
-		<div class="col-12">
-			<h1>Latest from the Members Blog</h1>
+<section class="blog-area">
+	<div class="container">
+		<!-- Recent blog posts -->
+		<div class="row">
+			<div class="col-12">
+				<h1>Latest from the Members Blog</h1>
+			</div>
 		</div>
-	</div>
-
-	<?php get_template_part( 'global-templates/subsection-cards--blog' ); ?>
 	
-	<div class="row">
-		<div class="col-12">
-			<div class="cta_link float-right">More from the Blog ></div>
-		</div>
-	</div>
-	
-	<!-- Videos -->
-	<div class="row">
-		<div class="col-12">
-			<h1>Video channel</h1>
-		</div>
-	</div>
+		<?php get_template_part( 'global-templates/subsection-cards--blog' ); ?>
 		
-	<div class="row">
-		<div class="col-12">
-			<?php
+		<div class="row">
+			<div class="col-12">
+				<div class="cta_link float-right">More from the Blog ></div>
+			</div>
+		</div>
+		
+		<!-- Videos -->
+		<div class="row">
+			<div class="col-12">
+				<h1>Video channel</h1>
+			</div>
+		</div>
 			
-			// Check value exists.
-			if( have_rows('fc_content_block') ):
+		<div class="row">
+			<div class="col-12">
+				<?php
+				
+				// Check value exists.
+				if( have_rows('fc_content_block') ):
+				
+				    // Loop through rows.
+				    while ( have_rows('fc_content_block') ) : the_row();
+				    
+				          // -------------------------- //
+				         // ---- CASE: VIDEO BLOCK ----//
+				        // -------------------------- //
+				        if( get_row_layout() == 'module_video_block' ): 
+				
+				            $mvb_video_url = get_sub_field('mvb_video_url'); // oEmbed
+							$mvb_video_title = get_sub_field('mvb_video_title'); // Text
+							$mvb_style = get_sub_field('mvb_style'); // Select
+				                        
+				            echo '
+				            <!-- Module Video Block -->
+				            <div class="mvb_video_url">'. $mvb_video_url . '</div>';
+						endif;
+					endwhile;
+				
+				else:
+					//Do nothing
+				endif;
+				 
+				?>
+			</div>
+		</div>
 			
-			    // Loop through rows.
-			    while ( have_rows('fc_content_block') ) : the_row();
-			    
-			          // -------------------------- //
-			         // ---- CASE: VIDEO BLOCK ----//
-			        // -------------------------- //
-			        if( get_row_layout() == 'module_video_block' ): 
-			
-			            $mvb_video_url = get_sub_field('mvb_video_url'); // oEmbed
-						$mvb_video_title = get_sub_field('mvb_video_title'); // Text
-						$mvb_style = get_sub_field('mvb_style'); // Select
-			                        
-			            echo '
-			            <!-- Module Video Block -->
-			            <div class="mvb_video_url">'. $mvb_video_url . '</div>';
-					endif;
-				endwhile;
-			
-			else:
-				//Do nothing
-			endif;
-			 
-			?>
+		<div class="row">
+			<div class="col-12">
+				<div class="cta_link float-right">More of our Videos ></div>
+			</div>
 		</div>
 	</div>
-		
-	<div class="row">
-		<div class="col-12">
-			<div class="cta_link float-right">More of our Videos ></div>
-		</div>
-	</div>
-		
 </div>
 
-<div class="container-fluid no-margins">
-	<div class="content">
+<div class="container">
 	<!-- INTRODUCTION -->
-	
 		<div class="module_content_block">
 			<div class='row'>
 				<div class='col-12'>
@@ -131,7 +130,9 @@ get_header();
 			<h3>Newsletters</h3>
 		</div>
 	</div>
-	<!-- Newsletters go here -->
+	
+	<?php get_template_part( 'global-templates/subsection-cards--newsletters' ); ?>
+	
 	<div class="row">
 		<div class="col-12">
 			<div class="more-resources float-right"><a href="#">More Newsletters<img src="<?=$themes_path;?>/theme-eh-19/images/icons/teal-arrow.png"></a></div>
@@ -144,43 +145,48 @@ get_header();
 			<h3>Events</h3>
 		</div>
 	</div>
-	<!-- Events go here -->
+	<?php get_template_part( 'global-templates/subsection-cards--events' ); ?>
+	
 	<div class="row">
 		<div class="col-12">
 			<div class="more-resources float-right"><a href="#">More Events<img src="<?=$themes_path;?>/theme-eh-19/images/icons/peach-arrow.png"></a></div>
 		</div>
 	</div>
 		
-	</div>
 </div>
 
 <!-- Primary Content CTA -->
-<?php
-	if( have_rows('primary_content_cta') ):
-		while ( have_rows('primary_content_cta') ) : the_row();
-	
-			$primary_content_cta_text = get_sub_field('primary_content_cta_text');
-			$primary_content_cta_link = get_sub_field('primary_content_cta_link');
-			$primary_content_cta_button = get_sub_field('primary_content_cta_button'); // Button text
-
-			if ( $primary_content_cta_text || $primary_content_cta_link || $primary_content_cta_button ):
-				echo
-				"
-					<div class='module_rich_callout_banner_block mrcbb_style--tertiary'>
-						<img src='".$themes_path."/theme-eh-19/images/separators/separator-white-nocircle.png' class='line-icon'>
-						". $primary_content_cta_text ."
-						<a href='". $primary_content_cta_link['url'] ."'>
-							<div class='cta_link'>". $primary_content_cta_button . "</div>
-						</a>
-					</div>	
-				";
-			else:
-				echo "";
-			endif;
-		endwhile;
-	endif;
-?>	
-
+<div class="container-fluid no-margins">
+	<div class="row">
+		<div class="col-12">
+			<?php
+				if( have_rows('primary_content_cta') ):
+					while ( have_rows('primary_content_cta') ) : the_row();
+				
+						$primary_content_cta_text = get_sub_field('primary_content_cta_text');
+						$primary_content_cta_link = get_sub_field('primary_content_cta_link');
+						$primary_content_cta_button = get_sub_field('primary_content_cta_button'); // Button text
+			
+						if ( $primary_content_cta_text || $primary_content_cta_link || $primary_content_cta_button ):
+							echo
+							"
+								<div class='module_rich_callout_banner_block mrcbb_style--tertiary'>
+									<img src='".$themes_path."/theme-eh-19/images/separators/separator-white-nocircle.png' class='line-icon'>
+									". $primary_content_cta_text ."
+									<a href='". $primary_content_cta_link['url'] ."'>
+										<div class='cta_link'>". $primary_content_cta_button . "</div>
+									</a>
+								</div>	
+							";
+						else:
+							echo "";
+						endif;
+					endwhile;
+				endif;
+			?>	
+		</div>
+	</div>
+</div>
 
 
 <?php 

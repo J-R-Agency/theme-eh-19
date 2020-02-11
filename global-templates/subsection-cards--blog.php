@@ -12,12 +12,19 @@ $themes_path = get_theme_root_uri();
 ?>
 
 <?php
-// QUERY ALL
+	
+$excludeNewsletter = get_term_by( 'name', 'newsletter', 'category' );
+$excludeEvents = get_term_by( 'name', 'events', 'category' );
+
+// QUERY ALL except newsletters and events
 $wpb_query = new WP_Query(array(
 	'post_type'=>'post',
 	'post_status'=>'publish',
 	'posts_per_page'=> 3,
-)); ?>
+	'category__not_in' => array( $excludeNewsletter->term_id, $excludeEvents ->term_id )
+));
+
+?>
 
 <div class="row">							
 <?php if ( $wpb_query->have_posts() ) :
