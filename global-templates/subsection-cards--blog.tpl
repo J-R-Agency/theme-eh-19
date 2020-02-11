@@ -69,12 +69,12 @@ endif;
 						</div>
 					</a>
 				</div>
-        <?php endif; ?>  
-         
+        <?php endif; ?>        
 <?php
 		$i++;
 	endwhile;
 endif;
 ?>
+
 </div> 
 <?php wp_reset_postdata(); ?>
