@@ -42,9 +42,7 @@ $wpb_query = new WP_Query(array(
 				</a>
 			</div>
 		<?php endif;?>
-		<?php if($i != 0 ): ?>
 
-		<?php endif;?>
 <?php $i++; ?>
 <?php
     endwhile;
