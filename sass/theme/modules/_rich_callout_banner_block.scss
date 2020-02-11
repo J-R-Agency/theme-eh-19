@@ -49,6 +49,22 @@
 .mrcbb_style--tertiary {
 	background-color: $teal;
 	color: white;
+	h1 {
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+		@media all and (max-width: $breakpoint-phone) {
+			width: 80%;
+		}		
+	}
+	p {
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 2rem;		
+		@media all and (max-width: $breakpoint-phone) {
+			width: 80%;
+		}		
+	}
 	a {
 		color: black;
 	}
