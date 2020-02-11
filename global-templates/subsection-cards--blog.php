@@ -32,6 +32,8 @@ $wpb_query = new WP_Query(array(
 						<div>
 							<?php if ( has_post_thumbnail() ) {
 					    		echo "<img src=\"" . get_the_post_thumbnail_url() . "\">";
+							} else {
+								echo "<img src='".$themes_path."/theme-eh-19/images/blog/placeholder.jpg'>";
 							}?>
 					    </div><!--end image -->	
 						<h3><?php the_title(); ?></h3>
@@ -50,6 +52,4 @@ endif;
 ?>
 
 
-
-</div> 
 <?php wp_reset_postdata(); ?>
