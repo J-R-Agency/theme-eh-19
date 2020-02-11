@@ -44,7 +44,7 @@ get_header();
 		</div>
 	</div>
 
-	<!--<?php include_once (get_template_directory() . '/global-templates/subsection-cards--blog.tpl'); ?>-->
+	<?php include_once (get_template_directory() . '/global-templates/subsection-cards--blog.tpl'); ?>
 	
 	<div class="row">
 		<div class="col-12">
