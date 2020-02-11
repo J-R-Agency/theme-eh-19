@@ -44,3 +44,12 @@
 		text-decoration: underline;
 	}
 }
+
+// TERTIARY STYLE (Dark green with white text)
+.mrcbb_style--tertiary {
+	background-color: $teal;
+	color: white;
+	a {
+		color: black;
+	}
+}

@@ -127,4 +127,20 @@ function trim_excerpt($text) {
     return $text;
 }
 add_filter('get_the_excerpt', 'trim_excerpt', 99);
+
+// Add login button to menu
+add_filter( 'wp_nav_menu_items', 'add_login', 10, 2 );
+function add_login ( $items, $args ) {
+    if( $args->theme_location == 'primary' ) {
+        $items .=
+        '
+        <li class="login-link">
+        	<a href="./members/" class="nav-link">
+        		Login
+        	</a>
+        </li>
+        ';
+    }
+    return $items;
+}
  
