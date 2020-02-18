@@ -19,6 +19,10 @@
 		}			
 	}
 	
+	@media all and (max-width: $breakpoint-phone) {
+		margin: 1rem 0;
+	}	
+		
 	.file-name {
 		font-size: 14pt;
 		text-transform: uppercase;
