@@ -179,70 +179,70 @@ get_header();
 	</div>
 </div>
 
-<div class="container">
-	<!-- Introduction -->
-	<div class="row">
-		<div class="col-12">
-			<h3><?php echo $additional_resources_title; ?></h3>
-			<p><?php echo $additional_resources_description ?></p>
+<section>
+	<div class="container">
+		<!-- Introduction -->
+		<div class="row">
+			<div class="col-12">
+				<h3><?php echo $additional_resources_title; ?></h3>
+				<p><?php echo $additional_resources_description ?></p>
+			</div>
+		</div>
+		
+		<!-- Files -->
+		<div class="row">
+		<?php if( have_rows('additional_resources_repeater') ): ?>				
+			<?php while( have_rows('additional_resources_repeater') ): the_row(); 
+				// vars
+				$file = get_sub_field('additional_resource_file');
+				$type = get_sub_field('additional_resource_type');
+				$name = get_sub_field('additional_resource_file_name');
+				$description = get_sub_field('additional_resource_description');
+				?>
+				<div class="col-12 col-md-6">				
+					<a href="<?php echo $file['url']; ?>" download>
+						<div class="file">
+							<div class="row">
+								<div class="col-3">
+									<?php if($type == 'misc'): ?>
+										<img src="<?php echo $themes_path; ?>/theme-eh-19/images/icons/filetype_generic.png">
+									<?php elseif($type == 'pdf'): ?>
+										<img src="<?php echo $themes_path; ?>/theme-eh-19/images/icons/filetype_pdf.png">
+									<?php elseif($type == 'doc'): ?>
+										<img src="<?php echo $themes_path; ?>/theme-eh-19/images/icons/filetype_document.png">													<?php elseif($type == 'image'): ?>
+										<img src="<?php echo $themes_path; ?>/theme-eh-19/images/icons/filetype_image.png">	
+									<?php elseif($type == 'sheet'): ?>
+										<img src="<?php echo $themes_path; ?>/theme-eh-19/images/icons/filetype_spreadsheet.png">												<?php elseif($type == 'link'): ?>
+										<img src="<?php echo $themes_path; ?>/theme-eh-19/images/icons/filetype_link.png">
+									<?php endif; ?>
+								</div>
+								<div class="col-9 vertical-center">
+									<?php if($type == 'misc'): ?>
+										<p class="file-name generic">									
+									<?php elseif($type == 'pdf'): ?>
+										<p class="file-name pdf">
+									<?php elseif($type == 'doc'): ?>
+										<p class="file-name document">
+									<?php elseif($type == 'image'): ?>
+										<p class="file-name image">
+									<?php elseif($type == 'sheet'): ?>
+										<p class="file-name spreadsheet">
+									<?php elseif($type == 'link'): ?>
+										<p class="file-name link">
+									<?php endif; ?>	
+										<?php echo $name; ?>
+									</p>
+									<p><?php echo $description; ?> ></p>
+								</div> <!-- end col -->
+							</div> <!-- end row -->
+						</div> <!-- end file -->
+					</a>
+				</div>
+			<?php endwhile; ?>							
+		<?php endif; ?>			
 		</div>
 	</div>
-	
-	<!-- Files -->
-	<div class="row">
-	<?php if( have_rows('additional_resources_repeater') ): ?>				
-		<?php while( have_rows('additional_resources_repeater') ): the_row(); 
-			// vars
-			$file = get_sub_field('additional_resource_file');
-			$type = get_sub_field('additional_resource_type');
-			$name = get_sub_field('additional_resource_file_name');
-			$description = get_sub_field('additional_resource_description');
-			?>
-			<div class="col-12 col-md-6">				
-				<a href="<?php echo $file['url']; ?>" download>
-					<div class="file">
-						<div class="row">
-							<div class="col-3">
-								<?php if($type == 'misc'): ?>
-									<img src="<?php echo $themes_path; ?>/theme-eh-19/images/icons/filetype_generic.png">
-								<?php elseif($type == 'pdf'): ?>
-									<img src="<?php echo $themes_path; ?>/theme-eh-19/images/icons/filetype_pdf.png">
-								<?php elseif($type == 'doc'): ?>
-									<img src="<?php echo $themes_path; ?>/theme-eh-19/images/icons/filetype_document.png">													<?php elseif($type == 'image'): ?>
-									<img src="<?php echo $themes_path; ?>/theme-eh-19/images/icons/filetype_image.png">	
-								<?php elseif($type == 'sheet'): ?>
-									<img src="<?php echo $themes_path; ?>/theme-eh-19/images/icons/filetype_spreadsheet.png">												<?php elseif($type == 'link'): ?>
-									<img src="<?php echo $themes_path; ?>/theme-eh-19/images/icons/filetype_link.png">
-								<?php endif; ?>
-							</div>
-							<div class="col-9 vertical-center">
-								<?php if($type == 'misc'): ?>
-									<p class="file-name generic">									
-								<?php elseif($type == 'pdf'): ?>
-									<p class="file-name pdf">
-								<?php elseif($type == 'doc'): ?>
-									<p class="file-name document">
-								<?php elseif($type == 'image'): ?>
-									<p class="file-name image">
-								<?php elseif($type == 'sheet'): ?>
-									<p class="file-name spreadsheet">
-								<?php elseif($type == 'link'): ?>
-									<p class="file-name link">
-								<?php endif; ?>	
-									<?php echo $name; ?>
-								</p>
-								<p><?php echo $description; ?> ></p>
-							</div> <!-- end col -->
-						</div> <!-- end row -->
-					</div> <!-- end file -->
-				</a>
-			</div>
-		<?php endwhile; ?>							
-	<?php endif; ?>			
-	</div>
-	
-</div>
-
+</section>
 
 <?php 
 get_footer();
