@@ -9,3 +9,40 @@
 	}
 	
 }
+
+.file {
+	img {
+		padding: 1rem;
+		
+		@media all and (max-width: $breakpoint-phone) {
+			padding: 0.2rem;
+		}			
+	}
+	
+	.file-name {
+		font-size: 14pt;
+		text-transform: uppercase;
+		font-weight: bold;
+		margin-bottom: 0;
+		
+		&.generic {
+			color: $peach;
+		}
+		&.pdf {
+			color: $teal;
+		}	
+		&.document {
+			color: $dark-blue;
+		}
+		&.image {
+			color: $grey;
+		}
+		&.spreadsheet {
+			color: $ambitious-mint;
+		}
+		&.link {
+			color: $dark-grey;
+		}								
+	}
+
+}
