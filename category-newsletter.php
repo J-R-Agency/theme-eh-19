@@ -11,7 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header();
-
+$themes_path = get_theme_root_uri();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
@@ -25,9 +25,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
 
 			<main class="site-main" id="main">
-
 				<?php if ( have_posts() ) : ?>
-
 				<section>
 					<div class="container">
 						<div class="row">
@@ -41,7 +39,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</div>
 						
 						<!-- POST LOOP -->
-						<?php get_template_part( 'global-templates/subsection-cards--blog' ); ?>
+						<?php get_template_part( 'global-templates/subsection-cards--newsletters' ); ?>
 						
 						<div class="row">
 							<div class="col-12">
@@ -50,7 +48,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</div>
 					</div> <!-- end container -->
 				</section>
-
 				<?php else : ?>
 
 					<?php get_template_part( 'loop-templates/content', 'none' ); ?>

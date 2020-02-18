@@ -73,7 +73,9 @@ get_header();
 		
 		<div class="row">
 			<div class="col-12">
-				<div class="cta_link float-right">More from the Blog ></div>
+				<a href="<?php echo site_url(); ?>/blog/">
+					<div class="cta_link float-right">More from the Blog ></div>
+				</a>
 			</div>
 		</div>
 		
@@ -130,8 +132,18 @@ get_header();
 	<?php get_template_part( 'global-templates/subsection-cards--newsletters' ); ?>
 	
 	<div class="row">
-		<div class="col-12">
-			<div class="more-resources float-right"><a href="#">More Newsletters<img src="<?=$themes_path;?>/theme-eh-19/images/icons/teal-arrow.png"></a></div>
+		<div class="col-12">		
+			<div class="more-resources float-right">
+				<?php
+				    // Get the ID of a given category
+				    $newsletter_id = get_cat_ID( 'newsletter' );
+				    // Get the URL of this category
+				    $newsletter_link = get_category_link( $newsletter_id );
+				?>				
+				<a href="<?php echo esc_url( $newsletter_link ); ?>">
+					More Newsletters<img src="<?=$themes_path;?>/theme-eh-19/images/icons/teal-arrow.png">
+				</a>
+			</div>
 		</div>
 	</div>
 	
@@ -145,7 +157,18 @@ get_header();
 	
 	<div class="row">
 		<div class="col-12">
-			<div class="more-resources float-right"><a href="#">More Events<img src="<?=$themes_path;?>/theme-eh-19/images/icons/peach-arrow.png"></a></div>
+			<div class="more-resources float-right">
+				<?php
+				    // Get the ID of a given category
+				    $events_id = get_cat_ID( 'events' );
+				
+				    // Get the URL of this category
+				    $events_link = get_category_link( $events_id );
+				?>					
+				<a href="<?php echo esc_url( $events_link ); ?>">
+					More Events<img src="<?=$themes_path;?>/theme-eh-19/images/icons/peach-arrow.png">
+				</a>
+			</div>
 		</div>
 	</div>
 		
