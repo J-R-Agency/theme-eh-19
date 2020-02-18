@@ -13,6 +13,8 @@ get_header();
 
 <!-- Variables -->
 <?php
+	$subtitle = get_field('subtitle');
+	$lead_in = get_field('lead_in');
 	$members_blog_section_title = get_field('members_blog_section_title');
 	$members_video_section_title = get_field('members_video_section_title');
 	$members_video_url = get_field('members_video_url');
@@ -47,10 +49,10 @@ get_header();
 <!-- INTRODUCTION -->
 	<div class="content">
 		<div class="module_content_block module_content_block--primary">
-			<h2 class="mcb_title mcb_title--primary">Here is a round-up of all  your member benefits</h2>
+			<h2 class="mcb_title mcb_title--primary"><?php echo $subtitle; ?></h2>
 			<div class="mcb_content mcb_style--primary mcb_cta_style--primary">
 				<p>
-					Enjoy a host of helpful resources, exclusive to Empowerment House members. Our resources are jam-packed with advice on improving your confidence
+					<?php echo $lead_in; ?>
 				</p>
 			</div>
 		</div>			
