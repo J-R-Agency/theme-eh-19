@@ -36,7 +36,7 @@ get_header();
 				<div class="col-12 col-md-6">
 					<div class="form form__registration">
 						<h1>Join empowerment house</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p>&nbsp;</p>
 						<form id="registerform-custom">
 							<p class="register-username">
 								<input type="text" name="log" placeholder="Username" id="user_login" class="input" value="" size="20" autocomplete="off">
@@ -54,7 +54,7 @@ get_header();
 				<div class="col-12 col-md-6">
 					<div class="form form__login">
 						<h1>log into your members area</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p>&nbsp;</p>
 						<?php
 							if ( ! is_user_logged_in() ) { // Display WordPress login form:
 							    $args = array(
