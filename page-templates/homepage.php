@@ -99,7 +99,7 @@ get_header();
 			</div>
 			<div class="row">
 				<div class="col-12 centered">
-					<a href="#">
+					<a href="mailto:info@empowermenthouse.co.uk">
 			        	<div class="cta_link">Get in touch</div>
 			        </a>					
 				</div>
