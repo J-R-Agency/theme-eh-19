@@ -37,7 +37,7 @@ get_header();
 					<div class="form form__registration">
 						<h1>Join empowerment house</h1>
 						<p>&nbsp;</p>
-						<form id="registerform-custom">
+						<!-- form id="registerform-custom">
 							<p class="register-username">
 								<input type="text" name="log" placeholder="Username" id="user_login" class="input" value="" size="20" autocomplete="off">
 							</p>
@@ -47,7 +47,10 @@ get_header();
 							<p class="register-submit">
 								<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary" value="SIGN ME UP">
 							</p>
-						</form>
+						</form -->
+						<div>
+							<a  class="button button-primary" href="mailto:info@empowermenthouse.co.uk" title="Sign me up">Sign me up</a>
+						</div>
 					</div>
 				</div>
 				
