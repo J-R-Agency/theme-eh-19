@@ -49,7 +49,7 @@ get_header();
 							</p>
 						</form -->
 						<div>
-							<a  class="cta_link centered button button-primary" href="mailto:info@empowermenthouse.co.uk" title="Sign me up">Sign me up</a>
+							<a  class="cta_link navy centered button button-primary" href="mailto:info@empowermenthouse.co.uk" title="Sign me up">Sign me up</a>
 						</div>
 					</div>
 				</div>
