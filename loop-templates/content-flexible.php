@@ -262,8 +262,9 @@ if( have_rows('fc_content_block') ):
 	        
 	        echo
             	"<div class=\"mrcbb_title\">". $mrcbb_title . "</div>" .
-            	"<div class=\"mrcbb_body\">". $mrcbb_body . "</div>" .
-            	"<div class=\"mrcbb_cta_text\">". $mrcbb_cta_text . "</div>";
+            	"<div class=\"mrcbb_body\">". $mrcbb_body . "</div>" ;
+            	// "<div class=\"mrcbb_cta_text\">". $mrcbb_cta_text . "</div>";
+
             	
 			    // Show CTA button if field is filled in. If not, don't display CTA.	
 	        	if( !empty($mrcbb_cta_link) ):
