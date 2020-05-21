@@ -1,6 +1,6 @@
 .form-area {
 	background-color: $light-grey;
-	padding: 4rem 4rem 7rem 4rem;
+	padding: 4rem 4rem calc(7rem+75px) 4rem;
 	margin: 0 0 -133px 0;
 	
 	@media all and (max-width: $breakpoint-phone) {
