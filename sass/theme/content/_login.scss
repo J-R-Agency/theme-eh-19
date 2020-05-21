@@ -2,7 +2,7 @@
 	background-color: $light-grey;
 	padding: 4rem 4rem 7rem 4rem;
 	margin: 0 0 -133px 0;
-	height: calc(inherit + 75px);
+	height: calc(100% + 75px);
 	
 	@media all and (max-width: $breakpoint-phone) {
 		padding: 0rem;
