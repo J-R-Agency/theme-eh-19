@@ -66,10 +66,15 @@ $event_id = get_the_ID();
 			<!-- .tribe-events-single-event-description -->
 			<?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
 			
+			
+			<!-- EVENT LINK -->
 			<?php $event_link = get_field('event_link'); ?>
+			
+			<?php if ($event_link): ?>
 			<a href="<?php echo $event_link['url'];?>" target="_blank">
 				<div class="cta_link navy"><?php echo $event_link['title']; ?></div>
 			</a>
+			<?php endif; ?>
 			
 			<!-- Event meta -->
 			<?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
