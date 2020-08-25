@@ -131,7 +131,10 @@ add_filter('get_the_excerpt', 'trim_excerpt', 99);
 // Add login button to menu
 add_filter( 'wp_nav_menu_items', 'add_login', 10, 2 );
 function add_login ( $items, $args ) {
-    if( $args->theme_location == 'primary' ) {
+	
+	$login_page = get_page_by_title('login');
+	
+    if( $args->theme_location == 'primary' and $login_page->post_status == 'publish') {
         $items .=
         '
         <li class="login-link">
