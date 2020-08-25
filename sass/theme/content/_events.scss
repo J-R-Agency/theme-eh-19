@@ -1,0 +1,10 @@
+#tribe-events-content {
+	padding: 3rem;
+	@media all and (max-width: $breakpoint-phone) {
+		padding: 0rem;
+	}
+} 
+
+.tribe-events-back {
+	color: red !important;
+}
