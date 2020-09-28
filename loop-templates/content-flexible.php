@@ -363,6 +363,47 @@ if( have_rows('fc_content_block') ):
 		    </section>"; //end accordion-container
 
 
+          // -------------------------------- //
+         // ---- CASE: PUBLIC BLOG POSTS ----//
+        // -------------------------------- //
+        elseif( get_row_layout() == 'module_public_blog_posts' ): 
+
+			$mpbp_title = get_sub_field('mpbp_title');
+			$mpbp_category = get_sub_field('mpbp_category'); 
+			   
+				$args = array(
+				    'post_type'      => 'post', //write slug of post type
+				    'status'		 => 'publish',
+				    'posts_per_page' => 3,
+				    'order'          => 'ASC',
+				    'category__in'	 => $mpbp_category
+				 );
+				 
+				$query = new WP_Query($args);
+				 
+				if ( $query->have_posts() ) :
+					echo "
+					<section class='bg-white'>
+						<div class='container'>
+							<h2>".$mpbp_title."</h2>
+							<div class='row'>";
+														 
+					    while ( $query->have_posts() ) : $query->the_post();
+						 	
+							$categories = get_the_category();
+							
+							include (get_template_directory().'/global-templates/cards/small-blog-card.php');	
+						
+						endwhile;
+						
+					echo "</div>
+						</div>
+					</section>";
+				endif; 
+				wp_reset_query();
+            
+            
+
           // ----------------------------- //
          // ---- CASE: NEWSLETTER CTA ----//
         // ----------------------------- //
