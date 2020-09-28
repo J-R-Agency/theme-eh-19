@@ -49,6 +49,15 @@ function register_my_menus() {
  add_action( 'init', 'register_my_menus' );
  
  
+ /*-- ADD ACF OPTIONS --*/
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	acf_add_options_sub_page("Header");
+	acf_add_options_sub_page("Company Info");
+}
+ 
 /*-- REGISTER WIDGETS --*/
 if ( function_exists('register_sidebar') )
   register_sidebar(array(

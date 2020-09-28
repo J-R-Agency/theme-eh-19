@@ -361,6 +361,63 @@ if( have_rows('fc_content_block') ):
 			    	</div>
 			    </div>
 		    </section>"; //end accordion-container
+
+
+          // ----------------------------- //
+         // ---- CASE: CONTACT BLOCK ----//
+        // ----------------------------- //
+        elseif( get_row_layout() == 'module_contact_block' ): 
+		
+		$email = get_field('email', 'option');
+		
+		echo "
+		<section class='social-cta'>
+			<div class='container'>
+				<div class='row'>
+					<div class='col-md-6 col-12 sm-icons'>
+						<h3>JOIN US ON SOCIAL</h3>
+		";
+		
+		if( have_rows('social_media', 'option') ):
+			while( have_rows('social_media', 'option') ): the_row();
+			
+				$social_media_type = get_sub_field('social_media_type', 'option');
+				$social_media_link = get_sub_field('social_media_link', 'option');
+				
+				echo "
+					<span class='sm-icon'>
+						<a href='".$social_media_link['url']."' target='_blank'>
+							<img src='".get_template_directory_uri()."/images/icons/peach-".$social_media_type.".svg' >
+						</a>
+					</span>			
+				
+				";
+				
+			endwhile;    
+		endif;
+		
+		echo "
+					</div>
+					<div class='col-md-6 col-12 get-in-touch'>
+						<div class='row'>
+							<div class='col-12 centered'>
+								<p>Email us for more information about how we can help</p>			
+							</div>
+						</div>
+						<div class='row'>
+							<div class='col-12 centered'>
+								<a href='mailto:".$email."'>
+						        	<div class='cta_link'>Get in touch</div>
+						        </a>					
+							</div>
+						</div>						
+					</div>		
+				</div> <!-- end row -->
+			</div> <!-- end container -->
+		</section>		
+		";
+
+
 		    
         endif;        
 

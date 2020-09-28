@@ -56,55 +56,6 @@ get_header();
 		<?php get_template_part( 'loop-templates/content', 'flexible' ); ?>
 	</div>
 	
-	
-	<section class='social-cta'>
-		<div class='container'>
-			<div class="row">
-				<div class="col-md-6 col-12 sm-icons">
-					<h3>JOIN US ON SOCIAL</h3>
-					
-						<span class="sm-icon">
-							<a href="https://www.facebook.com/empwrmenthouse/?__tn__=%2Cd%2CP-R&eid=ARCKAGZQDgh8aQUeF-acsP-5bOnU8jjC-A3UuYQUdAgJCyRf6qMlX2kS1VPoXbFLP3-MkyaKFGzc74h-" target="_blank">
-								<img src="<?=$themes_path;?>/theme-eh-19/images/icons/peach-facebook.png" >
-							</a>
-						</span>
-					
-						<span class="sm-icon">
-							<a href="https://www.instagram.com/empowrmenthouse/" target="_blank">
-								<img src="<?=$themes_path;?>/theme-eh-19/images/icons/peach-instagram.png">
-							</a>
-						</span>
-			
-						<span class="sm-icon">
-							<a href="https://twitter.com/empowrmenthouse" target="_blank">
-								<img src="<?=$themes_path;?>/theme-eh-19/images/icons/peach-twitter.png">
-							</a>
-						</span>
-					
-						<span class="sm-icon">
-							<a href="https://www.linkedin.com/in/mariehallempowr/" target="_blank">
-								<img src="<?=$themes_path;?>/theme-eh-19/images/icons/peach-linkedin.png">
-							</a>
-						</span>			
-				</div>
-				<div class="col-md-6 col-12 get-in-touch">
-					<div class="row">
-						<div class="col-12 centered">
-							<p>Email us for more information about how we&nbsp;can&nbsp;help</p>			
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-12 centered">
-							<a href="mailto:info@empowermenthouse.co.uk">
-					        	<div class="cta_link">Get in touch</div>
-					        </a>					
-						</div>
-					</div>						
-				</div>		
-			</div> <!-- end row -->
-		</div> <!-- end container -->
-	</section>
-	
 <?php 
 get_footer();
 ?>
