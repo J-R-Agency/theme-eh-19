@@ -29,7 +29,9 @@ $themes_path = get_theme_root_uri();
 				if ($getlength > $thelength) echo "...";
 				?>									
 			</h3>
-			<p class="blog-excerpt"><?php the_excerpt() ?></p>
+			<div class="blog-excerpt">
+				<?php the_excerpt() ?>
+			</div>
 		</div>
 	</a>
 </div>

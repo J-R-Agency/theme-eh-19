@@ -12,6 +12,7 @@
 	-moz-box-shadow: -14px -14px 0px 0px rgba(29,31,52,1), 0px 0px 5px 0px rgba(0,0,0,0.5);
 	box-shadow: -14px -14px 0px 0px rgba(29,31,52,1), 0px 0px 5px 0px rgba(0,0,0,0.5);
 	margin: 2rem 0;
+	overflow: hidden;
 	
 	@media all and (max-width: $breakpoint-phone) {
 		height: 350px;
@@ -58,11 +59,17 @@
 				height: 200px;
 			}			
 		}
-				
+
 		h3, p {
 			margin: 0.5rem 0 0 0;
-		}		
-	
+		}
+		
+		h3 {
+			max-height: 70px;
+			overflow: hidden;
+			font-size: 1.5rem;
+		}
+		
 		p {
 			display: block;
 			width: 100%;
