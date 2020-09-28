@@ -1,41 +1,9 @@
 // -- GLOBAL MODULES -- //
 
-@import '../modules/global';
-
-// CONTENT BLOCK
-@import '../modules/content_block';
-
-
-// ICON BLOCK
-@import '../modules/icon_block';
-
-
-// CTA VIDEO BLOCK
-@import '../modules/cta_video_block';
-
-
-// CTA FEATURE BLOCK
-@import '../modules/cta_feature_block';
-
-// ACCORDION BLOCK
-@import '../modules/accordion_block';
-
 // PARTNER LOGOS
 .avatar--partner-logo{
 	margin: 2rem 0;
 }
-
-// GENERAL CONTENT BLOCK
-@import '../modules/general_content_block';
-
-// RICH CALLOUT BANNER BLOCK
-@import '../modules/rich_callout_banner_block';
-
-// MEMBERSHIP BENEFITS
-@import '../modules/_membership_benefits';
-
-// NEWSLETTER CTA
-@import '../modules/_newsletter_cta';
 
 .module_about_feature_image_block{
 	& h2 {

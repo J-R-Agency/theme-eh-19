@@ -1,11 +1,9 @@
-/*-- FONTS --*/
-@import 'typography/fontfaces';
-
 /* -- MIXINS -- */
 @import 'mixins';
 
-/*-- Typography --*/
+/*-- TYPOGRAPHY --*/
 @import 'typography/typography';
+@import 'typography/fontfaces';
 
 /*-- Horizontal Lines --*/
 @import 'content/lines';
@@ -16,19 +14,16 @@
 /*-- HOMEPAGE --*/
 @import'content/homepage';
 
-/*-- MODULE CONTENT --*/
-@import 'content/modules';
-
 /*-- SHAME / PAGE-SPECIFIC CONTENT --*/
 @import 'content/shame';
 
 /*-- POSTS --*/
 @import 'content/posts';
 
-/*-- BLOG CARDS --*/
-@import 'content/blog-card';
-@import 'content/resource-card';
-@import 'content/resources';
+/*-- CARDS --*/
+@import 'cards/blog-card';
+@import 'cards/resource-card';
+@import 'cards/resources';
 
 /*-- FOOTER --*/
 @import 'navigation/footer';
@@ -38,3 +33,16 @@
 
 /*-- EVENT --*/
 @import 'content/events';
+
+/*-- MODULE CONTENT --*/
+@import 'content/modules';
+@import 'modules/global';
+@import 'modules/content_block';
+@import 'modules/icon_block';
+@import 'modules/cta_video_block';
+@import 'modules/cta_feature_block';
+@import 'modules/accordion_block';
+@import 'modules/general_content_block';
+@import 'modules/rich_callout_banner_block';
+@import 'modules/_membership_benefits';
+@import 'modules/_newsletter_cta';

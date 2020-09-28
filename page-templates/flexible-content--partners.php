@@ -11,31 +11,25 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
 
-<div class="container-fluid no-margins">
+<!-- Hero image -->
+<?php include_once (get_template_directory() . '/global-templates/hero.php'); ?>
 
-	<!-- Hero image -->
-	<?php include_once (get_template_directory() . '/global-templates/hero.php'); ?>
+<!-- Page title -->
+<?php include_once (get_template_directory() . '/global-templates/page-title.php'); ?>
 
-	<!-- Page title -->
-	<?php include_once (get_template_directory() . '/global-templates/page-title.php'); ?>
+<!-- Subtitle -->
+<?php include_once (get_template_directory() . '/global-templates/subtitle.php'); ?>
 	
-	<!-- Subtitle -->
-	<?php include_once (get_template_directory() . '/global-templates/subtitle.php'); ?>
+<!-- Lead in -->
+<?php include_once (get_template_directory() . '/global-templates/lead-in.php'); ?>
 
-	<div class="content">
+<!-- Flexible Content -->
+<?php get_template_part( 'loop-templates/content', 'flexible' ); ?>
 		
-		<!-- Lead in -->
-		<?php include_once (get_template_directory() . '/global-templates/lead-in.php'); ?>
+<!-- Get Child Pages as subcontent -->
 
-		<?php get_template_part( 'loop-templates/content', 'flexible' ); ?>
-		
-	</div>
-	
-	<!-- Get Child Pages as subcontent -->
-	
-    <?php include_once (get_template_directory() . '/global-templates/subsection-cards--partners.tpl'); ?>
+<?php include_once (get_template_directory() . '/global-templates/subsection-cards--partners.tpl'); ?>
 
-</div>
 
 <!-- General Content Block -->	
 <?php

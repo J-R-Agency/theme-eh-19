@@ -27,7 +27,6 @@ get_header();
 	$additional_resources_description = get_field('additional_resources_description');
 ?>
 
-<div class="container-fluid no-margins">
 
 	<!-- Hero image -->
 	<?php include_once (get_template_directory() . '/global-templates/hero.php'); ?>
