@@ -364,6 +364,54 @@ if( have_rows('fc_content_block') ):
 
 
           // ----------------------------- //
+         // ---- CASE: NEWSLETTER CTA ----//
+        // ----------------------------- //
+        elseif( get_row_layout() == 'module_newsletter_cta' ): 
+
+			$mnc_title = get_sub_field('mnc_title');
+			$mnc_link = get_sub_field('mnc_link');    
+            $mnc_text = get_sub_field('mnc_text'); 
+            
+            echo "
+			<section class='bg-dark-blue newsletter-cta'>
+				<div class='container'>";
+				
+			
+			if ($mnc_title) {
+			echo	"<div class='row'>
+						<div class='col-12'>
+							<h2>".$mnc_title."</h2>
+						</div>
+					</div>";				
+			}
+			
+			if ($mnc_text) {
+			echo	"<div class='row'>
+						<div class='col-12'>
+							".$mnc_text."
+						</div>
+					</div>";				
+			}
+			
+			if ($mnc_link) {
+			echo	"<div class='row'>
+						<div class='col-12'>
+							<a href='".$mnc_link['url']."' target='".$mnc_link['target']."'>
+								<div class='cta_link centered'>".$mnc_link['title']."</div>
+							</a>
+					</div>";				
+			}
+			
+					
+			echo "
+				</div>
+			</section>
+           
+           ";
+        	
+        	
+
+          // ----------------------------- //
          // ---- CASE: CONTACT BLOCK ----//
         // ----------------------------- //
         elseif( get_row_layout() == 'module_contact_block' ): 

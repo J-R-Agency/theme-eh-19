@@ -111,3 +111,21 @@ html,body
 	}
 }
 
+// Backgrounds
+
+.bg-white {
+	background-color: white;
+}
+
+.bg-dark-blue {
+	background-color: $dark-blue;
+	color: white;
+}
+
+.bg-light-grey {
+	background-color: $light-grey;
+}
+
+.bg-teal {
+	background-color: $teal;
+}
