@@ -32,14 +32,12 @@ get_header();
 	</div>
 <?php endif ?>
 
-<div class="content">
 	
-	<!-- Lead in -->
-	<?php include_once (get_template_directory() . '/global-templates/lead-in.php'); ?>
+<!-- Lead in -->
+<?php include_once (get_template_directory() . '/global-templates/lead-in.php'); ?>
 
-	<?php get_template_part( 'loop-templates/content', 'flexible' ); ?>
+<?php get_template_part( 'loop-templates/content', 'flexible' ); ?>
 	
-</div>
 
 <?php
 
@@ -54,21 +52,27 @@ $afib_linkedin_cta = get_field('afib_linkedin_cta'); // Link array
 
 echo "
 <!-- About Feature Image Block -->
-<div class=\"content module_content_block\">
-    <div class=\"module_about_feature_image_block\">" .
-    	"<div class=\" \">" ;
+<section class=\"module_content_block\">
+    <div class=\"container module_about_feature_image_block\">";
+    	
 if ($afib_title):
 	echo 
     "<h2>" . $afib_title . "</h2>";
 endif;
+
+
 if ($afib_subtitle):
 	echo 
     "<h3>" . $afib_subtitle . "</h3>";
 endif;
+
+
 if ($afib_image):
 	echo 
     "<img src=\"". $afib_image['url'] ."\" alt=\"".$afib_image['alt']."\" class=\"avatar--about\">";
 endif;
+
+
 if ($afib_body):
 	echo "<div class=\"afib_body mcb_content grey-content\">" . $afib_body ;
 
@@ -99,14 +103,12 @@ if ($afib_body):
 endif;
 
 	echo		
-    "	</div>
+    "
     </div>
-</div>";
+</section>";
 
 
 ?>
-
-
 
 <!-- Primary Content CTA -->
 <?php
