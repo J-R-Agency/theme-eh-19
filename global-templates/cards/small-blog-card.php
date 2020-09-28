@@ -23,10 +23,7 @@ $themes_path = get_theme_root_uri();
 			<h3>
 				<?php
 				$thetitle = $post->post_title; /* or you can use get_the_title() */
-				$getlength = strlen($thetitle);
-				$thelength = 30;
-				echo substr($thetitle, 0, $thelength);
-				if ($getlength > $thelength) echo "...";
+				echo $thetitle;
 				?>									
 			</h3>
 			<div class="blog-excerpt">
