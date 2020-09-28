@@ -1,4 +1,4 @@
-.accordion-container {
+.accordion {
 	margin: 5rem 0;
 }
 
@@ -10,31 +10,27 @@
 
 /* Accordion styles */
 
-.question-tabs {
-  overflow: hidden;
-}
-
-.question-tab {
+.card-header {
 	width: 100%;
 	color: white;
 	overflow: hidden;
-	background-color: $dark-blue;	
-
-	input {
-	  position: absolute;
-	  opacity: 0;
-	  z-index: -1;
-	}	
+	background-color: $dark-blue;
 	
-	.question-label {
+	.card-title {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		color: $peach;
-		text-transform: uppercase;	
-		margin: 0.75rem 1rem;
-		font-weight: bold;	
-		cursor: pointer;
+	    justify-content: space-between;
+	    align-items: center;
+	    width: 100%;
+	    background-color: transparent;
+	    border: none;
+	    text-transform: uppercase;
+	    color: $peach;
+	    margin: 0;
+	    padding: 0;
+	    font-weight: bold;
+	    font-size: 1.15rem;
+	    cursor: pointer;
+
 	
 		/* Icon */	
 		&::after {
@@ -45,25 +41,12 @@
 		  transition: all .35s;
 		}
 	}
-	
-	.answer-box {
-		max-height: 0;
-		padding: 0.1em 1.5em;
-		background-color: $light-grey;
-		transition: all .5s;
-		color: black;
-	}
-	
-	&-close {
-		display: flex;
-		justify-content: flex-end;
-		font-size: 0.75em;
-		background: $dark-blue;
-		cursor: pointer;
-		&:hover {
-		  background: darken($dark-blue, 10%);
-		}
-	}
+}
+
+.card-body {
+	padding: 0.1em 1.5em;
+	background-color: $light-grey;
+	color: black;
 }
 
 // :checked

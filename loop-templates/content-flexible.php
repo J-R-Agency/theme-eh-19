@@ -296,9 +296,9 @@ if( have_rows('fc_content_block') ):
         		</div>
         	</div>";
         
-          // ----------------------------- //
-         // ---- CASE: MODULE DIVIDER ----//
-        // ----------------------------- //
+          // ------------------------------------- //
+         // ---- CASE: MODULE ACCORDION BLOCK ----//
+        // ------------------------------------- //
         elseif( get_row_layout() == 'module_accordion_block' ): 
 
 			$mab_title = get_sub_field('mab_title'); // Text
@@ -306,7 +306,7 @@ if( have_rows('fc_content_block') ):
             
             echo "
             <!-- Accordion Block -->
-            <div class='accordion-container'>
+            <div class='accordion' id='myAccordion'>
 	            <div class='row'>
 	        		<div class='col-12'>
 	        			<h2 class='mab_title'>".$mab_title."</h2>
@@ -326,14 +326,23 @@ if( have_rows('fc_content_block') ):
 					
 		        	echo
 		        	"
-		        	<div class='question-tabs'>
-			        	<div class='question-tab'>
-			        		<input type='checkbox' id='check-".$check_id."'>
-			        			<label class='question-label' for='check-".$check_id."'>".$question."</label>
-				        	<div class='answer-box'>
-				        		<p>".$answer."</p>
-				        	</div>
+		        	<div class='card'>
+		        	
+		        		<!-- QUESTION -->
+			        	<div class='card-header' id='heading-".$check_id."'>
+		        				<button type='button' class='card-title'
+								data-toggle='collapse' data-target='#collapse-".$check_id."'>
+								".$question."</button>
+						</div>
+						
+						<!-- ANSWER -->
+			        	<div id='collapse-".$check_id."' class='collapse'
+			        	aria-labelledby='heading-".$check_id."' data-parent='#myAccordion'>
+			        		<div class='card-body'>
+			        			<p>".$answer."</p>
+			        		</div>
 			        	</div>
+				        	
 		        	</div>
 		        	";
 		        endwhile;		        
