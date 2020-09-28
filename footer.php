@@ -30,42 +30,57 @@ $container = get_theme_mod( 'understrap_container_type' );
 						
 						<!-- CONTENT -->
 						<div class="row">
+							
+							<!-- LEFT -->
 							<div class="col-md-6 col-12">
 								<p>Empowerment House &#169; 2019</p>
-								<p class="no-margins">Business address:</p>
-								<p class="no-margins">61 Rodney Street, Merseyside,</p>
-								<p class="no-margins">England, L1 9ER</p>
-								<p class="no-margins">Registered Business Number:</p>
+								
+								<?php
+									
+								$business_address = get_field('business_address', 'option');
+								$business_number = get_field('business_number', 'option');
+								
+								if ($business_address) {
+									echo "<p>Business address:</p>";
+									echo $business_address;
+								}
+								
+								if ($business_number) {
+									echo "<p>Business number:</p>";
+									echo $business_number;
+								}
+								
+								?>
 
 							</div>
+							
+							<!-- RIGHT -->
 							<div class="col-md-6 col-12">
-								<div class="row mt-4 mb-4">
-									<div class="col-12">
-									
-										<span class="footer-menu-item">
-											<a href="https://www.facebook.com/empwrmenthouse/?__tn__=%2Cd%2CP-R&eid=ARCKAGZQDgh8aQUeF-acsP-5bOnU8jjC-A3UuYQUdAgJCyRf6qMlX2kS1VPoXbFLP3-MkyaKFGzc74h-" target="_blank">
-												<img src="<?=$themes_path;?>/theme-eh-19/images/icons/grey-facebook.png" >
-											</a>
-										</span>
-									
-										<span class="footer-menu-item">
-											<a href="https://www.instagram.com/empowrmenthouse/" target="_blank">
-												<img src="<?=$themes_path;?>/theme-eh-19/images/icons/grey-instagram.png">
-											</a>
-										</span>
-
-										<span class="footer-menu-item">
-											<a href="https://twitter.com/empowrmenthouse" target="_blank">
-												<img src="<?=$themes_path;?>/theme-eh-19/images/icons/grey-twitter.png">
-											</a>
-										</span>
-									
-										<span class="footer-menu-item">
-											<a href="https://www.linkedin.com/in/mariehallempowr/" target="_blank">
-												<img src="<?=$themes_path;?>/theme-eh-19/images/icons/grey-linkedin.png">
-											</a>
-										</span>
+								<div class='container'>
+									<div class="row mt-4 mb-4">
+										<div class="col-12 sm-icons">
 										
+										<?php
+										if( have_rows('social_media', 'option') ):
+											while( have_rows('social_media', 'option') ): the_row();
+											
+												$social_media_type = get_sub_field('social_media_type', 'option');
+												$social_media_link = get_sub_field('social_media_link', 'option');
+												
+												echo "
+													<span class='sm-icon'>
+														<a href='".$social_media_link['url']."' target='_blank'>
+															<img src='".get_template_directory_uri()."/images/icons/grey-".$social_media_type.".svg' >
+														</a>
+													</span>			
+												
+												";
+												
+											endwhile;    
+										endif;											
+										?>
+											
+										</div>
 									</div>
 								</div>
 								

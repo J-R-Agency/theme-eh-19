@@ -43,37 +43,36 @@
 		margin-bottom: 1rem;
 	}
 
-	.sm-icons {
-		color: white;
-		padding: 20px 0px;
-		
-		.sm-icon {
-			display: inline-block;
-			margin-right: 30px;
-			margin-top: 5px;
-			
-			img {
-				height: 50px;
-				
-				@media all and (max-width: $breakpoint-phone) {
-					height: 40px;
-				}		
-
-			}
-			
-			@media all and (max-width: $breakpoint-phone) {
-				margin-right: 20px;
-			}		
-			
-		}		
-	}
-
 	.get-in-touch {
 		background-color: $light-grey;
 		color: $black;
 		text-align: center;
 		padding: 20px;
 	}
+}
+
+.sm-icons {
+	padding: 20px 0px;
+	
+	.sm-icon {
+		display: inline-block;
+		margin-right: 30px;
+		margin-top: 5px;
+		
+		img {
+			height: 50px;
+			
+			@media all and (max-width: $breakpoint-phone) {
+				height: 40px;
+			}		
+
+		}
+		
+		@media all and (max-width: $breakpoint-phone) {
+			margin-right: 20px;
+		}		
+		
+	}		
 }
 
 section:focus, div:focus{
