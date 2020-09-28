@@ -13,17 +13,8 @@ $themes_path = get_theme_root_uri();
 get_header();
 ?>
 
-<div class="container-fluid no-margins">
-
 	<!-- Hero image -->
-	<?php if ( has_post_thumbnail() ): ?>
-		<?php $thumb = get_the_post_thumbnail_url(); ?>
-		<div class="row">
-			<div class="col-12">					
-				<div class="hero" style="background-image: url('<?php echo $thumb; ?>');"></div>
-			</div>
-		</div>					
-	<?php endif ?>
+	<?php include_once (get_template_directory() . '/global-templates/hero.php'); ?>
 	
 	<!-- Homepage Introduction -->
 	<?php
@@ -33,28 +24,30 @@ get_header();
 		$homepage_cta_text = get_field('homepage_cta_text');
 		$homepage_cta_link = get_field('homepage_cta_link');
 	?>
+	
 	<div class="homepage-introduction">
-		
-		<div class="row">
-			<div class="col-12">
-				<h1><?php echo $homepage_title ?></h1>
+		<div class='container'>
+			<div class="row">
+				<div class="col-12">
+					<h1><?php echo $homepage_title ?></h1>
+				</div>
 			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-md-6 col-12"> 
-				<p class="first-copy"><?php echo $homepage_first_copy ?></p>
+			
+			<div class="row">
+				<div class="col-md-6 col-12"> 
+					<p class="first-copy"><?php echo $homepage_first_copy ?></p>
+				</div>
+				<div class="col-md-6 col-12 vertical-center">
+					<p class="second-copy"><?php echo $homepage_second_copy ?></p>				
+				</div>
 			</div>
-			<div class="col-md-6 col-12 vertical-center">
-				<p class="second-copy"><?php echo $homepage_second_copy ?></p>				
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-12 centered">
-				<a href=" <?php echo $homepage_cta_link['url'] ?> ">
-		        	<div class="cta_link navy"> <?php echo $homepage_cta_text ?></div>
-		        </a>				
+			
+			<div class="row">
+				<div class="col-12 centered">
+					<a href=" <?php echo $homepage_cta_link['url'] ?> ">
+			        	<div class="cta_link navy"> <?php echo $homepage_cta_text ?></div>
+			        </a>				
+				</div>
 			</div>
 		</div>
 	</div>
@@ -63,52 +56,55 @@ get_header();
 		<?php get_template_part( 'loop-templates/content', 'flexible' ); ?>
 	</div>
 	
-	<div class="row social-cta">
-		<div class="col-md-6 col-12 sm-icons">
-			<h3>JOIN US ON SOCIAL</h3>
-			
-				<span class="sm-icon">
-					<a href="https://www.facebook.com/empwrmenthouse/?__tn__=%2Cd%2CP-R&eid=ARCKAGZQDgh8aQUeF-acsP-5bOnU8jjC-A3UuYQUdAgJCyRf6qMlX2kS1VPoXbFLP3-MkyaKFGzc74h-" target="_blank">
-						<img src="<?=$themes_path;?>/theme-eh-19/images/icons/peach-facebook.png" >
-					</a>
-				</span>
-			
-				<span class="sm-icon">
-					<a href="https://www.instagram.com/empowrmenthouse/" target="_blank">
-						<img src="<?=$themes_path;?>/theme-eh-19/images/icons/peach-instagram.png">
-					</a>
-				</span>
 	
-				<span class="sm-icon">
-					<a href="https://twitter.com/empowrmenthouse" target="_blank">
-						<img src="<?=$themes_path;?>/theme-eh-19/images/icons/peach-twitter.png">
-					</a>
-				</span>
+	<section class='social-cta'>
+		<div class='container'>
+			<div class="row">
+				<div class="col-md-6 col-12 sm-icons">
+					<h3>JOIN US ON SOCIAL</h3>
+					
+						<span class="sm-icon">
+							<a href="https://www.facebook.com/empwrmenthouse/?__tn__=%2Cd%2CP-R&eid=ARCKAGZQDgh8aQUeF-acsP-5bOnU8jjC-A3UuYQUdAgJCyRf6qMlX2kS1VPoXbFLP3-MkyaKFGzc74h-" target="_blank">
+								<img src="<?=$themes_path;?>/theme-eh-19/images/icons/peach-facebook.png" >
+							</a>
+						</span>
+					
+						<span class="sm-icon">
+							<a href="https://www.instagram.com/empowrmenthouse/" target="_blank">
+								<img src="<?=$themes_path;?>/theme-eh-19/images/icons/peach-instagram.png">
+							</a>
+						</span>
 			
-				<span class="sm-icon">
-					<a href="https://www.linkedin.com/in/mariehallempowr/" target="_blank">
-						<img src="<?=$themes_path;?>/theme-eh-19/images/icons/peach-linkedin.png">
-					</a>
-				</span>			
-		</div>
-		<div class="col-md-6 col-12 get-in-touch">
-			<div class="row">
-				<div class="col-12 centered">
-					<p>Email us for more information about how we&nbsp;can&nbsp;help</p>			
+						<span class="sm-icon">
+							<a href="https://twitter.com/empowrmenthouse" target="_blank">
+								<img src="<?=$themes_path;?>/theme-eh-19/images/icons/peach-twitter.png">
+							</a>
+						</span>
+					
+						<span class="sm-icon">
+							<a href="https://www.linkedin.com/in/mariehallempowr/" target="_blank">
+								<img src="<?=$themes_path;?>/theme-eh-19/images/icons/peach-linkedin.png">
+							</a>
+						</span>			
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-12 centered">
-					<a href="mailto:info@empowermenthouse.co.uk">
-			        	<div class="cta_link">Get in touch</div>
-			        </a>					
-				</div>
-			</div>						
-		</div>		
-	</div>
+				<div class="col-md-6 col-12 get-in-touch">
+					<div class="row">
+						<div class="col-12 centered">
+							<p>Email us for more information about how we&nbsp;can&nbsp;help</p>			
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 centered">
+							<a href="mailto:info@empowermenthouse.co.uk">
+					        	<div class="cta_link">Get in touch</div>
+					        </a>					
+						</div>
+					</div>						
+				</div>		
+			</div> <!-- end row -->
+		</div> <!-- end container -->
+	</section>
 	
-</div>
-
 <?php 
 get_footer();
 ?>

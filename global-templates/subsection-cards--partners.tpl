@@ -29,7 +29,7 @@ if ( $parent->have_posts() ) : ?>
 
 <div class="content">
 <section class="success-stories--header" id="partners--header">
-    <div class="module_cta_feature_block module_cta_feature_block--partners">
+    <div class="container module_cta_feature_block module_cta_feature_block--partners">
         <div class="row centered">
             <?php  if( $parent->have_posts() ): ?>
                 <?php 

@@ -14,14 +14,7 @@ get_header();
 <div class="container-fluid no-margins">
 
 	<!-- Hero image -->
-	<?php if ( has_post_thumbnail() ): ?>
-		<?php $thumb = get_the_post_thumbnail_url(); ?>
-		<div class="row">
-			<div class="col-12">					
-				<div class="hero" style="background-image: url('<?php echo $thumb; ?>');"></div>
-			</div>
-		</div>					
-	<?php endif ?>
+	<?php include_once (get_template_directory() . '/global-templates/hero.php'); ?>
 	
 	<!-- Page title -->
 	<div class="row callout-banner callout-banner--contact">
@@ -30,7 +23,8 @@ get_header();
 		</div>
 	</div>
 
-	<section class="container-fluid form-area">
+	<section class="form-area">
+		<div class='container'>
 			<div class="row">
 				
 				<div class="col-12 col-md-6">
@@ -90,7 +84,8 @@ get_header();
 				</div>
 				
 			</div>
-		</section>
+		</div>
+	</section>
 	
 	<div class="content">
 		

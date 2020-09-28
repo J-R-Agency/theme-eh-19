@@ -38,7 +38,7 @@ if( have_rows('fc_content_block') ):
 			
             echo 
             "<!-- Module Content Block -->
-            <div class=\"module_content_block " . $module_content_block_modifier . "\" id=\"" . sanitize_title( $mcb_title ) . "\">";
+            <div class=\"container module_content_block " . $module_content_block_modifier . "\" id=\"" . sanitize_title( $mcb_title ) . "\">";
             
 					// DIVIDER
 					if( !empty($mcb_divider_icon) ):
@@ -122,7 +122,7 @@ if( have_rows('fc_content_block') ):
 	    	if ( !empty( $mib_style ) ):
 				$mib_style_modifier = "mib_style--" . $mib_style;
 				echo
-	            "<div class=\"module_icon_block $mib_style_modifier\" id=\"" . sanitize_title( $mib_title ) . "\">";
+	            "<div class=\"container module_icon_block $mib_style_modifier\" id=\"" . sanitize_title( $mib_title ) . "\">";
 	    	endif;
             
             echo
@@ -173,7 +173,7 @@ if( have_rows('fc_content_block') ):
                         
             echo "
             <!-- CTA Feature Block -->
-            <div class=\"module_cta_feature_block\">" .
+            <div class=\"container module_cta_feature_block\">" .
             	"<div class=\"row centered\">" ;
 
 				// check if the repeater field has rows of data
@@ -260,11 +260,17 @@ if( have_rows('fc_content_block') ):
 	            "<div class=\"module_rich_callout_banner_block $mrcbb_style_modifier\" id=\"" . sanitize_title( $mrcbb_title ) . "\">";
 	    	endif;
 	        
-	        echo
-            	"<div class=\"mrcbb_title\">". $mrcbb_title . "</div>" .
-            	"<div class=\"mrcbb_body\">". $mrcbb_body . "</div>" ;
-            	// "<div class=\"mrcbb_cta_text\">". $mrcbb_cta_text . "</div>";
-
+	        echo "<div class='container'>";
+	        	
+	        	// Title
+	        	if (!empty($mrcbb_title)):
+					echo "<div class=\"mrcbb_title\">". $mrcbb_title . "</div>";
+	        	endif;
+	        	
+	        	// Body
+	        	if (!empty($mrcbb_body)):
+            		echo "<div class=\"mrcbb_body\">". $mrcbb_body . "</div>" ;
+            	endif;
             	
 			    // Show CTA button if field is filled in. If not, don't display CTA.	
 	        	if( !empty($mrcbb_cta_link) ):
@@ -274,7 +280,8 @@ if( have_rows('fc_content_block') ):
 	        			</a>";
 	        	endif;           	
 			echo
-			"</div>";
+			"</div>
+			</div>";
 
 
 
@@ -306,6 +313,8 @@ if( have_rows('fc_content_block') ):
             
             echo "
             <!-- Accordion Block -->
+            <section>
+            <div class='container'>
             <div class='accordion' id='myAccordion'>
 	            <div class='row'>
 	        		<div class='col-12'>
@@ -348,7 +357,10 @@ if( have_rows('fc_content_block') ):
 		        endwhile;		        
 		    endif;
 		    
-		    echo "</div>"; //end accordion-container
+		    echo "
+			    	</div>
+			    </div>
+		    </section>"; //end accordion-container
 		    
         endif;        
 
