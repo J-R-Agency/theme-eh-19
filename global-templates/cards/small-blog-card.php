@@ -10,12 +10,6 @@ defined( 'ABSPATH' ) || exit;
 
 $themes_path = get_theme_root_uri(); 
 $categories = get_the_category();
-
-if (!$mpbp_category) {
-	$category_color = 'dark-blue';
-} else {
-	$category_color = $mpbp_card_color;
-}
 ?>
 
 <div class="col-12 col-md-4">

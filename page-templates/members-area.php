@@ -15,11 +15,6 @@ get_header();
 <?php
 	$subtitle = get_field('subtitle');
 	$lead_in = get_field('lead_in');
-	$members_blog_section_title = get_field('members_blog_section_title');
-	$members_video_section_title = get_field('members_video_section_title');
-	$members_video_url = get_field('members_video_url');
-	$exclusive_resources_section_title = get_field('exclusive_resources_section_title');
-	$exclusive_resources_body_content = get_field('exclusive_resources_body_content');
 	$callout_cta_banner_title = get_field('callout_cta_banner_title');
 	$callout_cta_body_content = get_field('callout_cta_body_content');
 	$callout_cta_link = get_field('callout_cta_link');
@@ -28,11 +23,11 @@ get_header();
 ?>
 
 
-	<!-- Hero image -->
-	<?php include_once (get_template_directory() . '/global-templates/hero.php'); ?>
+<!-- Hero image -->
+<?php include_once (get_template_directory() . '/global-templates/hero.php'); ?>
 
-	<!-- Page title -->
-	<?php include_once (get_template_directory() . '/global-templates/page-title.php'); ?>
+<!-- Page title -->
+<?php include_once (get_template_directory() . '/global-templates/page-title.php'); ?>
 
 <!-- INTRODUCTION -->
 	<div class="content">
@@ -47,148 +42,36 @@ get_header();
 	</div>
 </div>
 
-<!-- RECENT BLOG POSTS -->
-<section class="blog-area">
-	<div class="container">
-		<!-- Recent blog posts -->
-		<div class="row">
-			<div class="col-12">
-				<h1><?php echo $members_blog_section_title; ?></h1>
-			</div>
-		</div>
-	
-		<?php get_template_part( 'global-templates/subsection-cards--blog' ); ?>
-		
-		<div class="row">
-			<div class="col-12">
-				<a href="<?php echo site_url(); ?>/blog/">
-					<div class="cta_link float-right">More from the Blog ></div>
-				</a>
-			</div>
-		</div>
-		
-		<!-- Videos -->
-		<div class="row">
-			<div class="col-12">
-				<h1><?php echo $members_video_section_title; ?></h1>
-			</div>
-		</div>
-			
-		<div class="row">
-			<div class="col-12">
-				<?php       
-		            echo '
-		            <!-- Module Video Block -->
-		            <div class="mvb_video_url">'. $members_video_url . '</div>';
-				?>
-			</div>
-		</div>
-			
-		<div class="row">
-			<div class="col-12">
-				<div class="cta_link float-right">More of our Videos ></div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!-- EXCLUSIVE RESOURCES -->
-<div class="container">
-	<!-- INTRODUCTION -->
-		<div class="module_content_block">
-			<div class='row'>
-				<div class='col-12'>
-					<div class='line'>
-						<img src="https://empowermenthouse.co.uk/wp-content/uploads/2020/01/hr-icon-house-circle-white.png" class='line-icon'>
-					</div>
-				</div>
-			</div>
-			<h2><?php echo $exclusive_resources_section_title; ?></h2>
-			<div class="mcb_content mcb_style--primary mcb_cta_style--primary">
-				<p><?php echo $exclusive_resources_body_content; ?></p>
-			</div>
-		</div>	
-	
-	
-	<!-- NEWSLETTERS -->
-	<div class="row">
-		<div class="col-12">
-			<h3>Newsletters</h3>
-		</div>
-	</div>
-	
-	<?php get_template_part( 'global-templates/subsection-cards--newsletters' ); ?>
-	
-	<div class="row">
-		<div class="col-12">		
-			<div class="more-resources float-right">
-				<?php
-				    // Get the ID of a given category
-				    $newsletter_id = get_cat_ID( 'newsletter' );
-				    // Get the URL of this category
-				    $newsletter_link = get_category_link( $newsletter_id );
-				?>				
-				<a href="<?php echo esc_url( $newsletter_link ); ?>">
-					More Newsletters<img src="<?=$themes_path;?>/theme-eh-19/images/icons/teal-arrow.png">
-				</a>
-			</div>
-		</div>
-	</div>
-	
-	<!-- EVENTS -->
-	<div class="row">
-		<div class="col-12">
-			<h3>Events</h3>
-		</div>
-	</div>
-	<?php get_template_part( 'global-templates/subsection-cards--events' ); ?>
-	
-	<div class="row">
-		<div class="col-12">
-			<div class="more-resources float-right">
-				<?php
-				    // Get the ID of a given category
-				    $events_id = get_cat_ID( 'events' );
-				
-				    // Get the URL of this category
-				    $events_link = get_category_link( $events_id );
-				?>					
-				<a href="<?php echo esc_url( $events_link ); ?>">
-					More Events<img src="<?=$themes_path;?>/theme-eh-19/images/icons/peach-arrow.png">
-				</a>
-			</div>
-		</div>
-	</div>
-		
-</div>
+<!-- Flexible Content -->
+<?php get_template_part( 'loop-templates/content', 'flexible' ); ?>
 
 <!-- Primary Content CTA -->
-<div class="container-fluid no-margins">
+<section class='module_rich_callout_banner_block mrcbb_style--tertiary'>
+<div class="container">
+	
 	<div class="row">
 		<div class="col-12">	
-			<div class='module_rich_callout_banner_block mrcbb_style--tertiary'>
-				<div class='row'>
-					<div class='col-12'>
-						<img src='<?php echo $themes_path; ?>/theme-eh-19/images/separators/separator-white-nocircle.png' class='line-icon'>
-					</div>
-				</div>
-				<div class='row'>
-					<div class='col-12'>
-						<h1><?php echo $callout_cta_banner_title; ?></h1>
-						<p><?php echo $callout_cta_body_content; ?></p>
-					</div>
-				</div>
-				<div class='row'>
-					<div class='col-12'>
-						<a href='<?php echo $callout_cta_link['url']; ?>'>
-							<div class='cta_link'><?php echo $callout_cta_link['title']; ?></div>
-						</a>
-					</div>
-				</div>
-			</div>
+			<img src='<?php echo $themes_path; ?>/theme-eh-19/images/separators/separator-white-nocircle.png' class='line-icon'>
 		</div>
 	</div>
-</div>
+	
+	<div class='row'>
+		<div class='col-12'>
+			<h1><?php echo $callout_cta_banner_title; ?></h1>
+			<p><?php echo $callout_cta_body_content; ?></p>
+		</div>
+	</div>
+				
+	<div class='row'>
+		<div class='col-12'>
+			<a href='<?php echo $callout_cta_link['url']; ?>'>
+				<div class='cta_link'><?php echo $callout_cta_link['title']; ?></div>
+			</a>
+		</div>
+	</div>
+				
+	</div>
+</section>
 
 <section>
 	<div class="container">

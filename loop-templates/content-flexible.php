@@ -38,54 +38,56 @@ if( have_rows('fc_content_block') ):
 			
             echo 
             "<!-- Module Content Block -->
-            <div class=\"container module_content_block " . $module_content_block_modifier . "\" id=\"" . sanitize_title( $mcb_title ) . "\">";
-            
-					// DIVIDER
-					if( !empty($mcb_divider_icon) ):
-		            	echo
-		            	"<div class='row'>
-		            		<div class='col-12'>
-		            			<div class='line'>
-		            				<img src='". $mcb_divider_icon['url'] ."' alt='".$mcb_divider_icon['alt']." class='line-icon'>
-		            			</div>
-		            		</div>
-		            	</div>";
-		            endif;
-		            
-		            
-		            // TITLE      	
-	            	if ( !empty( $mcb_title ) ):
-	            			if ( !empty( $mcb_style ) ):
-	            				$mcb_title_modifier = "mcb_title--" . $mcb_style;
-	            				echo
-								"<h2 class=\"mcb_title $mcb_title_modifier\">". $mcb_title . "</h2>";
-			           		endif;
-	            	endif;
-	            	
-	            	
-	            	// STYLES
-	            	
-        			if ( !empty( $mcb_style ) ):
-        				$mcb_style_modifier = "mcb_style--" . $mcb_style;
-        				$mcb_cta_style_modifier = "mcb_cta_style--" . $mcb_cta_style;
-        				
-        				echo
-	            		"<div class=\"mcb_content $mcb_style_modifier $mcb_cta_style_modifier\">". $mcb_content; 
-	            		
-	            		
-	            		
-				        // Show CTA button if field is filled in. If not, don't display CTA.	
-			        	if( !empty($mcb_cta_link) ):
-			        		echo 
-			        			"<a href=\"". $mcb_cta_link['url'] ."\">
-			        				<div class=\"cta_link centered\">". $mcb_cta_text . "</div>
-			        			</a>";
-			        	endif;
-			        	echo "</div>"; // Close mcb_content  	            		
-	            		      				
-	           		endif;
+            <section class= 'module_content_block " . $module_content_block_modifier . "' id='".sanitize_title( $mcb_title )."'>
+	            <div class='container'>";
+	            
+						// DIVIDER
+						if( !empty($mcb_divider_icon) ):
+			            	echo
+			            	"<div class='row'>
+			            		<div class='col-12'>
+			            			<div class='line'>
+			            				<img src='". $mcb_divider_icon['url'] ."' alt='".$mcb_divider_icon['alt']." class='line-icon'>
+			            			</div>
+			            		</div>
+			            	</div>";
+			            endif;
+			            
+			            
+			            // TITLE      	
+		            	if ( !empty( $mcb_title ) ):
+		            			if ( !empty( $mcb_style ) ):
+		            				$mcb_title_modifier = "mcb_title--" . $mcb_style;
+		            				echo
+									"<h2 class=\"mcb_title $mcb_title_modifier\">". $mcb_title . "</h2>";
+				           		endif;
+		            	endif;
+		            	
+		            	
+		            	// STYLES
+		            	
+	        			if ( !empty( $mcb_style ) ):
+	        				$mcb_style_modifier = "mcb_style--" . $mcb_style;
+	        				$mcb_cta_style_modifier = "mcb_cta_style--" . $mcb_cta_style;
+	        				
+	        				echo
+		            		"<div class=\"mcb_content $mcb_style_modifier $mcb_cta_style_modifier\">". $mcb_content; 
+		            		
+		            		
+		            		
+					        // Show CTA button if field is filled in. If not, don't display CTA.	
+				        	if( !empty($mcb_cta_link) ):
+				        		echo 
+				        			"<a href=\"". $mcb_cta_link['url'] ."\">
+				        				<div class=\"cta_link centered\">". $mcb_cta_text . "</div>
+				        			</a>";
+				        	endif;
+				        	echo "</div>"; // Close mcb_content  	            		
+		            		      				
+		           		endif;
         	
-			echo "</div>"; // Close module_content_block
+			echo "</div>
+			</section>"; // Close module_content_block
 
 
 
@@ -96,11 +98,11 @@ if( have_rows('fc_content_block') ):
 
             $mvb_video_url = get_sub_field('mvb_video_url'); // oEmbed
 			$mvb_video_title = get_sub_field('mvb_video_title'); // Text
-			$mvb_style = get_sub_field('mvb_style'); // Select
+			$mvb_background_color = get_sub_field('mvb_background_color'); // Select
                         
             echo "
             <!-- Module Video Block -->
-            <div class=\"module_video_block green\" id=\"" . sanitize_title( $mvb_video_title ) . "\">" .
+            <div class=\"module_video_block bg-".$mvb_background_color."\" id=\"" . sanitize_title( $mvb_video_title ) . "\">" .
             	"<div class=\"mvb_video_title centered\"><h3>". $mvb_video_title . "</h3></div>" .            
             	"<div class=\"mvb_video_url\">". $mvb_video_url . "</div>" .
 			"</div>";
@@ -122,44 +124,47 @@ if( have_rows('fc_content_block') ):
 	    	if ( !empty( $mib_style ) ):
 				$mib_style_modifier = "mib_style--" . $mib_style;
 				echo
-	            "<div class=\"container module_icon_block $mib_style_modifier\" id=\"" . sanitize_title( $mib_title ) . "\">";
-	    	endif;
-            
-            echo
-            	"<div class=\"mib_title\"><h2>". $mib_title . "</h2></div>" .
-            		"<div class=\"row\">" ;
-
-				// check if the repeater field has rows of data
-				if( have_rows('mib_icon_repeater') ):
-
-					// loop through the rows of data
-					while ( have_rows('mib_icon_repeater') ) : the_row();
-
-						$mib_icon_image = get_sub_field('mib_icon_image'); // Image array
-						$mib_icon_heading = get_sub_field('mib_icon_heading'); // Text
-
-						echo
-						"<div class=\"mib_icon_repeater col-fifth\">" .
-			            	"<img src='". $mib_icon_image['url'] ."' alt='".$mib_icon_image['alt']."'>" .
-			            	"<div class=\"mib_icon_heading\">". $mib_icon_heading . "</div>" .
-						"</div>"
-						;
-
-					endwhile;
-
-				else :
-
-					// no rows found
-
+	            "
+	            <section class='module_icon_block ".$mib_style_modifier."' id='" . sanitize_title( $mib_title ) . "'>
+		            <div class='container'>";
+		    	endif;
+	            
+	            echo
+	            	"<div class=\"mib_title\"><h2>". $mib_title . "</h2></div>" .
+	            		"<div class=\"row\">" ;
+	
+					// check if the repeater field has rows of data
+					if( have_rows('mib_icon_repeater') ):
+	
+						// loop through the rows of data
+						while ( have_rows('mib_icon_repeater') ) : the_row();
+	
+							$mib_icon_image = get_sub_field('mib_icon_image'); // Image array
+							$mib_icon_heading = get_sub_field('mib_icon_heading'); // Text
+	
+							echo
+							"<div class=\"mib_icon_repeater col-fifth\">" .
+				            	"<img src='". $mib_icon_image['url'] ."' alt='".$mib_icon_image['alt']."'>" .
+				            	"<div class=\"mib_icon_heading\">". $mib_icon_heading . "</div>" .
+							"</div>"
+							;
+	
+						endwhile;
+	
+					else :
+	
+						// no rows found
+	
+					endif;
+	
+				if( !empty($mib_body) ):	
+		            echo 
+		            	"	<div class=\"mib_body\">". $mib_body . "</div>";
 				endif;
-
-			if( !empty($mib_body) ):	
-	            echo 
-	            	"	<div class=\"mib_body\">". $mib_body . "</div>";
-			endif;
-			
-			echo "</div>
-			</div>"; // Close module_icon_block
+				
+				echo "</div>
+				</div>
+			</section>"; // Close module_icon_block
 			
 
 		  // -------------------------- //
@@ -173,74 +178,76 @@ if( have_rows('fc_content_block') ):
                         
             echo "
             <!-- CTA Feature Block -->
-            <div class=\"container module_cta_feature_block\">" .
-            	"<div class=\"row centered\">" ;
-
-				// check if the repeater field has rows of data
-				if( have_rows('mcfb_repeater') ):
-
-					// loop through the rows of data
-					while ( have_rows('mcfb_repeater') ) : the_row();
-
-						$mcfb_image = get_sub_field('mcfb_image'); // Image array
-						$mcfb_title = get_sub_field('mcfb_title'); // Text
-						$mcfb_body = get_sub_field('mcfb_body'); // Text area
-						$mcfb_cta_text = get_sub_field('mcfb_cta_text'); // Text
-						$mcfb_cta_link = get_sub_field('mcfb_cta_link'); // Link array
-						$mcfb_cta_style = get_sub_field('mcfb_cta_style'); // Select
-						
-						
-						if ($mcfb_style == "primary"):
-							echo
-							"<div class=\"col-md-4 col-12\">" .
-				            "<img src='". $mcfb_image['url'] ."' alt='".$mcfb_image['alt']."'>";
-				        elseif ($mcfb_style == "profile"):
-				        	echo
-				        	"<div class=\"col-fifth\">" .
-				        	"<img src='". $mcfb_image['url'] ."' alt='".$mcfb_image['alt']."' class='avatar-peach'>";
-			            endif;
-			            
-			            echo
-				            // Title
-				            "<div class=\"mcfb_title\"><h5>". $mcfb_title . "</h5></div>" .
-				            
-				            //Body
-				            	"<div class=\"mcfb_body\">". $mcfb_body . "</div>";
-				            
-				            if( !empty($mcfb_cta_link) ):
-					            // CTA Button
-					            echo
-					            	"<a href=\"". $mcfb_cta_link['url'] ."\">";
-					            	
-					            		if ($mcfb_cta_style == 'primary'):
-					            			echo
-												"<div class=\"cta_link centered\">". $mcfb_cta_text . "</div>";
-											
-										elseif($mcfb_cta_style == 'secondary'):
-											echo
-												"<div class=\"cta_link navy centered\">". $mcfb_cta_text . "</div>";
-												
-										elseif($mcfb_cta_style == 'tertiary'):
-											echo
-												"<div class=\"cta_link green centered\">". $mcfb_cta_text . "</div>";
-										
-										endif;
+            <section class='module_cta_feature_block'>
+	            <div class=\"container\">" .
+	            	"<div class=\"row centered\">" ;
+	
+					// check if the repeater field has rows of data
+					if( have_rows('mcfb_repeater') ):
+	
+						// loop through the rows of data
+						while ( have_rows('mcfb_repeater') ) : the_row();
+	
+							$mcfb_image = get_sub_field('mcfb_image'); // Image array
+							$mcfb_title = get_sub_field('mcfb_title'); // Text
+							$mcfb_body = get_sub_field('mcfb_body'); // Text area
+							$mcfb_cta_text = get_sub_field('mcfb_cta_text'); // Text
+							$mcfb_cta_link = get_sub_field('mcfb_cta_link'); // Link array
+							$mcfb_cta_style = get_sub_field('mcfb_cta_style'); // Select
+							
+							
+							if ($mcfb_style == "primary"):
 								echo
-									"</a>";
-							endif;
-							echo		
-				            "</div>";
-
-					endwhile;
-
-				else :
-
-					// no rows found
-
-				endif;
-
-			echo "</div>
-			</div>"; // Close cta_feature_block
+								"<div class=\"col-md-4 col-12\">" .
+					            "<img src='". $mcfb_image['url'] ."' alt='".$mcfb_image['alt']."'>";
+					        elseif ($mcfb_style == "profile"):
+					        	echo
+					        	"<div class=\"col-fifth\">" .
+					        	"<img src='". $mcfb_image['url'] ."' alt='".$mcfb_image['alt']."' class='avatar-peach'>";
+				            endif;
+				            
+				            echo
+					            // Title
+					            "<div class=\"mcfb_title\"><h5>". $mcfb_title . "</h5></div>" .
+					            
+					            //Body
+					            	"<div class=\"mcfb_body\">". $mcfb_body . "</div>";
+					            
+					            if( !empty($mcfb_cta_link) ):
+						            // CTA Button
+						            echo
+						            	"<a href=\"". $mcfb_cta_link['url'] ."\">";
+						            	
+						            		if ($mcfb_cta_style == 'primary'):
+						            			echo
+													"<div class=\"cta_link centered\">". $mcfb_cta_text . "</div>";
+												
+											elseif($mcfb_cta_style == 'secondary'):
+												echo
+													"<div class=\"cta_link navy centered\">". $mcfb_cta_text . "</div>";
+													
+											elseif($mcfb_cta_style == 'tertiary'):
+												echo
+													"<div class=\"cta_link green centered\">". $mcfb_cta_text . "</div>";
+											
+											endif;
+									echo
+										"</a>";
+								endif;
+								echo		
+					            "</div>";
+	
+						endwhile;
+	
+					else :
+	
+						// no rows found
+	
+					endif;
+	
+				echo "</div>
+				</div>
+			</section>"; // Close cta_feature_block
 
 
           // ---------------------------------------- //
@@ -257,31 +264,33 @@ if( have_rows('fc_content_block') ):
  	    	if ( !empty( $mrcbb_cta_style ) ):
 				$mrcbb_style_modifier = "mrcbb_style--" . $mrcbb_cta_style;
 				echo
-	            "<div class=\"module_rich_callout_banner_block $mrcbb_style_modifier\" id=\"" . sanitize_title( $mrcbb_title ) . "\">";
-	    	endif;
-	        
-	        echo "<div class='container'>";
-	        	
-	        	// Title
-	        	if (!empty($mrcbb_title)):
-					echo "<div class=\"mrcbb_title\">". $mrcbb_title . "</div>";
-	        	endif;
-	        	
-	        	// Body
-	        	if (!empty($mrcbb_body)):
-            		echo "<div class=\"mrcbb_body\">". $mrcbb_body . "</div>" ;
-            	endif;
-            	
-			    // Show CTA button if field is filled in. If not, don't display CTA.	
-	        	if( !empty($mrcbb_cta_link) ):
-	        		echo 
-	        			"<a href=\"". $mrcbb_cta_link['url'] ."\">
-	        				<div class=\"cta_link centered\">". $mrcbb_cta_text . "</div>
-	        			</a>";
-	        	endif;           	
-			echo
-			"</div>
-			</div>";
+	            "
+		        <section class=\"module_rich_callout_banner_block $mrcbb_style_modifier\"
+		        		 id=\"" . sanitize_title( $mrcbb_title ) . "\">";
+		    	endif;
+		        
+		        echo "<div class='container'>";
+		        	
+		        	// Title
+		        	if (!empty($mrcbb_title)):
+						echo "<div class=\"mrcbb_title\">". $mrcbb_title . "</div>";
+		        	endif;
+		        	
+		        	// Body
+		        	if (!empty($mrcbb_body)):
+	            		echo "<div class=\"mrcbb_body\">". $mrcbb_body . "</div>" ;
+	            	endif;
+	            	
+				    // Show CTA button if field is filled in. If not, don't display CTA.	
+		        	if( !empty($mrcbb_cta_link) ):
+		        		echo 
+		        			"<a href=\"". $mrcbb_cta_link['url'] ."\">
+		        				<div class=\"cta_link centered\">". $mrcbb_cta_text . "</div>
+		        			</a>";
+		        	endif;           	
+				echo
+				"</div>
+			</section>";
 
 
 
@@ -371,6 +380,8 @@ if( have_rows('fc_content_block') ):
 			$mpbp_title = get_sub_field('mpbp_title');
 			$mpbp_category = get_sub_field('mpbp_category'); 
 			$mpbp_card_color = get_sub_field('mpbp_card_color');
+			$mpbp_background_color = get_sub_field('mpbp_background_color');
+			$mpbp_show_sticky_posts = get_sub_field('mpbp_show_sticky_posts');
 			$cat_name = get_cat_name($mpbp_category);
 			$cat_link = get_category_link( $mpbp_category );
 			
@@ -379,6 +390,41 @@ if( have_rows('fc_content_block') ):
 			} else {
 				$read_more_text = "Read more posts in " . $cat_name;
 			}
+			
+			echo "
+			<section class='bg-".$mpbp_background_color." blog-posts-module'>
+				<div class='container'>
+					<h2>".$mpbp_title."</h2>
+			";
+			
+				if ($mpbp_show_sticky_posts) {
+					// Big blog cards
+					$stickyArgs = array(
+					    'post_type'      => 'post',
+					    'post_status'	 => 'private',
+					    'posts_per_page' => 1,
+					    'order'          => 'DESC',
+					    'category__in'	 => $mpbp_category,
+					    'ignore_sticky_posts' => 0
+					 );
+					 
+					$stickyQuery = new WP_Query($stickyArgs);
+					 
+					if ( $stickyQuery->have_posts() ) :
+						echo	"<div class='row'>";
+															 
+						    while ( $stickyQuery->have_posts() ) : $stickyQuery->the_post();
+							 	
+								$categories = get_the_category();
+								$category_color = $mpbp_card_color;
+								
+								include (get_template_directory().'/global-templates/cards/big-blog-card.php');	
+								
+							endwhile;
+							
+						echo "</div> <!-- end row -->";
+					endif;					
+				}			
 						   
 				$args = array(
 				    'post_type'      => 'post', //write slug of post type
@@ -392,37 +438,135 @@ if( have_rows('fc_content_block') ):
 				$query = new WP_Query($args);
 				 
 				if ( $query->have_posts() ) :
-					echo "
-					<section class='bg-white blog-posts-module'>
-						<div class='container'>
-							<h2>".$mpbp_title."</h2>
-							<div class='row'>";
+					echo "<div class='row'>";
 														 
 					    while ( $query->have_posts() ) : $query->the_post();
 						 	
 							$categories = get_the_category();
+							$category_color = $mpbp_card_color;
 							
 							include (get_template_directory().'/global-templates/cards/small-blog-card.php');	
 							
 						endwhile;
 						
-					echo "	</div> <!-- end row -->
-					
-							<div class='row'>
-								<div class='col-12'>		
-									<div class='more-resources float-right'>
-										<a href='".$cat_link."'>
-											".$read_more_text."<img src='".get_template_directory_uri()."/images/icons/".$mpbp_card_color."-arrow.svg'>
-										</a>
-									</div>
+					echo "</div> <!-- end row -->";
+				endif;
+				
+				echo "
+						<div class='row'>
+							<div class='col-12'>		
+								<div class='more-resources float-right'>
+									<a href='".$cat_link."'>
+										".$read_more_text."<img src='".get_template_directory_uri()."/images/icons/".$mpbp_card_color."-arrow.svg'>
+									</a>
 								</div>
 							</div>
-							
-						</div> <!-- end container -->
-					</section>";
-				endif; 
+						</div>
+						
+					</div> <!-- end container -->
+				</section>				
+				
+				";				
+				
 				wp_reset_query();
-            
+ 
+ 
+           // -------------------------------- //
+         // ---- CASE: PRIVATE BLOG POSTS ----//
+        // -------------------------------- //
+        elseif( get_row_layout() == 'module_private_blog_posts' ): 
+			
+			$mprbp_title = get_sub_field('mprbp_title');
+			$mprbp_category = get_sub_field('mprbp_category'); 
+			$mprbp_card_color = get_sub_field('mprbp_card_color');
+			$mprbp_background_color = get_sub_field('mprbp_background_color');
+			$mprbp_show_sticky_posts = get_sub_field('mprbp_show_sticky_posts');
+			$cat_name = get_cat_name($mprbp_category);
+			$cat_link = get_category_link( $mprbp_category );
+			
+			if (!$mprbp_category) {
+				$read_more_text = 'Read more from the blog';
+			} else {
+				$read_more_text = "Read more posts in " . $cat_name;
+			}
+			
+			echo "
+			<section class='bg-".$mprbp_background_color." blog-posts-module'>
+				<div class='container'>
+					<h2>".$mprbp_title."</h2>";
+				
+				if ($mprbp_show_sticky_posts) {
+					// Big blog cards
+					$stickyArgs = array(
+					    'post_type'      => 'post',
+					    'post_status'	 => 'private',
+					    'posts_per_page' => 1,
+					    'order'          => 'DESC',
+					    'category__in'	 => $mprbp_category,
+					    'ignore_sticky_posts' => 0
+					 );
+					 
+					$stickyQuery = new WP_Query($stickyArgs);
+					 
+					if ( $stickyQuery->have_posts() ) :
+						echo	"<div class='row'>";
+															 
+						    while ( $stickyQuery->have_posts() ) : $stickyQuery->the_post();
+							 	
+								$categories = get_the_category();
+								$category_color = $mprbp_card_color;
+								
+								include (get_template_directory().'/global-templates/cards/big-blog-card.php');	
+								
+							endwhile;
+							
+						echo "</div> <!-- end row -->";
+					endif;					
+				}
+								
+				// Small blog cards
+				$args = array(
+				    'post_type'      => 'post',
+				    'post_status'	 => 'private',
+				    'posts_per_page' => 3,
+				    'order'          => 'DESC',
+				    'category__in'	 => $mprbp_category,
+				    'ignore_sticky_posts' => 1
+				 );
+				 
+				$query = new WP_Query($args);
+				 
+				if ( $query->have_posts() ) :
+					echo	"<div class='row'>";
+														 
+					    while ( $query->have_posts() ) : $query->the_post();
+						 	
+							$categories = get_the_category();
+							$category_color = $mprbp_card_color;
+							
+							include (get_template_directory().'/global-templates/cards/small-blog-card.php');	
+							
+						endwhile;
+						
+					echo "</div> <!-- end row -->";
+				endif;
+				
+				echo "
+						<div class='row'>
+							<div class='col-12'>		
+								<div class='more-resources float-right'>
+									<a href='".$cat_link."'>
+										".$read_more_text."<img src='".get_template_directory_uri()."/images/icons/".$mprbp_card_color."-arrow.svg'>
+									</a>
+								</div>
+							</div>
+						</div>
+						
+					</div> <!-- end container -->
+				</section>				
+				
+				";
+				wp_reset_query();           
             
 
           // ----------------------------- //

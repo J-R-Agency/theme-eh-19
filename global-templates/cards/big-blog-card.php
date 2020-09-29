@@ -13,7 +13,7 @@ $themes_path = get_theme_root_uri();
 
 <div class="col-12">
 	<a href="<?php the_permalink(); ?>" class="title">
-		<div class="blog-card">
+		<div class="blog-card blog-card__<?php echo $category_color; ?>">
 			<div>
 				<?php if ( has_post_thumbnail() ) {
 		    		echo "<img src=\"" . get_the_post_thumbnail_url() . "\">";

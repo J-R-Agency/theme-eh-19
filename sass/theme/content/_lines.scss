@@ -19,12 +19,10 @@
 	color: $navy; 
 	margin-left: -20vw;
 	margin-right: -20vw;
-	padding-top: 2rem;
 	
 	@media all and (max-width: $breakpoint-phone) {
 		margin-left: -50vw;
 		margin-right: -50vw;
-		padding-top: 5rem;
 	}
 		
 	&.shortened {

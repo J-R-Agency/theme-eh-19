@@ -56,31 +56,29 @@ $container = get_theme_mod( 'understrap_container_type' );
 							
 							<!-- RIGHT -->
 							<div class="col-md-6 col-12">
-								<div class='container'>
-									<div class="row mt-4 mb-4">
-										<div class="col-12 sm-icons">
+								<div class="row mt-4 mb-4">
+									<div class="col-12 sm-icons">
+									
+									<?php
+									if( have_rows('social_media', 'option') ):
+										while( have_rows('social_media', 'option') ): the_row();
 										
-										<?php
-										if( have_rows('social_media', 'option') ):
-											while( have_rows('social_media', 'option') ): the_row();
+											$social_media_type = get_sub_field('social_media_type', 'option');
+											$social_media_link = get_sub_field('social_media_link', 'option');
 											
-												$social_media_type = get_sub_field('social_media_type', 'option');
-												$social_media_link = get_sub_field('social_media_link', 'option');
-												
-												echo "
-													<span class='sm-icon'>
-														<a href='".$social_media_link['url']."' target='_blank'>
-															<img src='".get_template_directory_uri()."/images/icons/grey-".$social_media_type.".svg' >
-														</a>
-													</span>			
-												
-												";
-												
-											endwhile;    
-										endif;											
-										?>
+											echo "
+												<span class='sm-icon'>
+													<a href='".$social_media_link['url']."' target='_blank'>
+														<img src='".get_template_directory_uri()."/images/icons/grey-".$social_media_type.".svg' >
+													</a>
+												</span>			
 											
-										</div>
+											";
+											
+										endwhile;    
+									endif;											
+									?>
+										
 									</div>
 								</div>
 								

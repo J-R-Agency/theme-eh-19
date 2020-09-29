@@ -7,6 +7,13 @@ html,body
     overflow-x: hidden; 
 }
 
+.container {
+	padding: 4rem 0;
+	@media all and (max-width: $breakpoint-phone) {
+		padding: 1rem;	
+	}
+}
+
 /*-- Columns --*/
 .col-fifth {
     flex: 0 0 20%;
@@ -29,11 +36,6 @@ html,body
 	@media all and (max-width: $breakpoint-phone) {
 		height: 250px; 
 	}	
-}
-
-// Page Title
-.page-title {
-	margin: 3rem;	
 }
 
 // Callout Banner
@@ -79,7 +81,6 @@ html,body
 // Subtitle
 .subtitle {
 	text-align: center;
-	padding: 3rem; 
 	width: 50%;
 	margin: 0 auto;
 	@media all and (max-width: $breakpoint-phone) {
@@ -128,4 +129,9 @@ html,body
 
 .bg-teal {
 	background-color: $teal;
+	color: white;
+}
+
+.bg-mint {
+	background-color: $ambitious-mint;
 }

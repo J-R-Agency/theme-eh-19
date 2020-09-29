@@ -52,9 +52,8 @@ get_header();
 		</div>
 	</div>
 	
-	<div class="content">
-		<?php get_template_part( 'loop-templates/content', 'flexible' ); ?>
-	</div>
+	<!-- Flexible Content -->
+	<?php get_template_part( 'loop-templates/content', 'flexible' ); ?>	
 	
 <?php 
 get_footer();

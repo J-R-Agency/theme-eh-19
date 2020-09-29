@@ -1,10 +1,5 @@
 .module_content_block {
 	text-align: center;
-	padding: 4rem 0;
-	
-	@media all and (max-width: $breakpoint-phone) {
-		padding: 1rem;	
-	}
 	
 	ul {
 		list-style: none;
@@ -45,9 +40,7 @@
 	}
 
 
-	.mcb_content {
-		margin: 0 0 2rem 0;
-		
+	.mcb_content {		
 		.flex-wrapper {
 			justify-content: center;
 		}
@@ -61,8 +54,10 @@
 }
 
 // PRIMARY STYLE
-.mcb_style--primary {
-	
+.module_content_block--primary {
+	.line {
+		padding-top: 2rem;
+	}	
 }
 
 // SECONDARY STYLE (Two columns)
