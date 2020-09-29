@@ -36,82 +36,83 @@ defined( 'ABSPATH' ) || exit;
 		</header><!-- .entry-header -->
 		
 		<div class="entry-content">
-
-			<!-- Social Media 1 -->
-			<!-- HIDE FOR NOW
-			<div class="row social-media-header centered">
-					<?php //include get_template_directory() ."/inc/social-media-share.php"; ?>
-			</div>
-			-->
-			<div class="row">
-				<div class="col-12 mt-5">
-					<?php the_content(); ?>					
+			<div class='container'>
+				<!-- Social Media 1 -->
+				<!-- HIDE FOR NOW
+				<div class="row social-media-header centered">
+						<?php //include get_template_directory() ."/inc/social-media-share.php"; ?>
 				</div>
-			</div>
+				-->
 				
-			<?php
-			wp_link_pages(
-				array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
-					'after'  => '</div>',
-				)
-			);
-			?>
-			
-		<!-- Social Media 2 -->
-		<!-- HIDE FOR NOW
-		<div class="row social-media-footer centered">
-				<?php //include get_template_directory() ."/inc/social-media-share.php"; ?>
-		</div>
-		-->
-		<!-- AUTHOR BIO -->
-		<?php		
-			// Get author's display name 
-			$display_name = get_the_author_meta( 'display_name', $post->post_author );
-				  
-			// Get author's biographical information or description
-			$user_description = get_the_author_meta( 'user_description', $post->post_author );
-			  
-			// Get author's website URL 
-			$user_website = get_the_author_meta('url', $post->post_author);
-			  
-			// Get link to the author archive page
-			$user_posts = get_author_posts_url( get_the_author_meta( 'ID' , $post->post_author));
-			
-			// Get avatar
-			$user_avatar = get_avatar( get_the_author_meta('user_email') , 90 );
-			
-			// Get job role
-			$job_role = get_the_author_meta('job-role', $post->post_author);
-			
-			$author_details = null;		
-		?>
-		
-		<div class="row author-bio-section">
-			<div class="col-md-4 col-12">
-				<?php echo get_avatar( get_the_author_meta('user_email') , 240 ); ?>
-			</div>
-			<div class="col-md-8 vertical-center">
 				<div class="row">
-					<div class="col-12">
-						<h3><?php echo $display_name; ?> </h3>
-						<h4><?php echo $job_role; ?></h4>
+					<div class="col-12 mt-5">
+						<?php the_content(); ?>					
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-12">
-						<p class="author_description">
-							<?php echo $user_description; ?>
-						</p>
-					</div>
+				
+				<?php
+				wp_link_pages(
+					array(
+						'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
+						'after'  => '</div>',
+					)
+				);
+				?>
+				
+				<!-- Social Media 2 -->
+				<!-- HIDE FOR NOW
+				<div class="row social-media-footer centered">
+						<?php //include get_template_directory() ."/inc/social-media-share.php"; ?>
 				</div>
+				-->
+				<!-- AUTHOR BIO -->
+				<?php		
+					// Get author's display name 
+					$display_name = get_the_author_meta( 'display_name', $post->post_author );
+						  
+					// Get author's biographical information or description
+					$user_description = get_the_author_meta( 'user_description', $post->post_author );
+					  
+					// Get author's website URL 
+					$user_website = get_the_author_meta('url', $post->post_author);
+					  
+					// Get link to the author archive page
+					$user_posts = get_author_posts_url( get_the_author_meta( 'ID' , $post->post_author));
+					
+					// Get avatar
+					$user_avatar = get_avatar( get_the_author_meta('user_email') , 90 );
+					
+					// Get job role
+					$job_role = get_the_author_meta('job-role', $post->post_author);
+					
+					$author_details = null;		
+				?>
+				
 				<div class="row author-bio-section">
-					<?php echo $author_details; ?>
-				</div>
-			</div>
-		</div>	<!-- end author bio section -->		
+					<div class="col-md-4 col-12">
+						<?php echo get_avatar( get_the_author_meta('user_email') , 240 ); ?>
+					</div>
+					<div class="col-md-8 vertical-center">
+						<div class="row">
+							<div class="col-12">
+								<h3><?php echo $display_name; ?> </h3>
+								<h4><?php echo $job_role; ?></h4>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<p class="author_description">
+									<?php echo $user_description; ?>
+								</p>
+							</div>
+						</div>
+						<div class="row author-bio-section">
+							<?php echo $author_details; ?>
+						</div>
+					</div>
+				</div>	<!-- end author bio section -->		
 		
-			
+			</div>
 		</div><!-- .entry-content -->
 
 		<!--
