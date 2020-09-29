@@ -375,7 +375,7 @@ if( have_rows('fc_content_block') ):
 				    'post_type'      => 'post', //write slug of post type
 				    'status'		 => 'publish',
 				    'posts_per_page' => 3,
-				    'order'          => 'ASC',
+				    'order'          => 'DESC',
 				    'category__in'	 => $mpbp_category
 				 );
 				 
