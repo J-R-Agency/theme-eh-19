@@ -12,7 +12,7 @@ $themes_path = get_theme_root_uri();
 $categories = get_the_category();
 ?>
 
-<div class="col-12 col-md-4">
+<div class="col-12 col-lg-4">
 	<a href="<?php the_permalink(); ?>" class="title">
 		<div class="blog-card blog-card__small blog-card__<?php echo $category_color; ?>">
 			
