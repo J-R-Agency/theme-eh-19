@@ -100,10 +100,16 @@ if( have_rows('fc_content_block') ):
                         
             echo "
             <!-- Module Video Block -->
-            <div class=\"module_video_block bg-".$mvb_background_color."\" id=\"" . sanitize_title( $mvb_video_title ) . "\">" .
+            <section class=\"module_video_block bg-".$mvb_background_color."\"
+            		 id=\"" . sanitize_title( $mvb_video_title ) . "\">" .
+					 
+				"<div class='container'>".
+            
             	"<div class=\"mvb_video_title centered\"><h3>". $mvb_video_title . "</h3></div>" .            
             	"<div class=\"mvb_video_url\">". $mvb_video_url . "</div>" .
-			"</div>";
+            	
+            	"</div>" .
+			"</section>";
 
 
 
