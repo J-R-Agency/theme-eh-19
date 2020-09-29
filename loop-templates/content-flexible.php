@@ -376,7 +376,8 @@ if( have_rows('fc_content_block') ):
 				    'status'		 => 'publish',
 				    'posts_per_page' => 3,
 				    'order'          => 'DESC',
-				    'category__in'	 => $mpbp_category
+				    'category__in'	 => $mpbp_category,
+				    'ignore_sticky_posts' => 1
 				 );
 				 
 				$query = new WP_Query($args);
