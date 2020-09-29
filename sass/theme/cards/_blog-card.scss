@@ -64,12 +64,14 @@
 			margin: 0.5rem 0 0 0;
 		}
 		
+		// Card title
 		h3 {
 			max-height: 55px;
 			overflow: hidden;
 			font-size: 1.5rem;
 		}
 		
+		// Card excerpt
 		p {
 			display: block;
 			width: 100%;
@@ -77,6 +79,15 @@
 			overflow: hidden;
 			text-overflow: ellipsis;			
 		}			
+	}
+}
+
+.blog-posts-module {
+	padding: 2rem 0;
+	
+	// Module title
+	h2 {
+		text-align: center;
 	}
 }
 

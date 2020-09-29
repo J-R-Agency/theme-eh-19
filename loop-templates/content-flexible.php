@@ -370,10 +370,18 @@ if( have_rows('fc_content_block') ):
 
 			$mpbp_title = get_sub_field('mpbp_title');
 			$mpbp_category = get_sub_field('mpbp_category'); 
-			   
+			$cat_name = get_cat_name($mpbp_category);
+			$cat_link = get_category_link( $mpbp_category );
+			
+			if (!$mpbp_category) {
+				$read_more_text = 'Read more from the blog';
+			} else {
+				$read_more_text = "Read more posts in " . $cat_name;
+			}
+						   
 				$args = array(
 				    'post_type'      => 'post', //write slug of post type
-				    'status'		 => 'publish',
+				    'post_status'	 => 'publish',
 				    'posts_per_page' => 3,
 				    'order'          => 'DESC',
 				    'category__in'	 => $mpbp_category,
@@ -384,7 +392,7 @@ if( have_rows('fc_content_block') ):
 				 
 				if ( $query->have_posts() ) :
 					echo "
-					<section class='bg-white'>
+					<section class='bg-white blog-posts-module'>
 						<div class='container'>
 							<h2>".$mpbp_title."</h2>
 							<div class='row'>";
@@ -394,11 +402,22 @@ if( have_rows('fc_content_block') ):
 							$categories = get_the_category();
 							
 							include (get_template_directory().'/global-templates/cards/small-blog-card.php');	
-						
+							
 						endwhile;
 						
-					echo "</div>
-						</div>
+					echo "	</div> <!-- end row -->
+					
+							<div class='row'>
+								<div class='col-12'>		
+									<div class='more-resources float-right'>
+										<a href='".$cat_link."'>
+											".$read_more_text."<img src='".get_template_directory_uri()."/images/icons/dark-blue-arrow.svg'>
+										</a>
+									</div>
+								</div>
+							</div>
+							
+						</div> <!-- end container -->
 					</section>";
 				endif; 
 				wp_reset_query();
