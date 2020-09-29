@@ -71,9 +71,7 @@ if( have_rows('fc_content_block') ):
 	        				$mcb_cta_style_modifier = "mcb_cta_style--" . $mcb_cta_style;
 	        				
 	        				echo
-		            		"<div class=\"mcb_content $mcb_style_modifier $mcb_cta_style_modifier\">". $mcb_content; 
-		            		
-		            		
+		            		"<div class=\"mcb_content $mcb_style_modifier $mcb_cta_style_modifier\">". $mcb_content;
 		            		
 					        // Show CTA button if field is filled in. If not, don't display CTA.	
 				        	if( !empty($mcb_cta_link) ):
