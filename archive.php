@@ -11,64 +11,36 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header();
-
-$container = get_theme_mod( 'understrap_container_type' );
 ?>
+<?php if ( have_posts() ) : ?>
 
-<div class="wrapper" id="archive-wrapper">
-
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
-
+<section>
+	<div class="container">
 		<div class="row">
+			<div class="col-12">
+				<h1 class="centered">
+					<?php
+					the_category( ', ' );
+					?>
+				</h1><!-- .page-header -->
+			</div>
+		</div>
+		
+		<!-- POST LOOP -->
+		<?php get_template_part( 'global-templates/subsection-cards--blog' ); ?>
+		
+		<div class="row">
+			<div class="col-12">
+				<a href="<?php echo site_url(); ?>/members-area/">Back to Members Area</a>
+			</div>
+		</div>
+	</div> <!-- end container -->
+</section>
 
-			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
+<?php else : ?>
 
-			<main class="site-main" id="main">
+	<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
-				<?php if ( have_posts() ) : ?>
-
-				<section>
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
-								<h1 class="centered">
-									<?php
-									the_category( ', ' );
-									?>
-								</h1><!-- .page-header -->
-							</div>
-						</div>
-						
-						<!-- POST LOOP -->
-						<?php get_template_part( 'global-templates/subsection-cards--blog' ); ?>
-						
-						<div class="row">
-							<div class="col-12">
-								<a href="<?php echo site_url(); ?>/members-area/">Back to Members Area</a>
-							</div>
-						</div>
-					</div> <!-- end container -->
-				</section>
-
-				<?php else : ?>
-
-					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
-
-				<?php endif; ?>
-
-			</main><!-- #main -->
-
-			<!-- The pagination component -->
-			<?php understrap_pagination(); ?>
-
-			<!-- Do the right sidebar check -->
-			<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
-
-		</div> <!-- .row -->
-
-	</div><!-- #content -->
-
-	</div><!-- #archive-wrapper -->
+<?php endif; ?>
 
 <?php get_footer();

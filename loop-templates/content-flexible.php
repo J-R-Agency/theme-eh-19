@@ -383,12 +383,14 @@ if( have_rows('fc_content_block') ):
 			$mpbp_background_color = get_sub_field('mpbp_background_color');
 			$mpbp_show_sticky_posts = get_sub_field('mpbp_show_sticky_posts');
 			$cat_name = get_cat_name($mpbp_category);
-			$cat_link = get_category_link( $mpbp_category );
+			
 			
 			if (!$mpbp_category) {
 				$read_more_text = 'Read more from the blog';
+				$cat_link = site_url()."/archive";
 			} else {
 				$read_more_text = "Read more posts in " . $cat_name;
+				$cat_link = get_category_link( $mpbp_category );
 			}
 			
 			echo "
