@@ -30,7 +30,8 @@ get_header();
 <?php include_once (get_template_directory() . '/global-templates/page-title.php'); ?>
 
 <!-- INTRODUCTION -->
-	<div class="content">
+<section class='bg-light-grey'>
+	<div class="container">
 		<div class="module_content_block module_content_block--primary">
 			<h2 class="mcb_title mcb_title--primary"><?php echo $subtitle; ?></h2>
 			<div class="mcb_content mcb_style--primary mcb_cta_style--primary">
@@ -40,7 +41,7 @@ get_header();
 			</div>
 		</div>			
 	</div>
-</div>
+</section>
 
 <!-- Flexible Content -->
 <?php get_template_part( 'loop-templates/content', 'flexible' ); ?>
