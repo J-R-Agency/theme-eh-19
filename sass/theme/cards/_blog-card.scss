@@ -8,8 +8,6 @@
 .blog-card {
 	background-color: white;
 	padding: 2rem;
-	-webkit-box-shadow: -14px -14px 0px 0px rgba(29,31,52,1), 0px 0px 5px 0px rgba(0,0,0,0.5);
-	-moz-box-shadow: -14px -14px 0px 0px rgba(29,31,52,1), 0px 0px 5px 0px rgba(0,0,0,0.5);
 	box-shadow: -14px -14px 0px 0px rgba(29,31,52,1), 0px 0px 5px 0px rgba(0,0,0,0.5);
 	margin: 2rem 0;
 	overflow: hidden;
@@ -17,6 +15,22 @@
 	@media all and (max-width: $breakpoint-phone) {
 		height: 350px;
 		padding: 1rem;
+	}
+	
+	&__dark-blue {
+		box-shadow: -14px -14px 0px 0px rgba(29,31,52,1), 0px 0px 5px 0px rgba(0,0,0,0.5);
+	}
+	
+	&__peach {
+		box-shadow: -14px -14px 0px 0px rgba(243,180,138,1), 0px 0px 5px 0px rgba(0,0,0,0.5);
+	}
+	
+	&__mint {
+		box-shadow: -14px -14px 0px 0px rgba(171,209,197,1), 0px 0px 5px 0px rgba(0,0,0,0.5);
+	}
+	
+	&__dark-teal {
+		box-shadow: -14px -14px 0px 0px rgba(4,94,95,1), 0px 0px 5px 0px rgba(0,0,0,0.5);
 	}
 			
 	h3, p {

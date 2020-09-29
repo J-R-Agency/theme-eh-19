@@ -367,9 +367,10 @@ if( have_rows('fc_content_block') ):
          // ---- CASE: PUBLIC BLOG POSTS ----//
         // -------------------------------- //
         elseif( get_row_layout() == 'module_public_blog_posts' ): 
-
+			
 			$mpbp_title = get_sub_field('mpbp_title');
 			$mpbp_category = get_sub_field('mpbp_category'); 
+			$mpbp_card_color = get_sub_field('mpbp_card_color');
 			$cat_name = get_cat_name($mpbp_category);
 			$cat_link = get_category_link( $mpbp_category );
 			
@@ -411,7 +412,7 @@ if( have_rows('fc_content_block') ):
 								<div class='col-12'>		
 									<div class='more-resources float-right'>
 										<a href='".$cat_link."'>
-											".$read_more_text."<img src='".get_template_directory_uri()."/images/icons/dark-blue-arrow.svg'>
+											".$read_more_text."<img src='".get_template_directory_uri()."/images/icons/".$mpbp_card_color."-arrow.svg'>
 										</a>
 									</div>
 								</div>
