@@ -97,7 +97,8 @@ if( have_rows('fc_content_block') ):
             $mvb_video_url = get_sub_field('mvb_video_url'); // oEmbed
 			$mvb_video_title = get_sub_field('mvb_video_title'); // Text
 			$mvb_background_color = get_sub_field('mvb_background_color'); // Select
-                        
+            $mvb_link = get_sub_field('mvb_link');
+                      
             echo "
             <!-- Module Video Block -->
             <section class=\"module_video_block bg-".$mvb_background_color."\"
@@ -106,9 +107,17 @@ if( have_rows('fc_content_block') ):
 				"<div class='container'>".
             
             	"<div class=\"mvb_video_title centered\"><h3>". $mvb_video_title . "</h3></div>" .            
-            	"<div class=\"mvb_video_url\">". $mvb_video_url . "</div>" .
+            	"<div class=\"mvb_video_url\">". $mvb_video_url . "</div>";
             	
-            	"</div>" .
+            	if ($mvb_link) {
+	            	echo "
+	            	<a href=\"". $mvb_link['url'] ."\" target='".$mvb_link['target']."'>
+	            		<div class=\"cta_link centered\">". $mvb_link['title'] . "</div>
+	            	</a>
+	            	";
+            	}
+            	
+            echo "</div>" .
 			"</section>";
 
 

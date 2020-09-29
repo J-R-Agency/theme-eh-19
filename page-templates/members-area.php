@@ -74,6 +74,7 @@ get_header();
 	</div>
 </section>
 
+<!-- DOWNLOADS -->
 <section>
 	<div class="container">
 		<!-- Introduction -->
