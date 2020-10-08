@@ -498,7 +498,6 @@ if( have_rows('fc_content_block') ):
 			$mprbp_category = get_sub_field('mprbp_category'); 
 			$mprbp_card_color = get_sub_field('mprbp_card_color');
 			$mprbp_background_color = get_sub_field('mprbp_background_color');
-			$mprbp_show_sticky_posts = get_sub_field('mprbp_show_sticky_posts');
 			$cat_name = get_cat_name($mprbp_category);
 			
 			if (!$mprbp_category) {
@@ -513,43 +512,42 @@ if( have_rows('fc_content_block') ):
 			<section class='bg-".$mprbp_background_color." blog-posts-module'>
 				<div class='container'>
 					<h2>".$mprbp_title."</h2>";
-				
-				if ($mprbp_show_sticky_posts) {
-					// Big blog cards
-					$stickyArgs = array(
-					    'post_type'      => 'post',
-					    'post_status'	 => 'private',
-					    'post__in'  => get_option( 'sticky_posts' ),
-					    'posts_per_page' => 1,
-					    'orderby'          => 'menu_order date',
-					    'order'   => 'DESC',
-					    'category__in'	 => $mprbp_category,
-					    'ignore_sticky_posts' => 0
-					 );
-					 
-					$stickyQuery = new WP_Query($stickyArgs);
-					 
-					if ( $stickyQuery->have_posts() ) :
-						echo	"<div class='row'>";
-															 
-						    while ( $stickyQuery->have_posts() ) : $stickyQuery->the_post();
-							 	
-								$categories = get_the_category();
-								$category_color = $mprbp_card_color;
-								
-								include (get_template_directory().'/global-templates/cards/big-blog-card.php');	
-								
-							endwhile;
+					
+				// Big blog cards
+				$stickyArgs = array(
+				    'post_type'      => 'post',
+				    'post_status'	 => 'private',
+				    'posts_per_page' => 1,
+				    'order'   => 'DESC',
+				    'ignore_sticky_posts' => 1,
+				    'category__in'	 => $mprbp_category
+				 );
+				 
+				$stickyQuery = new WP_Query($stickyArgs);
+				 
+				if ( $stickyQuery->have_posts() ) :
+					echo	"<div class='row'>";
+														 
+					    while ( $stickyQuery->have_posts() ) : $stickyQuery->the_post();
+						 	
+							$categories = get_the_category();
+							$category_color = $mprbp_card_color;
 							
-						echo "</div> <!-- end row -->";
-					endif;					
-				}
+							include (get_template_directory().'/global-templates/cards/big-blog-card.php');	
+							
+						endwhile;
+						
+					echo "</div> <!-- end row -->";
+				endif;					
+				
 								
 				// Small blog cards
 				$args = array(
 				    'post_type'      => 'post',
 				    'post_status'	 => 'private',
 				    'posts_per_page' => 3,
+				    'offset' => 1,
+				    'orderby'        => 'menu_order date',
 				    'order'          => 'DESC',
 				    'category__in'	 => $mprbp_category,
 				    'ignore_sticky_posts' => 1,
