@@ -416,7 +416,7 @@ if( have_rows('fc_content_block') ):
 					// Big blog cards
 					$stickyArgs = array(
 					    'post_type'      => 'post',
-					    'post_status'	 => 'private',
+					    'post_status'	 => 'publish',
 					    'posts_per_page' => 1,
 					    'order'          => 'DESC',
 					    'category__in'	 => $mpbp_category,
