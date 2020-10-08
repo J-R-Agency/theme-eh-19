@@ -78,6 +78,14 @@ function wmpudev_enqueue_icon_stylesheet() {
 add_action( 'wp_enqueue_scripts', 'wmpudev_enqueue_icon_stylesheet' );
 
 
+// Add menu order to posts
+add_action( 'admin_init', 'posts_order_wpse_91866' );
+
+function posts_order_wpse_91866() 
+{
+    add_post_type_support( 'post', 'page-attributes' );
+}
+
 /* -- ADD "JOB ROLE" FIELD -- */
 add_action( 'show_user_profile', 'extra_user_profile_fields' );
 add_action( 'edit_user_profile', 'extra_user_profile_fields' );
