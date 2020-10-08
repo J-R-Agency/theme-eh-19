@@ -417,16 +417,17 @@ if( have_rows('fc_content_block') ):
 					$stickyArgs = array(
 					    'post_type'      => 'post',
 					    'post_status'	 => 'publish',
+					    'post__in'  => get_option( 'sticky_posts' ),
 					    'posts_per_page' => 1,
 					    'order'          => 'DESC',
-					    'category__in'	 => $mpbp_category,
 					    'ignore_sticky_posts' => 0
 					 );
 					 
 					$stickyQuery = new WP_Query($stickyArgs);
 					 
 					if ( $stickyQuery->have_posts() ) :
-						echo	"<div class='row'>";
+						echo	"<!-- Sticky Post -->
+						<div class='row'>";
 															 
 						    while ( $stickyQuery->have_posts() ) : $stickyQuery->the_post();
 							 	
@@ -516,6 +517,7 @@ if( have_rows('fc_content_block') ):
 					$stickyArgs = array(
 					    'post_type'      => 'post',
 					    'post_status'	 => 'private',
+					    'post__in'  => get_option( 'sticky_posts' ),
 					    'posts_per_page' => 1,
 					    'order'          => 'DESC',
 					    'category__in'	 => $mprbp_category,
