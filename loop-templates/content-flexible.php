@@ -449,7 +449,8 @@ if( have_rows('fc_content_block') ):
 				    'orderby'          => 'menu_order date',
 				    'order'          => 'DESC',
 				    'category__in'	 => $mpbp_category,
-				    'ignore_sticky_posts' => 1
+				    'ignore_sticky_posts' => 1,
+				    'post__not_in' => get_option( 'sticky_posts' )
 				 );
 				 
 				$query = new WP_Query($args);
@@ -551,7 +552,8 @@ if( have_rows('fc_content_block') ):
 				    'posts_per_page' => 3,
 				    'order'          => 'DESC',
 				    'category__in'	 => $mprbp_category,
-				    'ignore_sticky_posts' => 1
+				    'ignore_sticky_posts' => 1,
+				    'post__not_in' => get_option( 'sticky_posts' )
 				 );
 				 
 				$query = new WP_Query($args);
