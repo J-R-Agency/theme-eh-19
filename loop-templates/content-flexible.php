@@ -446,6 +446,7 @@ if( have_rows('fc_content_block') ):
 				    'post_type'      => 'post', //write slug of post type
 				    'post_status'	 => 'publish',
 				    'posts_per_page' => 3,
+				    'orderby'          => 'menu_order date',
 				    'order'          => 'DESC',
 				    'category__in'	 => $mpbp_category,
 				    'ignore_sticky_posts' => 1
@@ -519,7 +520,8 @@ if( have_rows('fc_content_block') ):
 					    'post_status'	 => 'private',
 					    'post__in'  => get_option( 'sticky_posts' ),
 					    'posts_per_page' => 1,
-					    'order'          => 'DESC',
+					    'orderby'          => 'menu_order date',
+					    'order'   => 'DESC',
 					    'category__in'	 => $mprbp_category,
 					    'ignore_sticky_posts' => 0
 					 );
