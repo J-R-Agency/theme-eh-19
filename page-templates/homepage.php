@@ -33,19 +33,20 @@ get_header();
 				</div>
 			</div>
 			
-			<div class="row">
-				<div class="col-md-6 col-12"> 
-					<p class="first-copy"><?php echo $homepage_first_copy ?></p>
-				</div>
-				<div class="col-md-6 col-12 vertical-center">
-					<p class="second-copy"><?php echo $homepage_second_copy ?></p>				
-				</div>
+			<div class="homepage-copy">
+				<?php if ($homepage_first_copy): ?>
+					<div class="first-copy"><?php echo $homepage_first_copy; ?></div>
+				<?php endif; ?>
+				
+				<?php if ($homepage_second_copy): ?>
+					<div class="second-copy"><?php echo $homepage_second_copy; ?></div>
+				<?php endif; ?>			
 			</div>
 			
 			<div class="row">
 				<div class="col-12 centered">
 					<a href=" <?php echo $homepage_cta_link['url'] ?> ">
-			        	<div class="cta_link navy"> <?php echo $homepage_cta_text ?></div>
+			        	<div class="cta_link navy"> <?php echo $homepage_cta_text; ?></div>
 			        </a>				
 				</div>
 			</div>
